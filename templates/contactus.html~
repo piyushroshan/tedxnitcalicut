@@ -1,9 +1,11 @@
-<html>
-<head>
-    <title>Contact us</title>
-</head>
-<body>
-    <h1>Contact us</h1>
+{% extends "base.html" %}
+{% block title %}Contact us{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/contactform.css" />
+<div id="content">
+<h1>Contact us</h1>
 
     {% if errors %}
         <ul>
@@ -12,14 +14,15 @@
             {% endfor %}
         </ul>
     {% endif %}
-
+<table>
     <form action="/contactus/submit/" method="post">{% csrf_token %}
-	<p>Name: <input type="text" name="name" value="{{ name }}"></p>
-	<p>Phone: <input type="text" name="phone" value="{{ phone }}"></p>
-        <p>Subject: <input type="text" name="subject" value="{{ subject }}"></p>
-        <p>Your e-mail (optional): <input type="text" name="email" value="{{ email }}"></p>
-        <p>Message: <textarea name="message" rows="10" cols="50">**{{ message }}**</textarea></p>
-        <input type="submit" value="Submit">
+	<tr><td>Name: </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
+	<tr><td>Phone</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
+        <tr><td>Subject</td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
+        <tr><td>Your e-mail (optional)</td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
+        <tr><td>Message</td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
+        <tr><td><input type="submit" value="Submit"></td></tr>
     </form>
-</body>
-</html>
+</table>
+</div>
+{% endblock %}

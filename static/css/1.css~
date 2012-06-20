@@ -1,0 +1,55 @@
+#header ul
+{
+background-color: #ffff01;
+ text-align: center;
+}
+
+#header ul li
+{
+display: inline;
+list-style-type: none;
+padding-right: 100px;
+}
+
+#header ul li a
+{
+color: #ff2b06;
+text-decoration:none;
+padding: .2em 1em;
+
+}
+
+#header ul li a:hover
+{
+color: #000000;
+background-color: #ff2b06;
+}
+
+
+#footer ul
+{
+text-align: center;
+}
+#footer ul li
+{
+display: inline;
+list-style-type: none;
+padding-right: 100px;
+}
+
+#footer ul li a
+{
+padding: .2em 1em;
+text-decoration:none;
+color: #ff2b06;
+
+}
+
+#footer ul li a:hover
+{
+color: #000000;
+background-color: #ff2b06;
+}
+
+
+

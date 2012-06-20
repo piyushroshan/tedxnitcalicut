@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>{% block title %}TEDXNitc{% endblock %}</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/1.css" />
+<body>
+{% block header %}
+	<div id="header">
+	<ul>
+  	<li><a href="/">Home</a></li>
+  	<li> <a href="/aboutus/">About</a></li>
+ 	<li> <a href="/contactus/">Contact us </a> </li>
+	</ul>
+	</div>
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
+    
+{% block footer %}
+	<div id="footer">
+	<ul>
+  	<li><a href="/">Credits</a></li>
+  	<li> <a href="/aboutus/">NITC</a></li>
+ 	<li> <a href="/contactus/">Facebook </a> </li>
+	</ul>
+	</div>
+{% endblock %}
+</body>
+</html>
