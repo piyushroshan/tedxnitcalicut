@@ -4,7 +4,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^aboutus/$','aboutus.views.about_us'),
+    url(r'^about/ted/$','aboutus.views.aboutted'),
+    url(r'^about/tedx/$','aboutus.views.abouttedx'),
+    url(r'^about/tedxnitcalicut/$','aboutus.views.abouttedxnitcalicut'),
     url(r'^contactus/$','contactus.views.contact_us'),
     url(r'^contactus/submit/$','contactus.views.submit_form'),
     url(r'^contactus/thanks/$','contactus.views.thanks'),

@@ -3,13 +3,19 @@
 <head>
     <title>{% block title %}TEDXNitc{% endblock %}</title>
 </head>
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/1.css" />
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/hf.css" />
 <body>
 {% block header %}
 	<div id="header">
-	<ul>
+	<ul id="navbar">
   	<li><a href="/">Home</a></li>
-  	<li> <a href="/aboutus/">About</a></li>
+  	<li><a href="">About</a>
+		<ul>
+		<li><a href="/about/ted/">About TED</a></li>
+		<li><a href="/about/tedx/">About TEDx</a></li>
+		<li><a href="/about/tedxnitcalicut/">About TEDxNITCalicut</a></li>
+		</ul>
+	</li>
  	<li> <a href="/contactus/">Contact us </a> </li>
 	</ul>
 	</div>

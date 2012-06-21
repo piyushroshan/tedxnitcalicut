@@ -1,0 +1,16 @@
+#content
+{
+padding-left: 100px;
+padding-right: 100px;
+}
+
+#content p
+{
+padding-left: 100px;
+padding-right: 100px;
+}
+#content h1
+{
+padding-left: 100px;
+padding-right: 100px;
+}

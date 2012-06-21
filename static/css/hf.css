@@ -1,4 +1,4 @@
-#header ul
+/*#header ul
 {
 background-color: #000000;
  text-align: center;
@@ -8,7 +8,7 @@ background-color: #000000;
 {
 display: inline;
 list-style-type: none;
-padding-right: 100px;
+padding-right: 60px;
 }
 
 #header ul li a
@@ -23,13 +23,61 @@ padding: .2em 1em;
 {
 color: #000000;
 background-color: #ff2b06;
-}
+} */
 
+#navbar {
+	margin: 0;
+	padding-left: 180px;
+	padding-bottom: 50px;
+	padding-top: 30px;
+	height: 1em; }
+#navbar li {
+	list-style: none;
+	float: left; }
+#navbar li a {
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #000000;
+	color: #ff2b06;
+	text-decoration: none; }
+#navbar li ul {
+	display: none; 
+	width: 10em; /* Width to help Opera out */
+	background-color: #ff2b06;}
+#navbar li:hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0; }
+#navbar li:hover li {
+	float: none; }
+#navbar li:hover li a {
+	background-color: #ff2b06;
+	border-bottom: 1px solid #fff;
+	color: #000000; }
+#navbar li li a:hover {
+	background-color: #000000; 
+	color: #ff2b06;	
+	}
+
+
+#footer
+{
+margin: 0;
+padding-left: 180px;
+padding-bottom: 30px;
+padding-top: 50px;
+padding-right: 180px;
+height: 1em;
+}
 
 #footer ul
 {
 background-color: #000000;
-text-align: center;
+text-align: left;
 }
 #footer ul li
 {

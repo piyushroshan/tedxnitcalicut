@@ -6,8 +6,6 @@
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/aboutus.css" />
 
 <div id="content">
-
-<div class="content">
 <h1> About : TED</h1>
    <p>
 	TED is a nonprofit organization devoted to <em>Ideas Worth Spreading</em>. Started as a four-day conference in California 26 years ago, TED has grown to support those world-changing ideas with multiple initiatives. At TED, the world's leading thinkers and doers are asked to give the talk of their lives in 18 minutes. Talks are then made available, free, at TED.com. TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Benoit Mandelbrot, Philippe Starck, Ngozi Okonjo-Iweala, Isabel Allende and former UK Prime Minister Gordon Brown. Two major TED events are held each year: The TED Conference takes place every spring in Long Beach, California (along with a parallel conference, TEDActive, in Palm Springs), and TEDGlobal is held each summer in Edinburgh, Scotland.</p>
