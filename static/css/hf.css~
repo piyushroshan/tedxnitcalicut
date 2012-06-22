@@ -6,6 +6,11 @@ height: 6em;
 padding: 0;
 width : 100%;
 }
+
+#content
+{
+height:100%;
+}
 /*
 #header ul li
 {

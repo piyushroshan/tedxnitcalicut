@@ -19,12 +19,12 @@
                     <footer>
 			<div>Posted By  <a href="mailto:{{post.email}}">{{post.name}}.</a></div>
 		    </footer>
-		
+		<div class="commentlink"><a href="{% url blogs.views.post post.pk %}">Comments</a></div>
 		</section>
             {% endfor %}
 	</article>	
         </ul>
-<div class="commentlink"><a href="{% url blogs.views.post post.pk %}">Comments</a></div>
+
         <!-- Next/Prev page links  -->
         {% if posts.object_list and posts.paginator.num_pages > 1 %}
         <div  style="margin-top: 20px; margin-left: -20px; ">

@@ -36,11 +36,13 @@
 
 <div id="addc">Add a comment</div>
 <!-- Comment form  -->
-<form action="{% url blog.views.add_comment post.id %}" method="POST">{% csrf_token %}
+<form action="/blog/{% url blogs.views.add_comment post.id %}" method="POST">{% csrf_token %}
     <div id="cform">
-        Name: {{ form.name }}
-        <p>{{ form.body|linebreaks }}</p>
+<table>
+{{form.as_table}}
+</table>
     </div>
+
     <div id="submit"><input type="submit" value="Submit"></div>
 </form>
 

@@ -11,8 +11,7 @@
 </div>
 <div class="rsidebar">
 <div>
-    <p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="TEDxNITCalicut">Tweet</a></p>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+    
 </div></div>
 {% block header %}
 	<div id="header">

@@ -31,8 +31,9 @@ def list(request):
 def post(request, pk):
     """Single post with comments and a comment form."""
     post = Blogpost.objects.get(pk=int(pk))
+    comments = Comment.objects.filter(post=post)
     t=get_template('post.html')
-    c = RequestContext(request, {'post':post, 'user':request.user})
+    c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm(), 'user':request.user})
     html= t.render(c)
     return HttpResponse(html)
 
