@@ -7,4 +7,4 @@ class contactform(models.Model):
 	email = models.EmailField()
 	phone = models.CharField(max_length = 50)
 	subject = models.CharField(max_length = 50)
-	message = models.CharField(max_length = 1000)
+	message = models.TextField(max_length = 1000)

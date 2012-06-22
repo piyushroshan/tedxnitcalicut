@@ -1,15 +1,26 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset=”UTF-8”>
     <title>{% block title %}TEDXNitc{% endblock %}</title>
 </head>
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/hf.css" />
+<link rel="stylesheet" href="{{STATIC_URL}}css/hf.css" />
 <body>
+<div class="lsidebar">
+<img src="{{STATIC_URL}}images/logo.png" border="0" width="100%" height="100em"></img>
+</div>
+<div class="rsidebar">
+<div>
+    <p><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="TEDxNITCalicut">Tweet</a></p>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+</div></div>
 {% block header %}
 	<div id="header">
+	<nav>
 	<ul id="navbar">
   	<li><a href="/">Home</a></li>
-  	<li><a href="">About</a>
+	<li><a href="/blogs/">Blog</a></li>
+  	<li><a >About</a>
 		<ul>
 		<li><a href="/about/ted/">About TED</a></li>
 		<li><a href="/about/tedx/">About TEDx</a></li>
@@ -18,13 +29,14 @@
 	</li>
  	<li> <a href="/contactus/">Contact us </a> </li>
 	</ul>
+	</nav>
 	</div>
 {% endblock %}
 
-
+<div class="resize">
 {% block content %}
 {% endblock %}
-    
+</div>
 {% block footer %}
 	<div id="footer">
 	<ul>

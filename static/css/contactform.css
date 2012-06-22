@@ -1,9 +1,12 @@
 #content
 {
-padding-left: 100px;
+padding-left: 20%;
+padding-right: 20%;
 }
 
-#content p
+#content table td
 {
-padding-left: 500px;
+padding-left: 5px;
+padding-top: .5em;
+padding-bottom: .5em;
 }

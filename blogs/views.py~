@@ -1,0 +1,10 @@
+ Create your views here.
+
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.core.urlresolvers import reverse
+
+from blogs.models import *
+
+def main(request):
+	html="hello"
+	return HttpResponse(html)

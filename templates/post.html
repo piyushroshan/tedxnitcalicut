@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
+    <div id="content" >
+
+        <!-- Posts  -->
+        <ul>
+	<article>
+		<section>
+                <header>
+		<h1>{{ post.title }}</h1>
+		<p>{{post.created}}</p>
+                </header>
+               
+                    <div >{{ post.body|linebreaks }}</div>
+                    <footer>
+			<div>Posted By  {{post.name}}</div>
+		    </footer>
+		</section>
+	</article>	
+        </ul>
+
+<!-- Comments  -->
+{% if comments %}
+    <p>Comments:</p>
+{% endif %}
+
+{% for comment in comments %}
+    <div class="comment">
+        <div class="time">{{ comment.created }} | {{ comment.author }}</div>
+        <div class="body">{{ comment.body|linebreaks }}</div>
+    </div>
+{% endfor %}
+
+<div id="addc">Add a comment</div>
+<!-- Comment form  -->
+<form action="{% url blog.views.add_comment post.id %}" method="POST">{% csrf_token %}
+    <div id="cform">
+        Name: {{ form.name }}
+        <p>{{ form.body|linebreaks }}</p>
+    </div>
+    <div id="submit"><input type="submit" value="Submit"></div>
+</form>
+
+
+        
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+from django.db import models
+
+# Create your models here.
+
+class Comments(models.Model):
+	name=models.CharField(max_length = 50)
+	created = models.DateField()
+	content = models.CharField(max_length = 1000)
+
+class Blogpost(models.Model):
+	title = models.CharField(max_length = 100)
+	name = models.CharField(max_length = 50)
+        email = models.EmailField()
+        body = models.CharField(max_length = 1000)
+	created = models.DateTimeField('%Y-%m-%d %H:%M:%S',)
+

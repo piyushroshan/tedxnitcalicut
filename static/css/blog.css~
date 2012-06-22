@@ -1,0 +1,9 @@
+#content
+{
+padding-left:20%;
+padding-right:20%;
+}
+#content .footer
+{
+font: Ariel 20px
+}
