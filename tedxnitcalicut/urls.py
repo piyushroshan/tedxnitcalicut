@@ -5,6 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^about/ted/$','aboutus.views.aboutted'),
+    url(r'^organisers/$','aboutus.views.organisers'),
     url(r'^about/tedx/$','aboutus.views.abouttedx'),
     url(r'^about/tedxnitcalicut/$','aboutus.views.abouttedxnitcalicut'),
     url(r'^contactus/$','contactus.views.contact_us'),

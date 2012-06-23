@@ -18,15 +18,17 @@
 	<nav>
 	<ul id="navbar">
   	<li><a href="/">Home</a></li>
-	<li><a href="/blogs/">Blog</a></li>
+
+	<li><a href="/organisers/">Organisers</a></li>
   	<li><a >About</a>
 		<ul>
-		<li><a href="/about/ted/">About TED</a></li>
-		<li><a href="/about/tedx/">About TEDx</a></li>
+		<li><a href="/about/ted/">TED</a></li>
+		<li><a href="/about/tedx/">TEDx</a></li>
 		<li><a href="/about/tedxnitcalicut/">About TEDxNITCalicut</a></li>
 		</ul>
 	</li>
  	<li> <a href="/contactus/">Contact us </a> </li>
+ 		<li><a href="/blog/">Blog</a></li>
 	</ul>
 	</nav>
 	</div>

@@ -20,12 +20,4 @@ def aboutted(request):
         c = RequestContext(request,{})
         http = t.render(c)  
         return HttpResponse(http)
-        
-        
-def organisers(request):
-							t = get_template('organisers.html') 
-							c = RequestContext(request,{}) 
-							http = t.render(c)
-							return HttpResponse(http)
-
 
