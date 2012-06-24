@@ -7,7 +7,7 @@ class Blogpost(models.Model):
 	title = models.CharField(max_length = 100)
 	name = models.CharField(max_length = 50)
         email = models.EmailField()
-        body = models.TextField(max_length = 1000)
+        body = models.TextField()
 	created = models.DateTimeField('%Y-%m-%d %H:%M:%S',auto_now_add=True)
 
 class Comment(models.Model):
