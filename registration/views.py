@@ -59,6 +59,8 @@ def register(request, success_url='/accounts/register/complete/'):
 								if form.is_valid():
 												new_user = RegistrationProfile.objects.create_inactive_user(username=form.cleaned_data['username'],
 																																																																								password=form.cleaned_data['password1'],
+																																																																								fname=form.cleaned_data['fname'],
+																																																																								lname=form.cleaned_data['lname'],
 																																																																								email=form.cleaned_data['email'])
 												return HttpResponseRedirect(success_url)
 				else:

@@ -15,6 +15,6 @@ class Comment(models.Model):
         created = models.DateTimeField(auto_now_add=True)
         body = models.TextField()
         post = models.ForeignKey(Blogpost)
-def __unicode__(self):
-        return unicode("%s: %s" % (self.post, self.body[:60]))
+	def __unicode__(self):
+        	return unicode("%s: %s" % (self.post, self.body[:60]))
 

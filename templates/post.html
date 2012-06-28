@@ -27,7 +27,7 @@
 {% endif %}
 
 {% for comment in comments %}
-    <div class="comment">
+    <div id="comment">
         <div class="time">{{ comment.created }} | {{ comment.author }}</div>
         <div class="body">{{ comment.body|linebreaks }}</div>
     </div>

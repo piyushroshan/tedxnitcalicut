@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/contactform.css" />
+<link rel="stylesheet"  href="{{STATIC_URL}}css/contactform.css" />
 <div id="content">
 <h1>Contact us</h1>
 
@@ -16,11 +16,12 @@
     {% endif %}
 <table>
     <form action="/contactus/submit/" method="post">{% csrf_token %}
-	<tr><td>Name: </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
-	<tr><td>Phone (optional):</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
-        <tr><td>Subject:</td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
-        <tr><td>Your e-mail:</td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
-        <tr><td >Message :</td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
+	<tr><td>Name:<sup>*</sup> </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
+	<tr><td>E-mail:<sup>*</sup></td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
+	<tr><td>Phone :</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
+        <tr><td>Subject:<sup>*</sup></td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
+        
+        <tr><td >Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
         <tr><td></td><td><input type="submit" value="Submit"></td></tr>
     </form>
 </table>

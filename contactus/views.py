@@ -6,8 +6,14 @@ from django.template import RequestContext
 from contactus.models import contactform
 def contact_us(request):
 	t = get_template('contactus.html')
-	c = RequestContext(request,{})
-	html = t.render(c)
+	if request.user.is_authenticated():
+        	name = request.user.get_full_name()
+        	email = request.user.email
+		c = RequestContext(request,{'name':name,'email':email,})
+		html = t.render(c)
+	else:
+		c = RequestContext(request,{})
+		html = t.render(c)
 	return HttpResponse(html)
 
 
@@ -23,8 +29,8 @@ def submit_form(request):
         	if not errors:
 			cform = contactform()
 			cform.name = request.POST['name']
-			cform.phone = request.POST['phone']
 			cform.email = request.POST['email']
+			cform.phone = request.POST['phone']
 			cform.subject = request.POST['subject']
 			cform.message = request.POST['message']
 			cform.save()	
@@ -36,13 +42,20 @@ def submit_form(request):
 	        	)"""
 			return HttpResponseRedirect('/contactus/thanks/')    
 	t = get_template('contactus.html')
+        if request.user.is_authenticated():
+	        name = request.user.get_full_name()
+        	email = request.user.email
+        else:
+        	name = request.POST['name']
+               	email = request.POST['email']
+
 	c = RequestContext (request, {
         	'errors': errors,
-		'name': request.POST.get('name',''),
+		'name': name,
 		'phone' : request.POST.get('phone',''),
         	'subject': request.POST.get('subject', ''),
         	'message': request.POST.get('message', ''),
-        	'email': request.POST.get('email', ''),
+        	'email': email,
     	})
 	html = t.render(c)
 	return HttpResponse(html)

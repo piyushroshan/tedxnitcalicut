@@ -27,6 +27,14 @@
       {{ form.email }}
     </p>
     <p>
+      <label for="id_fname">First Name:</label>
+      {{ form.fname }}
+    </p>
+    <p>
+      <label for="id_lname">Last Name:</label>
+      {{ form.lname }}
+    </p>
+    <p>
       <label for="id_password1">Password:</label>
       {% if form.password1.errors %}
         <p class="errors">{{ form.password1.errors.as_text }}</p>
