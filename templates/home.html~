@@ -1,3 +1,0 @@
-{% extends "base.html" %}
-{% include "list.html" ,{'post':post} %}
-

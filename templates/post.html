@@ -11,12 +11,11 @@
 		<section>
                 <header>
 		<h1>{{ post.title }}</h1>
-		<p>{{post.created}}</p>
                 </header>
                
                     <div >{{ post.body|linebreaks }}</div>
                     <footer>
-			<div>Posted By  {{post.name}}</div>
+			<div id="post_footer">Posted By  {{post.name}} at {{post.created}}</div>
 		    </footer>
 		</section>
 	</article>	
@@ -24,7 +23,7 @@
 
 <!-- Comments  -->
 {% if comments %}
-    <p>Comments:</p>
+    <p id="comment">Comments:</p>
 {% endif %}
 
 {% for comment in comments %}

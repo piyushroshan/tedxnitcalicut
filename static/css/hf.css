@@ -7,10 +7,7 @@ padding: 0;
 width : 100%;
 }
 
-#content
-{
-height:100%;
-}
+
 /*
 #header ul li
 {
@@ -76,16 +73,19 @@ background-color: #ff2b06;
 
 #footer
 {
-margin: 0;
+
 background-color: #000000;
 padding: 0;
 height: 4em;
+clear: both;
+ position: relative;
+ z-index: 10;
 }
 
 #footer ul
 {
 padding-left: 180px;
-padding-bottom: 0px;
+
 
 padding-right: 180px;
 background-color: #000000;
@@ -112,23 +112,43 @@ color: #000000;
 background-color: #ff2b06;
 }
 
-.lsidebar {
+.lsidebar
+{
 	float: left;
+
 	width: 20%;
-	background-color: #000000;
+	background-color: #ff2b06;
 	color:#ffffff;
-	height: 100%;
+
 }
 
 .rsidebar {
+
+margin-top: 8em;
 	float: right;
 	width: 20%;
-	background-color: #000000;
+	background-color: #ff2b06;
 	color:#ffffff;
-	height: 100%;
+
 }
 
-.resize
+#logo
 {
-height: 100%;
+	
+	float: left;
+	width: 20%;
+	background-color: #000000;
+	height: auto;
+	max-height:10%;
+
 }
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+
+#content
+{
+padding-left: 20%;
+padding-right: 20%;	
+	}

@@ -23,7 +23,7 @@ def list(request):
         posts = paginator.page(paginator.num_pages)
     
     t=get_template("list.html")
-    c=RequestContext(request, {'posts':posts, 'user':request.user})
+    c=RequestContext(request, {'posts':posts})
     html=t.render(c)
     return HttpResponse(html)
 
@@ -33,7 +33,7 @@ def post(request, pk):
     post = Blogpost.objects.get(pk=int(pk))
     comments = Comment.objects.filter(post=post)
     t=get_template('post.html')
-    c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm(), 'user':request.user})
+    c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm()})
     html= t.render(c)
     return HttpResponse(html)
 

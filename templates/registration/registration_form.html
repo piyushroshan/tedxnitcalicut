@@ -3,10 +3,10 @@
 {% block title %}Sign up{% endblock %}
 
 {% block content %}
-
+<div id="content">
   {% if form.errors %}
   <p class="errors">Please correct the errors below: {{ form.non_field_errors }}
-  {{form.errors}}</p>
+  </p>
   {% endif %}
 
   <h1>Create an account</h1>
@@ -49,11 +49,12 @@
     </p>
     <p class="submit"><input type="submit" value="Register &rarr;"></p>
   </form>
-
+</div>
   
 {% endblock %}
 
 {% block content-related %}
+<div id="content">
 <p>Fill out the form to the left (all fields are required), and your
 account will be created; you'll be sent an email with instructions on how
 to finish your registration.</p>
@@ -63,4 +64,5 @@ as much as you do.</p>
 
 <p>This account will let you log into the ticket tracker, claim tickets,
 and be exempt from spam filtering.</p>
+</div>
 {% endblock %}

@@ -1,24 +1,31 @@
-{% extends "registration/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Log in{% endblock %}
 
 {% block content %}
+<div id="content">
 
+{%if not user.is_authenticated %}
 <h1>Log in</h1>
 
 {% if form.errors %}
 <p class="error">Please correct the errors below:</p>
+<p>{{ form.non_field_errors }}</p>
 {% endif %}
 
 <form method="post" action="?next={{ next|default:"/" }}">{%csrf_token%}
 <dl>
 <dt><label for="id_username">Username:</label>{% if form.username.errors %} <span class="error">{{ form.username.errors|join:", " }}</span>{% endif %}</dt>
 <dd>{{ form.username }}</dd>
-<dt><label for="id_password">Password:</label>{% if form.password.errors %} <span class="error">{{ form.password.errors|join:", " }}</span>{% endif %}</dt>
+<dt><label for="id_password">Password:</label>{% if form.password.errors %} <p>{{ form.password.errors|join:", " }}</p>{% endif %}</dt>
 <dd>{{ form.password }}</dd>
 <dt><input type="submit" value="Log in" /></dt>
 </dl>
 </form>
+{%else%}
+<p>You are already logged in</p>
+{%endif%}
+</div>
 {% endblock %}
 
 {% block content-related %}

@@ -7,3 +7,27 @@ padding-right:20%;
 {
 font: Ariel 20px;
 }
+
+#content a
+{
+color: #ff2b06;
+text-decoration: none;
+}
+#post_footer
+{
+	font:10px arial,sans-serif;
+	
+	}
+	
+	
+	
+#post_footer a,s
+{
+	color: #ff2b06;
+	}
+	
+	#commentlink a
+	{
+		color: #ff2b06;
+		
+		}

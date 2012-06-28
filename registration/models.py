@@ -19,6 +19,7 @@ from django.contrib.sites.models import Site
 from django.conf import settings
 from django.template import RequestContext
 from django.utils.timezone import utc
+from django.core.mail import EmailMessage
 class RegistrationManager(models.Manager):
     """
     Custom manager for the RegistrationProfile model.
@@ -83,8 +84,8 @@ class RegistrationManager(models.Manager):
                                         'activation_key': activation_key,
                                         'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS })
             message = message_template.render(message_context)
-            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [new_user.email])
-        return HttpResponse(activation_key)
+            EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, [new_user.email])
+        return new_user
     
     def delete_expired_users(self):
         """

@@ -3,13 +3,13 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_ACTIVATION_DAYS=7
-EMAIL_HOST ='localhost'
-EMAIL_POR = 1025
-EMAIL_HOST_USER=''
-EMAIL_HOST_PASSWORD =''
-EMAIL_USE_TLS =False
-DEFAULT_FROM_EMAIL ='testing@example.com'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_TLS =True
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 567
+EMAIL_HOST_USER='piyushroshan@gmail.com'
+EMAIL_HOST_PASSWORD ='Secure@no01'
+DEFAULT_FROM_EMAIL ='noreply@tedxnitcalicut.com'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'blogs',
     'homepage',
     'registration',
+    'voting',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

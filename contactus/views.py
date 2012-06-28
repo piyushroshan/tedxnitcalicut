@@ -34,7 +34,6 @@ def submit_form(request):
                 		request.POST.get('email', 'noreply@example.com'),
                 		['siteowner@example.com'],
 	        	)"""
-			request.session['name']=request.POST.get('name')
 			return HttpResponseRedirect('/contactus/thanks/')    
 	t = get_template('contactus.html')
 	c = RequestContext (request, {
@@ -51,9 +50,7 @@ def submit_form(request):
 
 def thanks(request):
 	t=get_template('contact_post.html')
-	c=RequestContext(request, {
-	'name': request.session.get('name'),
-	})
+	c=RequestContext(request, {	})
 	html=t.render(c)	
 	return HttpResponse(html)
 

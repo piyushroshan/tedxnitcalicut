@@ -17,6 +17,6 @@ def main(request):
 	except (InvalidPage, EmptyPage):
 		posts = paginator.page(paginator.num_pages)
 	t=get_template('home.html')
-	c=RequestContext(request, {'posts':posts, 'user':request.user})
+	c=RequestContext(request, {'posts': posts})
 	html=t.render(c)
 	return HttpResponse(html)

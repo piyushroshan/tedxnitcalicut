@@ -30,7 +30,7 @@ def activate(request, activation_key):
 				activation_key = activation_key.lower() # Normalize before trying anything with it.
 				account = RegistrationProfile.objects.activate_user(activation_key)
 				t = get_template('registration/activate.html')
-				c = RequestContext(request,{'account': account,'expiration_days':settings.ACCOUNT_ACTIVATION_DAYS })
+				c = RequestContext(request,{'account': account,'expiration_days':settings.ACCOUNT_ACTIVATION_DAYS ,})
 				html=t.render(c)
 				return HttpResponse(html)
 
@@ -64,7 +64,7 @@ def register(request, success_url='/accounts/register/complete/'):
 				else:
 								form = RegistrationForm()
 				t = get_template('registration/registration_form.html')
-				c = RequestContext(request,{ 'form': form })
+				c = RequestContext(request,{ 'form': form ,})
 				html = t.render(c)
 				return HttpResponse(html)
 

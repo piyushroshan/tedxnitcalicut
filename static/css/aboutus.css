@@ -12,5 +12,11 @@ padding-right: 100px;
 #content h1
 {
 padding-left: 100px;
+color:  #ff2b06;
+}
 
+#content a
+{
+color: #ff2b06;
+text-decoration: none;
 }
