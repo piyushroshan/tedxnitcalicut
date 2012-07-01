@@ -12,6 +12,9 @@ urlpatterns = patterns('',
     url(r'^contactus/$','contactus.views.contact_us'),
     url(r'^contactus/submit/$','contactus.views.submit_form'),
     url(r'^contactus/thanks/$','contactus.views.thanks'),
+    url(r'^nominate/$','nominations.views.nominater'),
+    url(r'^nominate/submit/$','nominations.manage.nominated'),
+
     # url(r'^$', 'tedxnitcalicut.views.home', name='home'),
     # url(r'^tedxnitcalicut/', include('tedxnitcalicut.foo.urls')),
 

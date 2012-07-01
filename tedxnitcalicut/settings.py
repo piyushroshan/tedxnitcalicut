@@ -7,7 +7,7 @@ EMAIL_USE_TLS =True
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT = 567
 EMAIL_HOST_USER='piyushroshan@gmail.com'
-EMAIL_HOST_PASSWORD ='Secure@no01'
+EMAIL_HOST_PASSWORD ='ppppppppp'
 DEFAULT_FROM_EMAIL ='noreply@tedxnitcalicut.com'
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'homepage',
     'registration',
     'voting',
+    'nominations',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Nomination Form{% endblock %}
+
+{% block content %}
+<h2>Nominate a Speaker</h2>
+<form action="/nominate/submit/" method="POST">{% csrf_token %}
+    <div id="cform">
+<table>
+{{form.as_table}}
+</table>
+<input type="submit" value="Submit &rarr;">
+</form>
+
+{% endblock %}
