@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Choose your Speakers{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
+<div id="content" >
+	<h2>Choose your Speakers</h2>
+	<h3>Cast your vote</h3>
+
+{% for nomination in nominees %}
+
+<p>{{nomination.fname}} {{nomination.lname}}
+<br/>{{nomination.description}}</p>
+{%endfor%}
+
+</div>
+{% endblock %}
