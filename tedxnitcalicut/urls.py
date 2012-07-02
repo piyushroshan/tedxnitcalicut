@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^contactus/thanks/$','contactus.views.thanks'),
     url(r'^nominate/$','nominations.views.nominater'),
     url(r'^nominate/submit/$','nominations.manage.nominated'),
-
+    url(r'^nominate/vote/$','nominations.views.nominator_view'),
     # url(r'^$', 'tedxnitcalicut.views.home', name='home'),
     # url(r'^tedxnitcalicut/', include('tedxnitcalicut.foo.urls')),
 

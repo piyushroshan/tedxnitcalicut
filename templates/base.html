@@ -23,6 +23,8 @@
   	<li><a href="/">Home</a></li>
 
 	<li><a href="/organisers/">Organisers</a></li>
+	 		<li><a href="/blog/">Blog</a></li>
+ 		<li><a href="/nominate/">Nominate</a></li>
   	<li><a >About</a>
 		<ul>
 		<li><a href="/about/ted/">TED</a></li>
@@ -31,7 +33,7 @@
 		</ul>
 	</li>
  	<li> <a href="/contactus/">Contact us </a> </li>
- 		<li><a href="/blog/">Blog</a></li>
+
 	</ul>
 	</nav>
 	</div>
@@ -47,7 +49,7 @@
 	<div id="footer">
 	<ul>
 	{% if user.is_authenticated %}
-		<li> <a href="/accounts/logout/">Log Out </a></li>
+		<li> <a href="/accounts/logout/">Log Out</a>&nbsp;&nbsp;<b>{{user.username}}</b></li>
 		{%else%}
 			<li> <a href="/accounts/login/">Log In</a></li>
 			{%endif%}

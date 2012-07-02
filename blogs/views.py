@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
 from django.template.loader import get_template
 from django.template import RequestContext
-
+from django.contrib.auth.decorators import login_required
 from django.forms import ModelForm
 from blogs.models import *
 
@@ -22,7 +22,7 @@ def list(request):
     except (InvalidPage, EmptyPage):
         posts = paginator.page(paginator.num_pages)
     
-    t=get_template("list.html")
+    t=get_template("blogs/list.html")
     c=RequestContext(request, {'posts':posts})
     html=t.render(c)
     return HttpResponse(html)
@@ -32,7 +32,7 @@ def post(request, pk):
     """Single post with comments and a comment form."""
     post = Blogpost.objects.get(pk=int(pk))
     comments = Comment.objects.filter(post=post)
-    t=get_template('post.html')
+    t=get_template('blogs/post.html')
     c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm()})
     html= t.render(c)
     return HttpResponse(html)
@@ -43,6 +43,8 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         exclude = ["post"]
+
+
 
 def add_comment(request, pk):
     """Add a new comment."""

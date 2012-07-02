@@ -5,7 +5,7 @@ from django.template.loader import get_template
 from django.template import RequestContext
 from contactus.models import contactform
 def contact_us(request):
-	t = get_template('contactus.html')
+	t = get_template('contactus/contactus.html')
 	if request.user.is_authenticated():
         	name = request.user.get_full_name()
         	email = request.user.email
@@ -41,7 +41,7 @@ def submit_form(request):
                 		['siteowner@example.com'],
 	        	)"""
 			return HttpResponseRedirect('/contactus/thanks/')    
-	t = get_template('contactus.html')
+	t = get_template('contactus/contactus.html')
         if request.user.is_authenticated():
 	        name = request.user.get_full_name()
         	email = request.user.email
@@ -62,7 +62,7 @@ def submit_form(request):
 
 
 def thanks(request):
-	t=get_template('contact_post.html')
+	t=get_template('contactus/contact_post.html')
 	c=RequestContext(request, {	})
 	html=t.render(c)	
 	return HttpResponse(html)
