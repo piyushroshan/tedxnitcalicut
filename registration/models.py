@@ -154,3 +154,10 @@ class RegistrationProfile(models.Model):
         """
         expiration_date = datetime.timedelta(days=settings.ACCOUNT_ACTIVATION_DAYS)
         return self.key_generated + expiration_date <= datetime.datetime.utcnow().replace(tzinfo=utc)
+
+
+class UserProfile(models.Model):
+	url = models.URLField(blank = True)
+	home_address = models.TextField(blank = True)
+	phone_number = models.TextField(blank = True)
+	user = models.ForeignKey(User, unique=True)

@@ -3,11 +3,11 @@ from blogs.models import *
 
 
 class BlogpostAdmin(admin.ModelAdmin):
-	list_fields = ('title','name','email','body','created')
+	list_display = ('title','name','email','body','created')
 	search_feilds = ('name','email')
 
 class CommentAdmin(admin.ModelAdmin):
-	display_field = ['post','name','created']
+	list_display = ['post','name','created','body']
 
 
 admin.site.register(Comment,CommentAdmin)

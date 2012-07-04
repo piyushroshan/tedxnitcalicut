@@ -2,7 +2,7 @@
 Form and validation code for user registration.
 
 """
-
+from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.models import User
 
@@ -64,3 +64,10 @@ class RegistrationForm(forms.Form):
         if self.cleaned_data.get('tos', False):
             return self.cleaned_data['tos']
         raise forms.ValidationError(u'You must agree to the terms to register')
+
+
+def UserProfileForm(ModelForm):
+	class Meta:
+		model=UserProfile
+		exclude = ['user']
+

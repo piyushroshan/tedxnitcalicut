@@ -9,7 +9,7 @@ root URLConf to include this URLConf for any URL begninning with
 
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import *
 from views import activate, register
 
 urlpatterns = patterns('',
@@ -21,5 +21,15 @@ urlpatterns = patterns('',
                        (r'^login/$', login, {'template_name': 'registration/login.html'}),
                        (r'^logout/$', logout, {'template_name': 'registration/logout.html'}),
                        (r'^register/$', register),
-                       (r'^register/complete/$', direct_to_template, {'template': 'registration/registration_complete.html'}),
-                       )
+                       (r'^register/complete/$', direct_to_template,{'template_name': 'registration/registration_complete.html'}),
+                       (r'^password/change/$',password_change,{'template_name': 'registration/password_change_form.html'}),
+                       (r'^password/change/done/$',password_change_done,{'template_name': 'registration/password_change_done.html'}),
+                       (r'^password/reset/$',password_reset,{'template_name': 'registration/password_reset_form.html',
+			       'email_template_name': 'registration/password_reset_email.html',
+			       'subject_template_name': 'registration/password_reset_subject.txt'}),
+		       (r'^password/reset/done/$',password_reset_done,{'template_name': 'registration/password_reset_done.html'}),
+		       (r'^password/reset/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
+			       password_reset_confirm,{'template_name': 'registration/password_reset_confirm.html'}),
+		       (r'^password/reset/complete/$',password_reset_complete,{'template_name': 'registration/password_reset_complete.html'}),
+		       )
+
