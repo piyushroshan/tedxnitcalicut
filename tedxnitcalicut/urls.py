@@ -44,5 +44,5 @@ urlpatterns += patterns('blogs.views',
 )
 
 urlpatterns += patterns('',
-		   url(r'^(?P[-\w]+)/(?Pup|down|clear)vote/?$', vote_on_object, nominations_dict, name="nominations-voting"),
+		   url(r'^/nominate/vote/(?P<slug>[-\w]+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, nominations_dict, name="nominations-voting"),
 		   )
