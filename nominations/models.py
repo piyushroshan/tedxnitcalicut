@@ -12,6 +12,5 @@ class nominee(models.Model):
 	support = models.TextField(max_length = 750)
 	reference1 = models.URLField(blank=True)
 	reference2 = models.URLField(blank=True)
-	nominator = models.ForeignKey(User,related_name='+',blank = True, null=True, on_delete=models.SET_NULL)
-	
+	nominator = models.ForeignKey(User,related_name='+',blank = True, null=True, on_delete=models.SET_NULL)	
 	

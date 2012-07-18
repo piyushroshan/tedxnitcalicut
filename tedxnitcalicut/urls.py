@@ -3,14 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 from django.conf.urls.defaults import *
-from nominations.models import *
-from voting.views import vote_on_object
 
-nominations_dict = {
-		'model':'nominee',
-		'slug_field':'slug',
-		'allow_xmlhttprequest':'true',
-		}
 
 
 
@@ -32,6 +25,7 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^accounts/',include('registration.urls')),
+    url(r'^nominations/vote/',include('nominations.urls')),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
@@ -43,6 +37,4 @@ urlpatterns += patterns('blogs.views',
     url(r"^blog/add_comment/(\d+)/$", "add_comment"),
 )
 
-urlpatterns += patterns('',
-		   url(r'^/nominate/vote/(?P<slug>[-\w]+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, nominations_dict, name="nominations-voting"),
-		   )
+

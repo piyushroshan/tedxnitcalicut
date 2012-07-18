@@ -19,7 +19,7 @@ def nominater(request):
 
 
 def nominator_view(request):
-	nominees=nominee.objects.all()
+	nominees =nominee.objects.all()
 	t=get_template('nominations/view_nominations.html')
 	c=RequestContext(request,{'nominees':nominees})
 	html = t.render(c)

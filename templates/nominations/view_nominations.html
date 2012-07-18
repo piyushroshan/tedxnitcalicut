@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load voting_tags %} 
 {% block title %}Choose your Speakers{% endblock %}
 
 {% block content %}
@@ -9,11 +10,7 @@
 
 {% for nomination in nominees %}
 
-<p>{{nomination.fname}} {{nomination.lname}}
-<br/>{{nomination.description}}</p>
-{%endfor%}
-
-{% score_for_object nominees as score %}
+{% score_for_object nomination as score %}
 <h5>Votes <span id="score">{{ score.score }}</span> point{{ score.score|pluralize }}
 	         after <span id="num_votes">{{ score.num_votes }}</span> vote{{ score.num_votes|pluralize }}</h5>
 	 <ul>
@@ -22,6 +19,10 @@
 			     <li><a href="#" onclick="vote('{{ object.slug }}', 'clear');">I take it back! Clear my vote.</a></li>
 		     </ul>
 
+
+<p>{{nomination.fname}} {{nomination.lname}}
+<br/>{{nomination.description}}</p>
+{%endfor%}
+
 </div>
-{% endblock %}
 {% endblock %}
