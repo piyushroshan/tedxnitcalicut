@@ -4,4 +4,4 @@ from nominations.models import nominee
 class NominationForm(ModelForm):
 	class Meta:
 		model = nominee
-		exclude = ['nominator']
+		exclude = ['nominator','slug']

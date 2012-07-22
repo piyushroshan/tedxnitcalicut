@@ -10,5 +10,5 @@ nominations_dict = {
 		}
 
 urlpatterns = patterns('',
-		   url(r'^(?P<slug>[-\w]+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, nominations_dict, name="nominations-voting"),
+		   url(r'^(?P<slug>[-\w]+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, nominations_dict),
 		   )
