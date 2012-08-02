@@ -1,3 +1,5 @@
+from os import path
+
 # Django settings for tedxnitcalicut project.
 
 DEBUG = True
@@ -35,7 +37,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Asia/Calcutta'
+TIME_ZONE = 'Asia/Kolkata'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -56,7 +58,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/coded/Documents/tedxnitcalicut/media/'
+MEDIA_ROOT = path.abspath('media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -67,7 +69,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'home/coded/Documents/tedxnitcalicut/static_root/'
+STATIC_ROOT = path.abspath('static_root/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -75,8 +77,8 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/home/coded/Documents/tedxnitcalicut/static/",
-    "/home/coded/Documents/tedxnitcalicut/templates/",
+    path.abspath("static"),
+    path.abspath("templates"),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -117,7 +119,7 @@ WSGI_APPLICATION = 'tedxnitcalicut.wsgi.application'
 
 TEMPLATE_DIRS = (
 
-    "/home/coded/Documents/tedxnitcalicut/templates/"
+    path.abspath("templates/"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
