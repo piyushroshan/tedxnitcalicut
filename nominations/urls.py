@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.defaults import *
 
 nominations_dict = {
-		'model':'nominee',
+		'model': nominee,
 		'slug_field':'slug',
 		'allow_xmlhttprequest':'true',
 		}

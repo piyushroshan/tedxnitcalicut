@@ -4,8 +4,12 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.views import redirect_to_login
 from django.template import loader, RequestContext
 from django.utils import simplejson
-
+from nominations.models import *
 from voting.models import Vote
+from django.db.models.loading import cache as model_cache
+if not model_cache.loaded:
+        model_cache.get_models()
+
 
 VOTE_DIRECTIONS = (('up', 1), ('down', -1), ('clear', 0))
 
@@ -39,6 +43,7 @@ def vote_on_object(request, model, direction, post_vote_redirect=None,
                                              object_id=object_id, slug=slug,
                                              slug_field=slug_field)
 
+
     if extra_context is None: extra_context = {}
     if not request.user.is_authenticated():
         return redirect_to_login(request.path)
@@ -63,6 +68,7 @@ def vote_on_object(request, model, direction, post_vote_redirect=None,
         raise Http404, 'No %s found for %s.' % (model._meta.app_label, lookup_kwargs)
 
     if request.method == 'POST':
+
         if post_vote_redirect is not None:
             next = post_vote_redirect
         elif request.REQUEST.has_key('next'):

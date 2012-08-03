@@ -19,3 +19,6 @@ class nominee(models.Model):
 		if not self.id:
 			self.slug = slugify(self.fname)
 			super(nominee, self).save()
+
+	def __unicode__(self):
+        	return unicode("%s: %s" % (self.fname, self.email))
