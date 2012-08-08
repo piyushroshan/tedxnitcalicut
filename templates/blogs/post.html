@@ -35,7 +35,7 @@
 
 <div id="addc">Add a comment</div>
 <!-- Comment form  -->
-<form action="{% url blogs.views.add_comment post.id %}" method="POST">{% csrf_token %}
+<form action="{% url 'blogs.views.add_comment' post.id %}" method="POST">{% csrf_token %}
     <div id="cform">
 <table>
 {{form.as_table}}

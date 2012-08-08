@@ -11,19 +11,19 @@
             {% for post in posts.object_list %}
 		<section>
                 <header>
-		<h1><a href="{% url blogs.views.post post.pk %}">{{ post.title }}</a></h1>
+		<h1><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h1>
                 </header>
                
                     <div >{{ post.body|linebreaks|truncatewords:50}}</div>
                     <footer>
 			<div id="post_footer">{% ifnotequal post.body|linebreaks post.body|linebreaks|truncatewords:50 %}
 			
-<a class="readmore" href="{% url blogs.views.post post.pk  %}"><b>read more...</b></a>{%else%}
+<a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a>{%else%}
 <b><s>   read more</s> ...</b>
 {%endifnotequal%}
 									Posted By  <a href="mailto:{{post.email}}">{{post.name}} </a>at {{post.created}}.</div>
 		    </footer>
-		<div id="commentlink"><a href="{% url blogs.views.post post.pk %}">Comments</a></div>
+		<div id="commentlink"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></div>
 		</section>
 		<hr/>
             {% endfor %}

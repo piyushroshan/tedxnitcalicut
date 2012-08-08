@@ -21,7 +21,7 @@ def list(request):
         posts = paginator.page(page)
     except (InvalidPage, EmptyPage):
         posts = paginator.page(paginator.num_pages)
-    
+
     t=get_template("blogs/list.html")
     c=RequestContext(request, {'posts':posts})
     html=t.render(c)
