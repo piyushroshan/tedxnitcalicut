@@ -4,13 +4,8 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.views import redirect_to_login
 from django.template import loader, RequestContext
 from django.utils import simplejson
-from nominations.models import *
 from voting.models import Vote
-from django.db.models.loading import cache as model_cache
-if not model_cache.loaded:
-        model_cache.get_models()
-
-
+from nominations.models import *
 VOTE_DIRECTIONS = (('up', 1), ('down', -1), ('clear', 0))
 
 def vote_on_object(request, model, direction, post_vote_redirect=None,
@@ -63,7 +58,9 @@ def vote_on_object(request, model, direction, post_vote_redirect=None,
         raise AttributeError('Generic vote view must be called with either '
                              'object_id or slug and slug_field.')
     try:
+        print lookup_kwargs
         obj = model._default_manager.get(**lookup_kwargs)
+        print obj
     except ObjectDoesNotExist:
         raise Http404, 'No %s found for %s.' % (model._meta.app_label, lookup_kwargs)
 

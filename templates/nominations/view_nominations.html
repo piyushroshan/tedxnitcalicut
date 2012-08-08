@@ -17,12 +17,12 @@
 <br/>{{nomination.description}}</p>
 
 {% score_for_object nomination as score %}
-<h5>Votes <span id="score">{{ score.score }}</span> point{{ score.score|pluralize }}
-	         after <span id="num_votes">{{ score.num_votes }}</span> vote{{ score.num_votes|pluralize }}</h5>
+<h5>Votes <span id="score_{{nomination.id}}">{{ score.score }}</span> point{{ score.score|pluralize }}
+    after <span id="num_votes_{{ nomination.id}}">{{ score.num_votes }}</span> vote{{ score.num_votes|pluralize }}</h5>
 	 <ul id="vote_link">
-		     <li><a href="#" onclick="vote('{{ nomination.slug }}', 'up');">Like</a></li>
-		         <li><a href="#" onclick="vote('{{ nomination.slug }}', 'down');">Unlike</a></li>
-			     <li><a href="#" onclick="vote('{{ nomination.slug }}', 'clear');">Clear</a></li>
+         <li><a href="#" onclick="vote('{{ nomination.slug }}', 'up','{{ nomination.id}}');">Like</a></li>
+         <li><a href="#" onclick="vote('{{ nomination.slug }}', 'down' ,'{{ nomination.id}}');">Unlike</a></li>
+         <li><a href="#" onclick="vote('{{ nomination.slug }}', 'clear' ,'{{nomination.id}}');">Clear</a></li>
 		     </ul>
 
 
