@@ -1,4 +1,5 @@
 from os import path
+import os
 
 # Django settings for tedxnitcalicut project.
 
@@ -12,7 +13,6 @@ EMAIL_HOST_USER='piyushroshan@gmail.com'
 EMAIL_HOST_PASSWORD ='8888888'
 DEFAULT_FROM_EMAIL ='noreply@tedxnitcalicut.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -58,7 +58,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = path.abspath('media/')
+MEDIA_ROOT = path.abspath('media_root/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -78,6 +78,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     path.abspath("static"),
+    path.abspath("media"),
     path.abspath("templates"),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -91,6 +92,22 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+TINYMCE_JS_URL = path.join(MEDIA_ROOT, "js/tiny_mce/tiny_mce.js")
+TINYMCE_JS_ROOT = path.join(MEDIA_ROOT, "js/tiny_mce")
+
+TINYMCE_DEFAULT_CONFIG = {
+	'plugins': "table,spellchecker,paste,searchreplace",
+	'theme': "advanced",
+	'theme_advanced_toolbar_location' : "top",
+	'theme_advanced_toolbar_align' : "left",
+	'theme_advanced_statusbar_location' : "bottom",
+	'theme_advanced_resizing' : True,
+	'convert_urls' : False
+	}
+TINYMCE_SPELLCHECKER = False
+TINYMCE_COMPRESSOR = False
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '_urk((9f^#13w!r#$qg8m-_wk!+^z0)ygr9s(7cr6b27heg4sx'
@@ -144,6 +161,8 @@ INSTALLED_APPS = (
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
+    'south',
+    'tinymce',
 )
 
 # A sample logging configuration. The only tangible logging

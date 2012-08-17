@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from django.template import RequestContext
 from contactus.models import contactform
+from django.core.mail import *
 def contact_us(request):
 	t = get_template('contactus/contactus.html')
 	if request.user.is_authenticated():
@@ -34,12 +35,12 @@ def submit_form(request):
 			cform.subject = request.POST['subject']
 			cform.message = request.POST['message']
 			cform.save()	
-            		"""send_mail(
+            		EmailMessage(
                 		request.POST['subject'],
                 		request.POST['message'],
                 		request.POST.get('email', 'noreply@example.com'),
-                		['siteowner@example.com'],
-	        	)"""
+                		['piyushroshan@example.com'],
+	        	)
 			return HttpResponseRedirect('/contactus/thanks/')    
 	t = get_template('contactus/contactus.html')
         if request.user.is_authenticated():

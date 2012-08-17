@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Registration complete{% endblock %}
+
+{% block content %}
+<div id="content">
+<h1>Check your email</h1>
+<p>An activation link has been sent to the email address you supplied, along with instructions for activating your account.</p>
+{{activation_key}}
+</div>
+{% endblock %}

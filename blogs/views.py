@@ -33,7 +33,7 @@ def post(request, pk):
     post = Blogpost.objects.get(pk=int(pk))
     comments = Comment.objects.filter(post=post)
     t=get_template('blogs/post.html')
-    c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm()})
+    c = RequestContext(request, {'post':post, 'comments' : comments, 'form':CommentForm(initial = { 'name' : request.user.get_full_name(), 'email':request.user.email })})
     html= t.render(c)
     return HttpResponse(html)
 
