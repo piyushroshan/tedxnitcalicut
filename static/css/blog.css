@@ -16,10 +16,11 @@ text-decoration: none;
 	
 #post_footer {
 	background: none repeat scroll 0 0 #111;
+	border-radius: 5px;
 	color: white;
 	margin-top: 1em;
 	padding: 5px 10px;
-	font:10px arial,sans-serif;
+	font:10px ubuntu,arial,sans-serif;
 }	
 
 #post_footer #readmore_link
@@ -30,6 +31,7 @@ text-decoration: none;
 
 #post_footer #comments_link
 {
+	
 	padding-right: 3em;
 	padding-left: 1em;
 	font-weight: bold;
@@ -74,7 +76,7 @@ div {
 
 #comment #comment_body
 {
-	font: 10px arial,sans-serif;
+	font: 12px arial,sans-serif;
 }
 
 #comment a

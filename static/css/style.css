@@ -1,0 +1,93 @@
+body
+{  background-color: black;
+	background-repeat: repeat;}
+/* this div will contain all contents to maintain a fixed width */
+.wrapper
+{
+	position: relative;
+	width: 1280px;
+	height: 1000px;
+	top: 0;
+	margin: 0 auto;
+	z-index: 2;
+	background-image:url('../images/home/wbck.png');
+	}
+.slideshow
+{
+	position: absolute;
+	height: 388px;
+	width: 857px;
+	top: 129px;
+	left: 21%;
+	background-image: url('../images/home/slide1.png');
+	-moz-box-shadow: inset -5px -5px 5px 5px #888;
+-webkit-box-shadow: inset -5px -5px 5px 5px#888;
+box-shadow: inset -5px -5px 5px 5px #888;
+        }
+/* header */
+.header 
+{
+	width: 100%;
+	height: 0px;
+	top: 0;
+	z-index: 1;
+	
+	background-color: black;
+
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 9%, rgba(0,0,0,0.65) 62%, rgba(0,0,0,0.65) 65%, rgba(0,0,0,0.65) 66%, rgba(0,0,0,0.65) 69%, rgba(0,0,0,0.59) 72%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(9%,rgba(0,0,0,0.65)), color-stop(62%,rgba(0,0,0,0.65)), color-stop(65%,rgba(0,0,0,0.65)), color-stop(66%,rgba(0,0,0,0.65)), color-stop(69%,rgba(0,0,0,0.65)), color-stop(72%,rgba(0,0,0,0.59)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.65) 65%,rgba(0,0,0,0.65) 66%,rgba(0,0,0,0.65) 69%,rgba(0,0,0,0.59) 72%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.65) 65%,rgba(0,0,0,0.65) 66%,rgba(0,0,0,0.65) 69%,rgba(0,0,0,0.59) 72%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.65) 65%,rgba(0,0,0,0.65) 66%,rgba(0,0,0,0.65) 69%,rgba(0,0,0,0.59) 72%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to right, rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.65) 65%,rgba(0,0,0,0.65) 66%,rgba(0,0,0,0.65) 69%,rgba(0,0,0,0.59) 72%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */	
+
+	}
+/* top left ted logo */
+.header .logo
+{
+	background-image: url("../images/home/logo.png");
+	background-repeat: no-repeat;
+	top:0;
+	left: 0;
+	height: 50px;
+	width: 240px;
+	z-index: 2; 
+  -moz-box-shadow:    3px 3px 5px 6px #000;
+  -webkit-box-shadow: 3px 3px 5px 6px #000;
+  box-shadow:         3px 3px 5px 6px #000;
+	}
+.footer
+{
+	
+	background-color: black;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3%;
+	z-index: 5;
+	/* shadow */
+	-moz-box-shadow:    68px 52px 154px 44px #000;
+  -webkit-box-shadow: 68px 52px 154px 44px #000;
+  box-shadow:         68px 52px 154px 44px #000;}	
+/* what is tedx div only displayed @ home page*/
+.content{
+	position: absolute;
+	top: 517px;
+	left: 21%;
+	background-color: black;
+	z-index: 3;
+	height: auto;
+	width: 525px;
+	/* transperancy */
+	opacity:0.8;
+  filter:alpha(opacity=80);
+  margin-bottom: 56px;
+	}
+.content h4
+{ margin: 8px;
+margin-top: 15px;}	
+.content p
+{	margin: 16px;	}
+/* menU alignment */ 

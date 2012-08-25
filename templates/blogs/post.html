@@ -15,7 +15,7 @@
 							{% autoescape off %}  <div >{{ post.body|linebreaks }}</div> {% endautoescape %}
 							<footer>
 								<div id="post_footer">
-									Posted By  <a href="mailto:{{post.email}}">{{post.name}} </a>at {{post.created}}.
+									Posted By &nbsp;  <a href="mailto:{{post.email}}">{{post.name}}&nbsp; </a> on &nbsp;{{post.created}}.
 								</div>
 							</footer>
 					</section>
@@ -31,7 +31,7 @@
 			{% for comment in comments %}
 				<div id="comment">
 					<div id="comment_body">{{ comment.body|linebreaks }}</div>
-					<div id="post_footer">Posted by <a href="mailto: {{ comment.email }}"> {{comment.name}} </a> at {{comment.created}} </div>
+					<div id="post_footer">Posted by &nbsp; <a href="mailto: {{ comment.email }}"> {{comment.name}} </a> &nbsp; on &nbsp; {{comment.created}} </div>
 					
 				</div>
 			{% endfor %}

@@ -35,6 +35,7 @@ urlpatterns = patterns('',
 urlpatterns += patterns('blogs.views',
     (r"^blog/$",'list'),
     (r"^blog/(\d+)/$", 'post'),
+    (r"^blog/(?P<uid>[-\w]+)/$", 'list_user'),
     url(r"^blog/add_comment/(\d+)/$", "add_comment"),
 )
 

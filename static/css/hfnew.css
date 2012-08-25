@@ -7,23 +7,19 @@ width : 100%;
  z-index: 10;
 }
 
-#red
+#cursive
 {
-	color: #ff2b06;
+	font: Helvetica;
+	color: white;
 }
 
 html>body #header {
 	height: auto;
 }
 
- 
-body {
-	margin: 0;
-	padding: 0;
-	background: #FFFFFF;
-	font-family:  Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #333333;
+#red
+{
+	color: #ff2b06;
 }
 /*
 #header ul li
@@ -50,7 +46,6 @@ background-color: #ff2b06;
 /* Main */
 #menu{
 	width: 100%;
-	height:auto;;
 	: center;
 	margin: 0;
 	padding-top: 10px;
@@ -167,15 +162,13 @@ width: 150px;
 	background: linear-gradient(#ffffff,  #ff2b06);
 }
 
-#menu ul li:first-child a
-{
+#menu ul li:first-child a{
 	-moz-border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
 }
 
-#menu ul li:first-child a:after
-{
+#menu ul li:first-child a:after{
 	content: '';
 	position: absolute;
 	left: 30px;
@@ -187,13 +180,11 @@ width: 150px;
 	border-bottom: 8px solid #444;
 }
 
-#menu ul li:first-child a:hover:after
-{
+#menu ul li:first-child a:hover:after{
 	border-bottom-color: #ffffff; 
 }
 
-#menu ul li:last-child a
-{
+#menu ul li:last-child a{
 	-moz-border-radius: 0 0 5px 5px;
 	-webkit-border-radius: 0 0 5px 5px;
 	border-radius: 0 0 5px 5px;
@@ -220,7 +211,6 @@ padding: 0;
 height: 200px;
 min-height: 100px;
  z-index: 10;
- line-height:20px;
 }
 
 html>body #footer {
@@ -230,7 +220,8 @@ html>body #footer {
 #footer ul
 {
 padding-left: 180px;
-vertical-align:bottom;
+
+
 padding-right: 180px;
 background-color: #000000;
 text-align: center;
@@ -256,6 +247,26 @@ color: #000000;
 background-color: #ff2b06;
 }
 
+.lsidebar
+{
+	float: left;
+
+	width: 20%;
+	background-color: #ff2b06;
+	color:#ffffff;
+
+}
+
+.rsidebar {
+
+margin-top: 8em;
+	float: right;
+	width: 20%;
+	background-color: #ff2b06;
+	color:#ffffff;
+
+}
+
 #logo
 {
 	float: left;
@@ -266,9 +277,7 @@ background-color: #ff2b06;
 
 }
 
-html, body, #container { height: 100%; 
-margin-bottom:-10px;
-}
+html, body, #container { height: 100%; }
 body > #container { height: auto; min-height: 100%; }
 
 
@@ -276,4 +285,4 @@ body > #container { height: auto; min-height: 100%; }
 {
 padding-left: 20%;
 padding-right: 20%;	
-}
+	}
