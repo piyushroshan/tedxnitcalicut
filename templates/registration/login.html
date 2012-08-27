@@ -2,25 +2,40 @@
 
 {% block title %}Log in{% endblock %}
 
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/registration.css" />
+{% endblock %}
+
+
+
 {% block content %}
 <div id="content">
 <div class="wrapper">
+<div class="loginbox">
 {%if not user.is_authenticated %}
 <h1>Log in</h1>
 
 {% if form.errors %}
-<p class="error">Please correct the errors below:</p>
+<p class="errors">Please correct the errors below:</p>
 <p>{{ form.non_field_errors }}</p>
 {% endif %}
 
-<form method="post" action="?next={{ next|default:"/" }}">{%csrf_token%}
-<dl>
-<dt><label for="id_username">Username:</label>{% if form.username.errors %} <span class="error">{{ form.username.errors|join:", " }}</span>{% endif %}</dt>
-<dd>{{ form.username }}</dd>
-<dt><label for="id_password">Password:</label>{% if form.password.errors %} <p>{{ form.password.errors|join:", " }}</p>{% endif %}</dt>
-<dd>{{ form.password }}</dd>
-<dt><input type="submit" value="Log in" /></dt>
-</dl>
+<form method="post" action="?next={{ next|default:"/" }}"> {%csrf_token%}
+<div class="loginform">
+<div id="username">
+		<span class="label"><label for="id_username">Username:</label></span><span class="box">{{ form.username }}</span>
+		{% if form.username.errors %}<span class="errors">{{ form.username.errors|join:", " }}</span>{% endif %}
+</div>
+
+
+<div id="password">
+<span class="label"><label for="id_password">Password:</label></span><span class="box"> {{ form.password }}</span>
+
+		{% if form.password.errors %} <span class="errors">{{ form.password.errors|join:", " }}</span>   {% endif %}
+</div>
+<button class="sbutton" type="submit" >Log In</button>
+</div>
 </form>
 
 
@@ -28,11 +43,8 @@
 {%else%}
 <p>You are already logged in</p>
 {%endif%}
-</div>
-</div>
-{% endblock %}
 
-{% block content-related %}
-<p>If you don't have an account, you can <a href="/accounts/register/">sign
-up</a> for one.
+</div>
+</div>
+</div>
 {% endblock %}

@@ -5,6 +5,7 @@
 {% block content %}
 <link rel="stylesheet"  href="{{STATIC_URL}}css/contactform.css" />
 <div id="content">
+<div class="wrapper">
 <h1>Contact us</h1>
 
     {% if errors %}
@@ -21,9 +22,10 @@
 	<tr><td>Phone :</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
         <tr><td>Subject:<sup>*</sup></td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
         
-        <tr><td >Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
+        <tr><td >Your Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
         <tr><td></td><td><input type="submit" value="Submit"></td></tr>
     </form>
 </table>
+</div>
 </div>
 {% endblock %}

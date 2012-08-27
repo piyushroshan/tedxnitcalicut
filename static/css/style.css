@@ -5,38 +5,46 @@ body
 .wrapper
 {
 	position: relative;
-	width: 1280px;
+	width: 100%;
 	height: 1000px;
+	
 	top: 0;
-	margin: 0 auto;
-	z-index: 2;
+	margin: 0 0;
+	z-index: 9999;
 	background-image:url('../images/home/wbck.png');
+	background-size: 800px 768px;
+	background-repeat: no-repeat;
 	}
 
 .slideshow
 {
 	position: absolute;
-	height: 410px;
-	width: 820px;
-	top: 150px;
-	left: 19%;
+	height: 350px;
+	width: 710px;
+	top: 140px;
+	left: 206px;
 	-moz-box-shadow: inset -5px -5px 5px 5px #888;
 -webkit-box-shadow: inset -5px -5px 5px 5px#888;
 box-shadow: inset -5px -5px 5px 5px #888;
 display: block;
-        }
+   }
 
-
+body
+{
+	color: #fff;
+	}
 
 .content{
-	position: relative;
-	top: 600px;
-	left: 21%;
+	position: absolute;
+		word-spacing: 3px;
+	line-height: 20px;
+	top: 530px;
+	left: 238px;
 	color: white;
 	background-color: transparent;
 	z-index: 10;
 	height: auto;
-	width: 525px;
+	width: 600px;
 	/* transperancy */
 	opacity:0.8;
   filter:alpha(opacity=90);
@@ -52,3 +60,10 @@ margin-top: 15px;
 	line-height: 15px;
 	}
 
+.blog{
+	
+	
+	
+	
+	
+	}

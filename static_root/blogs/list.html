@@ -4,27 +4,32 @@
 {% block content %}
 	<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
 	<div id="content" >
+	<div class="wrapper">
 
 		<!-- Posts  -->
 		<ul>
 			<article>
 				{% for post in posts.object_list %}
 					<section>
+					<div id="post_content">
 							<header>
-								<h1><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h1>
+								<h3><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h3>
 							</header>
-						
+							
 							{% autoescape off %}  
-								<div >{{ post.body|linebreaks|truncatewords:100}}</div> 
+								<div id="post_body">	{{ post.body|linebreaks|truncatewords:100}}</div> 
 							{% endautoescape %}
 							
 							<footer>
 								<div id="post_footer">
-										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
-										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span>
-										Posted By  <a href="mailto:{{post.email}}">{{post.name}} </a>at {{post.created}}.
+										<p>Posted By &nbsp; <a href="mailto:{{post.email}}">{{post.name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
+										<p><span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
+										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.list_user' post.user_id  %}"><b>{{post.name}}'s blog</b></a></span>
+										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
+										
 								</div>
 							</footer>
+					</div>
 					</section>
 				{% endfor %}
 			</article>	
@@ -48,7 +53,7 @@
 			</span>
 		</div>
 		{% endif %}
-
+</div>
 	</div>
 
 {% endblock %}

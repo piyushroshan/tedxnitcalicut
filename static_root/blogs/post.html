@@ -4,20 +4,22 @@
 {% block content %}
 	<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
 <div id="content" >
-
+<div class="wrapper">
 			<!-- Posts  -->
 			<ul>
 				<article>
 					<section>
+					<div id="post_content">
 							<header>
-								<h1>{{ post.title }}</h1>
+								<h2>{{ post.title }}</h2>
 							</header>
-							{% autoescape off %}  <div >{{ post.body|linebreaks }}</div> {% endautoescape %}
+							<div id="post_bosy"> {% autoescape off %}  <div >{{ post.body|linebreaks }}</div> {% endautoescape %} </div>
 							<footer>
 								<div id="post_footer">
-									Posted By  <a href="mailto:{{post.email}}">{{post.name}} </a>at {{post.created}}.
+									Posted By &nbsp;  <a href="mailto:{{post.email}}">{{post.name}}&nbsp; </a> on &nbsp;{{post.created}}.
 								</div>
 							</footer>
+						</div>
 					</section>
 				</article>	
 			
@@ -30,36 +32,34 @@
 
 			{% for comment in comments %}
 				<div id="comment">
-					<div id="comment_body">{{ comment.body|linebreaks }}</div>
-					<div id="post_footer">Posted by <a href="mailto: {{ comment.email }}"> {{comment.name}} </a> at {{comment.created}} </div>
+					<div id="comment_body"> {{ comment.body|linebreaks }} </div>
+					<div id="post_footer">Posted by &nbsp; <a href="mailto: {{ comment.email }}"> {{comment.name}} </a> &nbsp; on &nbsp; {{comment.created}} </div>
 					
 				</div>
 			{% endfor %}
-
-			<div id="addc">Add a comment</div>
+			<div id="addc"> Add a comment </div>
 				<!-- Comment form  -->
-				<form action="{% url 'blogs.views.add_comment' post.id %}" method="POST">{% csrf_token %}
+				<form action="{% url 'blogs.views.add_comment' post.id %}" method="POST">	{% csrf_token %}
 					<div id="cform">
-						<div id="cname_wrapper"">
-							<label for="id_name">Name :	</label>
-							<div id="cname">{{form.name}}</div>
+						<div id="cname_wrapper" >
+							<label for="id_name"> Name :	</label>
+							<div id="cname"> {{form.name}} </div>
 						</div>
 						<div id="cemail_wrapper">
 							<label for="id_email">Email : </label>
-							<div id="cemail">{{form.email}}</div>
+							<div id="cemail" > {{form.email}} </div>
 						</div>
 						<div id="cbody_wrapper">
 							<label for="id_body">Your Message : </label>
-							<div id="cbody">{{form.body}}</div>
+							<div id="cbody"> {{form.body}} </div>
 						</div>
-					</div>
-
 					<div class="submit-button">
 							<input type="submit" value="Submit">
 					</div>
+					</div>
 				</form>
 			</div>
-		</div>
 	</ul>
+	</div>
 </div>
 {% endblock %}

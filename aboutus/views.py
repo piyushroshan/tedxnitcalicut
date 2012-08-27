@@ -29,3 +29,14 @@ def organisers(request):
 	return HttpResponse(http)
 
 
+def credits(request):
+	t=get_template('about/credits.html')
+	c=RequestContext(request,{}) 
+	http = t.render(c)
+	return HttpResponse(http)
+	
+def privacypolicy(request):
+	t=get_template('about/privacypolicy.html')
+	c=RequestContext(request,{}) 
+	http = t.render(c)
+	return HttpResponse(http)

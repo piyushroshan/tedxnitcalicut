@@ -7,6 +7,7 @@ padding-right: 20%;
 #content .wrapper
 {
 	padding: 50px;
+
 }
 
 #content h1
@@ -15,8 +16,14 @@ color:  #ff2b06;
 padding-bottom: 15px;
 }
 
-#content a
+.red
 {
 color: #ff2b06;
 text-decoration: none;
 }
+
+
+.black
+{
+color: #111;
+	}

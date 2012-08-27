@@ -22,10 +22,11 @@
 							
 							<footer>
 								<div id="post_footer">
-										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
+										<p>Posted By &nbsp; <a href="mailto:{{post.email}}">{{post.name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
+										<p><span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
 										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.list_user' post.user_id  %}"><b>{{post.name}}'s blog</b></a></span>
-										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span>
-										Posted By &nbsp; <a href="mailto:{{post.email}}">{{post.name}} </a> &nbsp;on &nbsp;{{post.created}}.
+										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
+										
 								</div>
 							</footer>
 					</div>

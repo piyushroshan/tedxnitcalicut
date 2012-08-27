@@ -2,6 +2,13 @@
 
 {% block title %}Sign up{% endblock %}
 
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/registration.css" />
+{% endblock %}
+
+
+
 {% block content %}
 <div id="content">
 <div class="wrapper">
@@ -14,54 +21,65 @@
   {% endif %}
 
   <h1>Create an account</h1>
-  
+  <div class="reg">
   <form method="post" action="" class="wide">{%csrf_token%}
     <div>
-    
-      <div> <label for="id_username">Username:</label> </div>
-      {% if form.username.errors %}
+       {% if form.username.errors %}
         <div class="errors">{{ form.username.errors.as_text }}</div>
       {% endif %}
-     <div> {{ form.username }}</div>
+      <div class="form_wrapper"><span class="label"> <label for="id_username">Username:</label> </span>  <span class="box"> {{ form.username }}</span></div>
+   
+   
     </div>
     <div>
-      <div> <label for="id_email">Email address:</label> </div>
-      {% if form.email.errors %}
+        {% if form.email.errors %}
         <div class="errors">{{ form.email.errors.as_text }}</div>
       {% endif %}
-      <div> {{ form.email }} </div>
+      <div class="form_wrapper"><span class="label"> <label for="id_email">Email address:</label></span> <span class="box"> {{ form.email }} </span></div>
+  
+       
     </div>
     <div>
-      <div> <label for="id_fname">First Name:</label> </div>
-      <div> {{ form.fname }} </div>
+            {% if form.fname %}
+        <div class="errors">{{ form.fname.errors.as_text }}</div>
+      {% endif %}
+      <div class="form_wrapper"> <span class="label"><label for="id_fname">First Name:</label></span> <span class="box">{{ form.fname }} </span> </div>
+     
     </div>
     <div>
-      <div> <label for="id_lname">Last Name:</label> </div>
-       <div> {{ form.lname }} </div>
+       {% if form.lname %}
+        <div class="errors">{{ form.lname.errors.as_text }}</div>
+      {% endif %}
+      <div class="form_wrapper"><span class="label"> <label for="id_lname">Last Name:</label></span> <span class="box"> {{ form.lname }}</span> </div>
+        
     </div>
     <div>
-      <div> <label for="id_password1">Password:</label> </div>
-      {% if form.password1.errors %}
+         {% if form.password1.errors %}
         <div class="errors">{{ form.password1.errors.as_text }}</div>
       {% endif %}
-      <div> {{ form.password1 }} </div>
+      <div class="form_wrapper"><span class="label"> <label for="id_password1">Password:</label></span> <span class="box"> {{ form.password1 }} </span></div>
+ 
+       
     </div>
     <div>
-      <div> <label for="id_password2">Password (type again to catch typos):</label> </div>
-      {% if form.password2.errors %}
+    {% if form.password2.errors %}
         <div class="errors">{{ form.password2.errors.as_text }}</div>
       {% endif %}
-      <div> {{ form.password2 }} </div>
+      <div class="form_wrapper"><span class="label"> <label for="id_password2">Password (type again):</label> </span> <span class="box"> {{ form.password2 }} </span> </div>
+      
+     
     </div>
        <div>
-      <div> <label for="id_tos">Tos:</label> </div>
-      {% if form.tos.errors %}
+          {% if form.tos.errors %}
         <div class="errors">{{ form.tos.errors.as_text }}</div>
       {% endif %}
-      <div> {{ form.tos }} <a href="#>Terms of service </a> </div>
-    </div>
-    <submit class="submit"><input type="submit" value="Register &rarr;">Register &rarr; </submit>
+      <div class="form_wrapper"><span> <label for="id_tos"></label></span><div> {{ form.tos }} <a href="#">Terms of service </a> </div> </div>
+   
+      
+    </div >
+    <button class="sbutton" type="submit">Register &rarr; </button>
   </form>
+  </div>
   </ul>
 </div>
   

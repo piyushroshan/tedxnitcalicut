@@ -4,19 +4,19 @@
 {% block content %}
 <link rel="stylesheet" href="{{STATIC_URL}}css/nominations.css" />
 <div id="content">
-<div class="content_wrapper">
+<div class="wrapper">
 <script type="text/javascript" src="{{STATIC_URL}}js/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
         // General options
-        width : 600,
+        width : 500,
         height : 200,
-        
+
         mode : "textareas",
         theme : "advanced",
         plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
         // Theme options
-        
+
         template_external_list_url : "js/template_list.js",
         external_link_list_url : "js/link_list.js",
         external_image_list_url : "js/image_list.js",
@@ -32,9 +32,9 @@ tinyMCE.init({
         theme_advanced_resizing : false,
 
         // Skin options
-       
 
-       
+
+
         // Example content CSS (should be your site CSS)
         content_css : "{{STATIC_URL}}css/nominations.css",
 
@@ -61,7 +61,7 @@ tinyMCE.init({
 					<div class="field-item even" property="content:encoded"><p>We are now accepting nominations for speakers, entertainers and performers for the TEDxNITCalicut 2012 event. If you know a dynamic speaker who has an idea to share and knows how to leave audience in a state of astonishment., please do write to us.</p>
                        <fieldset class="webform-component-fieldset form-wrapper" id="webform-component-nominee-information"><legend><span class="fieldset-legend">Nominee Information</span></legend>
 							<div class="fieldset-wrapper">
-								
+
 								<div class="form-item" id="full-name-wrapper">
 									<label for="full-name">Full Name of the Nominee: <span class="form-required" title="This field is required.">*</span></label>
 									<div id="full-name">{{form.fullname}}</div>
@@ -77,30 +77,31 @@ tinyMCE.init({
 								<div class="form-item" id="descriptions-wrapper">
 									<label for="descriptions">Tell us briefly about the speaker: <span class="form-required" title="This field is required.">*</span></label>
 									<div class="description">Occupation? Honors or Distinctions? Recent Work?</div>
-									<div id="descriptions"><div class="form-textarea-wrapper resizable">{{form.description}}</div></div>
+									<div id="descriptions"><div class="textarea">{{form.description}}</div></div>
 								</div>
 								<div class="form-item" id="support-wrapper">
 									<label for="support">What is the presenter's "Idea Worth Spreading"? What is unique about this performer?: <span class="form-required" title="This field is required.">*</span></label>
 									<div class="description">Why should TEDxNITCalicut experience this speaker?</div>
-									<div id="support"><div class="form-textarea-wrapper resizable">{{form.support}} </div></div>
+									<div id="support"><div class="textarea">{{form.support}} </div></div>
 								</div>
 								<div class="form-item" id="reference-wrapper">
 									<label for="referencee">Additional Reference: </label>
 									<div class="description">Please provide links to any articles, videos or web pages about the nominee.</div>
-									<div id="reference"><div class="form-textarea-wrapper resizable">{{form.reference1}}</div></div>
+									<div id="reference"><div class="textarea">{{form.reference1}}</div></div>
 								</div>
-                                                         
 
-								<div class="submit-button">
-									<input type="submit" value="Submit &rarr;">
-								</div>
-							</div>  
+
+								<button class="submit-button" type="submit" value="submit">
+  									<span>Submit</span>
+								</button>
+							</div>
                         </fieldset>
-					</div>                                    
-				</div> 
-				
+					</div>
+
+				</div>
+
 			</form>
-			</div>                        
+			</div>
 	</div>
 
 
