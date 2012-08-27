@@ -4,6 +4,7 @@
 
 {% block content %}
 <div id="content">
+<div class="wrapper">
 <ul>
   {% if form.errors %}
 
@@ -59,7 +60,7 @@
       {% endif %}
       <div> {{ form.tos }} <a href="#>Terms of service </a> </div>
     </div>
-    <div class="submit"><input type="submit" value="Register &rarr;"></div>
+    <submit class="submit"><input type="submit" value="Register &rarr;">Register &rarr; </submit>
   </form>
   </ul>
 </div>
@@ -68,6 +69,7 @@
 
 {% block content-related %}
 <div id="content">
+<div class="wrapper">
 <div>Fill out the form to the left (all fields are required), and your
 account will be created; you'll be sent an email with instructions on how
 to finish your registration.</div>
@@ -77,5 +79,6 @@ as much as you do.</div>
 
 <div>This account will let you log into the ticket tracker, claim tickets,
 and be exempt from spam filtering.</div>
+</div>
 </div>
 {% endblock %}

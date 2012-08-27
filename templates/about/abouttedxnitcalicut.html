@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}About us: TEDxNITCalicut{% endblock %}
 
-
+{% block head %}<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/aboutus.css" />{% endblock %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/aboutus.css" />
-<div id="content">
+
+ <div id="content">
+ <div class="wrapper">
 <h1> About US : TEDxNITCalicut</h1>
  <p>
 TEDxNITCalicut is an independently organized conference brought forth by a group of diverse and passionate TED enthusiasts under the exclusive license from TED. The conference gathers some active thinkers and doers from entrepreneurs to artists, technocrats to economists and is all about ideas: inspiring, discovering, generating and sharing “Ideas Worth Spreading” in different areas. We believe in sharing the platform with people with great ideas that can not only inspire but also bring fresh perspectives before us to make this world a better place to live.</p>

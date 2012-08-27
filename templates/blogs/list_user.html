@@ -1,21 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Blog Posts{% endblock %}
-
+{% block head %} <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" /> {% endblock %}
 {% block content %}
-	<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
-	<div id="content" >
-
+	
+<div id="content" >
+<div class="wrapper">
 		<!-- Posts  -->
 		<ul>
 			<article>
 				{% for post in posts.object_list %}
+				
 					<section>
+					<div id="post_content">
 							<header>
-								<h1><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h1>
+								<h3><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h3>
 							</header>
 						
 							{% autoescape off %}  
-								<div >{{ post.body|linebreaks|truncatewords:100}}</div> 
+								<div id="post_body">{{ post.body|linebreaks|truncatewords:100}}</div> 
 							{% endautoescape %}
 							
 							<footer>
@@ -25,7 +27,9 @@
 										Posted on &nbsp;{{post.created}}.
 								</div>
 							</footer>
+							</div>
 					</section>
+					
 				{% endfor %}
 			</article>	
 		</ul>
@@ -48,7 +52,7 @@
 			</span>
 		</div>
 		{% endif %}
-
+</div>
 	</div>
 
 {% endblock %}

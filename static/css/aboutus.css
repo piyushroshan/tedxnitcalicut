@@ -4,15 +4,15 @@ padding-left: 20%;
 padding-right: 20%;
 }
 
-#content p
+#content .wrapper
 {
-padding-left: 12px;
-padding-right: 12px;
+	padding: 50px;
 }
+
 #content h1
 {
-padding-left: 100px;
 color:  #ff2b06;
+padding-bottom: 15px;
 }
 
 #content a

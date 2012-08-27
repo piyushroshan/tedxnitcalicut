@@ -1,27 +1,39 @@
 #space
 {
-	
-	}
-	
-	#content
+
+}
+
+#content .wrapper
+{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 100px;
+}
+
+#content
 {
 padding-left: 20%;
 padding-right: 20%;
-padding-bottom: 10%;
 
 }
 
 #content h2
 {
 	margin-top: 2em;
-	}
+}
 
 #box
 {
 display: block;
-
+min-height: 150px;
 background-color: 000000;
-position: static;
+position: relative;
 margin: 0.5;
-padding:  0.5;	
-	}
+padding:  0.5;
+}
+
+.rteright
+{
+	display:block;
+
+}

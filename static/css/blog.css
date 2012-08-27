@@ -3,6 +3,25 @@
 padding-left:20%;
 padding-right:20%;
 }
+
+#post_content
+{
+line-height: 15px;	
+word-wrap: break-word;
+word-spacing: 2px;
+}
+#post_content header
+{
+	padding: 10px 5px 5px 5px;
+	font-weight: bold; 
+	color: #ff2b06;
+}
+
+#content .wrapper
+{
+padding-left: 50px;
+padding-right: 50px; 
+}
 #content .footer
 {
 font: Ariel 20px;
@@ -84,4 +103,5 @@ div {
 	color: #ff2b06;
 	text-decoration: none;
 }
+
 

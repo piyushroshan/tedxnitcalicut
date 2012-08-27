@@ -1,4 +1,5 @@
 #Create your views here.
+maxpost = 3
 from django.http import *
 from django.shortcuts import render_to_response
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
@@ -12,7 +13,7 @@ from django.contrib.auth.models import User
 def list(request):
 	"""Main listing."""
 	posts = Blogpost.objects.all().order_by("-created")
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, maxpost )
 
 	try: page = int(request.GET.get("page", '1'))
 	except ValueError: page = 1
@@ -32,7 +33,7 @@ def list_user(request, uid):
 	"""Main listing."""
 	u_id = User.objects.get(username = uid)
 	posts = Blogpost.objects.filter(user_id = u_id)
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, maxpost)
 	
 	try: page = int(request.GET.get("page", '1'))
 	except ValueError: page = 1

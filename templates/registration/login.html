@@ -4,7 +4,7 @@
 
 {% block content %}
 <div id="content">
-
+<div class="wrapper">
 {%if not user.is_authenticated %}
 <h1>Log in</h1>
 
@@ -28,6 +28,7 @@
 {%else%}
 <p>You are already logged in</p>
 {%endif%}
+</div>
 </div>
 {% endblock %}
 
