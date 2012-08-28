@@ -154,8 +154,6 @@ INSTALLED_APPS = (
     'contactus',
     'blogs',
     'homepage',
-    'registration',
-    'voting',
     'nominations',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',

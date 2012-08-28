@@ -9,7 +9,7 @@ from nominations.forms import *
 from django.contrib.auth.decorators import login_required
 
 
-@login_required (login_url='/accounts/login/')
+
 def nominater(request):
 	t=get_template('nominations/nomination.html')
 	c=RequestContext(request,{'form':NominationForm()})

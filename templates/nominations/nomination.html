@@ -18,19 +18,41 @@
             <form action="/nominate/submit/" method="POST">{% csrf_token %}
 				<div class="field-items">
 					<div class="field-item even" property="content:encoded"><p>We are now accepting nominations for speakers, entertainers and performers for the TEDxNITCalicut 2012 event. If you know a dynamic speaker who has an idea to share and knows how to leave audience in a state of astonishment., please do write to us.</p>
+					<fieldset class="webform-component-fieldset form-wrapper" id="webform-component-nominee-information"><legend><span class="fieldset-legend">Nominator Information</span></legend>
+				
+				
+					<div class="fieldset-wrapper">
+
+								<div class="form-item" id="full-name-wrapper">
+									<label for="full-name">Full Name of the Nominee: <span class="form-required" title="This field is required.">*</span></label>
+									<div id="full-name">{{form.nominator_name}}</div>
+								</div>
+								<div class="form-item" id="email-wrapper">
+									<label for="email">Email: <span class="form-required" title="This field is required.">*</span></label>
+									<div id="email">{{form.nominator_email}}</div>
+								</div>
+								<div class="form-item" id="phone-number-wrapper">
+									<label for="phone-number">Phone Number: <span class="form-required" title="This field is required.">*</span> </label>
+									<div id="phone-number">{{form.nominator_phone}}</div>
+								</div>
+					</div>
+					</fieldset>				
+									
+					
+					
                        <fieldset class="webform-component-fieldset form-wrapper" id="webform-component-nominee-information"><legend><span class="fieldset-legend">Nominee Information</span></legend>
 							<div class="fieldset-wrapper">
 
 								<div class="form-item" id="full-name-wrapper">
-									<label for="full-name">Full Name of the Nominee: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="full-name">Full Name of the Nominator: <span class="form-required" title="This field is required.">*</span></label>
 									<div id="full-name">{{form.fullname}}</div>
 								</div>
 								<div class="form-item" id="email-wrapper">
-									<label for="email">Email: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="email">Nominator's Email: <span class="form-required" title="This field is required.">*</span></label>
 									<div id="email">{{form.email}}</div>
 								</div>
 								<div class="form-item" id="phone-number-wrapper">
-									<label for="phone-number">Phone Number: </label>
+									<label for="phone-number">Nominator's Phone Number: </label>
 									<div id="phone-number">{{form.phone}}</div>
 								</div>
 								<div class="form-item" id="descriptions-wrapper">

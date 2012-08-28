@@ -5,7 +5,7 @@ from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
 class nomineeAdmin(admin.ModelAdmin):
-	list_display=('fullname','email','phone','description','support','reference1','nominator')
+	list_display=('fullname','email','phone','description','support','reference1','nominator_name','nominator_email','nominator_phone',)
 	def formfield_for_dbfield(self, db_field, **kwargs):
 		if db_field.name in ('description', 'support','reference1'):
 			return db_field.formfield(widget=TinyMCE(attrs={'cols': 80, 'rows': 10},mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},

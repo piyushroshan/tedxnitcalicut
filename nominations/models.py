@@ -13,9 +13,11 @@ class nominee(models.Model):
 	description = models.TextField(max_length = 750)
 	support = models.TextField(max_length = 750)
 	reference1 = models.TextField(max_length = 500, blank=True)
-	nominator = models.ForeignKey(User,related_name='+',blank = True, null=True, on_delete=models.SET_NULL)
 	slug = models.SlugField(blank=True)
 	nominated_on = models.DateTimeField('%Y-%m-%d %H:%M:%S',auto_now_add=True)
+	nominator_phone = models.CharField(max_length = 25)
+	nominator_email = models.EmailField(max_length = 128)
+	nominator_name = models.CharField(max_length = 128)
 
 	def save(self):
 		date = datetime.datetime.today()

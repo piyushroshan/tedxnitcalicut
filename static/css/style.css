@@ -12,7 +12,7 @@ body
 	margin: 0 0;
 	z-index: 9999;
 	background-image:url('../images/home/wbck.png');
-	background-size: 800px 768px;
+	background-size: 60% 768px;
 	background-repeat: no-repeat;
 	}
 
@@ -22,7 +22,7 @@ body
 	height: 350px;
 	width: 710px;
 	top: 140px;
-	left: 206px;
+	left: 19%;
 	-moz-box-shadow: inset -5px -5px 5px 5px #888;
 -webkit-box-shadow: inset -5px -5px 5px 5px#888;
 box-shadow: inset -5px -5px 5px 5px #888;
@@ -36,10 +36,10 @@ body
 
 .content{
 	position: absolute;
-		word-spacing: 3px;
+	word-spacing: 3px;
 	line-height: 20px;
 	top: 530px;
-	left: 238px;
+	left: 21%;
 	color: white;
 	background-color: transparent;
 	z-index: 10;

@@ -6,4 +6,4 @@ from registration.models import UserProfile
 class NominationForm(ModelForm):
 	class Meta:
 		model = nominee
-		exclude = ['nominator','slug']
+		exclude = ['slug']

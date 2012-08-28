@@ -11,7 +11,7 @@
 
 {% block head %} {% endblock %}
 
-<script src="{{STATIC_URL}}js/twidtter.js"></script>
+
 </head>
 
 <body>
@@ -63,13 +63,16 @@
 <div style="width: 100%;"><div style="background: #111;padding: 5px;"><img src="http://www.facebook.com/images/fb_logo_small.png" alt="Facebook"/><img src="https://badge.facebook.com/badge/217383778300462.100000111709722.498679001.png" alt="" width="0" height="0"/></div><div style="background: #000;display: block;border-right: 1px solid #D8DFEA;border-bottom: 1px solid #D8DFEA;border-left: 1px solid #D8DFEA;margin: 0px;padding: 0px 0px 5px 0px;"><div style="background: #EDEFF4;display: block;padding: 5px;"><table cellspacing="0" cellpadding="0" border="0"><tr><td valign="top"><img src="http://www.facebook.com/images/icons/fbpage.gif" alt=""/></td><td valign="top"><p style="color: #808080;font-family: verdana;font-size: 11px;margin: 0px 0px 0px 0px;padding: 0px 8px 0px 8px;"><a href="https://www.facebook.com/piyushroshan" target="_TOP" style="color: #3B5998;font-family: verdana;font-size: 11px;font-weight: normal;margin: 0px;padding: 0px 0px 0px 0px;text-decoration: none;" title="Roshan Piyush">Roshan Piyush</a> likes</p></td></tr></table></div><div style="background: #FFFFFF;clear: both;display: block;margin: 0px;overflow: hidden;padding: 5px;"><table cellspacing="0" cellpadding="0" border="0"><tr><td valign="middle"><a href="https://www.facebook.com/TEDxNITCalicut" target="_TOP" style="border: 0px;color: #3B5998;font-family: verdana;font-size: 12px;font-weight: bold;margin: 0px;padding: 0px;text-decoration: none;" title="TEDxNITCalicut"><img src="https://www.facebook.com/profile/pic.php?oid=AWzU9g2l7yDFE9k3UbmcaxkBVVU88iF4G2ByF1qlzRs_Hv4rAETbSwv1ZyRLONT76L8&size=square" style="border: 0px;margin: 0px;padding: 0px;" alt="TEDxNITCalicut"/></a></td><td valign="middle" style="padding: 0px 8px 0px 8px;"><a href="https://www.facebook.com/TEDxNITCalicut" target="_TOP" style="border: 0px;color: #3B5998;font-family: verdana;font-size: 12px;font-weight: bold;margin: 0px;padding: 0px;text-decoration: none;" title="TEDxNITCalicut">TEDxNITCalicut</a></td></tr></table></div></div></div>
 
 <div id="twitter_div">
+<script src="{{STATIC_URL}}js/twitter.js"></script>
 <script type="text/javascript" >
 
- new TWTR.Widget({
+new TWTR.Widget({
   version: 2,
-  type: 'profile',
-  rpp: 4,
+  type: 'search',
+  search: 'tedxnitcalicut OR tedxnitc',
   interval: 30000,
+  title: 'Excitement in the air!',
+  subject: 'What\'s the buzz??',
   width: 'auto',
   height: 300,
   theme: {
@@ -78,18 +81,18 @@
       color: '#ffffff'
     },
     tweets: {
-      background: '#000000',
-      color: '#ffffff',
+      background: '#ffffff',
+      color: '#000000',
       links: '#ff2b06'
     }
   },
   features: {
     scrollbar: false,
-    loop: false,
-    live: false,
-    behavior: 'all'
+    loop: true,
+    live: true,
+    behavior: 'default'
   }
-}).render().setUser('tedxnitcalicut').start();
+}).render().start();
 
 if (!browser.ie || isLoaded || (document.readyState === "complete")) {
 append();

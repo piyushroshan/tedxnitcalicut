@@ -21,6 +21,7 @@ html,
 		position:absolute;
 		bottom:0;
 		width:100%;
+		margin-top: 50px;
 		height:200px;			/* Height of the footer */
 	}
 
@@ -446,6 +447,8 @@ color: #ff2b06;
 
 #twitter_div
 {
-display: inherit;
-overflow: hidden;
+display: block;
+height: 380px;
+min-height: 380px;
+padding-bottom: 10px;
 	}
