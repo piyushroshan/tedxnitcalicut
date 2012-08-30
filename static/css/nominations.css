@@ -1,35 +1,51 @@
 #content .wrapper
 {
 	padding-left: 50px;
-	padding-right: 50px;
 }
 
-#content
+#content .wrapper h3
 {
-	margin: 0 20% 0 20%;
-}
+color: red;	
+	}
+
 
 .form-item
 {
-	padding-top: 1em;
+	padding-bottom: 1em;
+	display: block;
+	width: 500px;
 }
+
+.input
+{
+display: inline-block;	
+	}
 
 .phone-number
 {
 	border-radius: 5 px;	
 }
 
+.form-item .errors
+{
+margin-left: 170px;
+padding-left: 10px;	
+	}
+
 .form-item label
 {
 	padding-bottom: .1em;
-	font:15px arial,sans-serif;
-	font-weight : bold;
+	font:12px arial,sans-serif;
+	font-weight : inherit;
+	display: inline-block;
+	width: 170px;
 }
 
 .form-item .description
 {
 	padding-bottom: .1em;
-	font: 12px/16px Arial,Helvetica,sans-serif;
+	font-weight: lighter;
+	font: 10px/10px Arial,Helvetica,sans-serif;
 }
 
 fieldset
@@ -37,9 +53,11 @@ fieldset
 border-radius:5px;	
 margin-bottom: 50px;
 	}
+	
+	
 
 .submit-button {
-	border-top: 1px solid #000000;
+	border-color: #777;
 	background: #000000;
 	background-image:url('../images/home/wbck.png');
 	background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
@@ -50,34 +68,36 @@ margin-bottom: 50px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
-	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-	box-shadow: rgba(0,0,0,1) 0 1px 0;
-	text-shadow: rgba(0,0,0,.4) 0 1px 0;
 	color: #e80c0c;
 	font-size: 18px;
-	margin:  10px 0 10px 10px;
+	margin:  50px 0 10px 10px;
+	padding: 3px 3px 3px 3px;
 	font-family: Georgia, Serif;
 	text-decoration: none;
 	vertical-align: middle;
 	width:100px;
-	height:25px;
+	height:auto;
 }
 .submit-button:hover {
-	border-top-color: #000203;
+	border-color: #fff;
+	border-width: medium;
 	background: #000203;
 	color: #e30000;
 }
 .submit-button:active {
-	border-top-color: #0d1012;
+	border-color: #fff;
 	background: #0d1012;
 }
 
 textarea
 {
-width: 600px;
+width: 400px;
+border-color: #999;
+border-left-width: 2px;
+border-top-width: 2px;
 	
 	}
+	
 
 
 

@@ -6,7 +6,10 @@
 <div id="content" >
 <div class="wrapper">
 		<!-- Posts  -->
+		
+		
 		<ul>
+		<h4>{{u_name}}'s blog</h4>
 			<article>
 				{% for post in posts.object_list %}
 				
@@ -21,10 +24,9 @@
 							{% endautoescape %}
 							
 							<footer>
+							<p><span id="red"> <a class="readmore" href="{% url 'blogs.views.post' post.pk  %}">read more..</a> </span> <span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
 								<div id="post_footer">
-										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
-										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span>
-										Posted on &nbsp;{{post.created}}.
+										<p>Posted on &nbsp;{{post.created}}.</p>
 								</div>
 							</footer>
 							</div>

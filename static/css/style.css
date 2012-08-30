@@ -1,66 +1,158 @@
 body
-{  background-color: #000;
-	background-repeat: repeat;}
+{ 
+background-repeat: repeat;}
 /* this div will contain all contents to maintain a fixed width */
-.wrapper
+
+
+#wrappernew
 {
 	position: relative;
-	width: 100%;
-	height: 1000px;
+	width: 960px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 900px;
+	height: 100%;
+	}
 	
-	top: 0;
-	margin: 0 0;
-	z-index: 9999;
+	
+	
+	.wrapper
+	{
+	position: relative;
+	width: 600px;
+	display: block;
+	min-height: 900px;
+	height: 100%;
+		
+		}
+	
+	#header
+	{
+height: 650px;		
+		}
+		
+.black
+{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
 	background-image:url('../images/home/wbck.png');
-	background-size: 60% 768px;
-	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 40% 100%;
+	background-repeat: no-repeat;	
+	 background-color: #000;
+	 height: 500px;
+	 width: 100%;
+	}
+
+
+.center
+{
+	
+	width: 760px;
+	margin-left: auto;
+	margin-right: auto;
+		
 	}
 
 .slideshow
 {
+	top: 7.5%;
+	height: 380px;
+	width: 740px;
 	position: absolute;
-	height: 350px;
-	width: 710px;
-	top: 140px;
-	left: 19%;
-	-moz-box-shadow: inset -5px -5px 5px 5px #888;
--webkit-box-shadow: inset -5px -5px 5px 5px#888;
-box-shadow: inset -5px -5px 5px 5px #888;
+background-color: #000;
 display: block;
    }
 
 body
 {
-	color: #fff;
+	color: #111;
 	}
 
 .content{
-	position: absolute;
+	
+	/* transperancy */
+	opacity:0.8;
+  filter:alpha(opacity=90);
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 56px;
+	}
+	
+	
+	
+	
+#content-wrapper{	
+position: absolute;
 	word-spacing: 3px;
-	line-height: 20px;
-	top: 530px;
-	left: 21%;
-	color: white;
+	line-height: 26px;
+	margin-left: 0;
+	color: #111;
 	background-color: transparent;
 	z-index: 10;
 	height: auto;
 	width: 600px;
-	/* transperancy */
-	opacity:0.8;
-  filter:alpha(opacity=90);
-  margin-bottom: 56px;
-	}
-.content h4
+	display: inline-block;
+}
+	
+.content h3
 {
 margin: 8px;
+margin-left: 18px;
 margin-top: 15px;
+
+
 }
 .content p
-{	margin: 16px;
-	line-height: 15px;
+{	
+	margin: 16px;
+	line-height: 18px;
+}
+
+.about
+{
+	width: 300px;
+  display: block;
+  position: absolute;
+
 	}
 
-.blog{
+
+.blog-home
+{
+width: 300px;;
+margin-left: 300px;
+display: block;
+position: relative;
+	}
+
+
+#post_footer {
+	border-radius: 5px;
+	margin-top: 1em;
+	font:10px ubuntu,arial,sans-serif;
+}	
+
+#post_footer  .detail{
+word-spacing: 1px;
+}	
+
+#post_footer #readmore_link,#comments_link
+{
+	font-size: 12px;
+}
+
+#post_footer 
+{
+padding-right: 1em;
+}
+#post_footer a
+{
+	color: #ff2b06;
+	text-decoration: none;
+}
 	
 	
 	

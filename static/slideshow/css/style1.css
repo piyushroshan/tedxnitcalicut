@@ -43,30 +43,30 @@
 		background: url('../images/arrows-small.png');
 		width: 15px;
 		height: 15px;
-		top: 352px;
+		top: 400px;
 		cursor: pointer;
 	}
 
 	.showcase-arrow-previous
 	{
 		left:30px;
-		background-position: 0px -14px;
+		background-position: 0px -18px;
 	}
 
 	.showcase-arrow-previous:hover
 	{
-		background-position: 0px -14px;
+		background-position: -2px -18px;
 	}
 
 	.showcase-arrow-next
 	{
 		right: 30px;
-		background-position: 0px -0px;
+		background-position: 0px -1px;
 	}
 
 	.showcase-arrow-next:hover
 	{
-		background-position: -0px -0px;
+		background-position: 0px -1px;
 	}
 
 	/* Content */
@@ -103,29 +103,29 @@
 			color: #000;
 			text-align: left;
 			padding: 5px 8px;
-			background-image: url(../images/white-opacity-80.png);
+			background-image: url(../images/black-opacity-60.png);
 		}
 
 		/* Styling the caption */
 		.showcase-caption
 		{
-			color: #fff;
+			color: #111;
 			padding: 8px 10px;
 			text-align: left;
 			position: absolute;
-			bottom: 2px; left: 10px; right: 10px;
+			bottom: 2%; left: 14%; right: 14%;
 			border-radius: 5px;
 			display: none;
-			background-image: url(../images/black-opacity-60.png);
-				opacity:0.6;
+			background-color: #ff2b06;
+				opacity:0.9;
 				margin-bottom: 2px
-  filter:alpha(opacity=70);
+ 
 
 		}
 		.showcase-caption a
 		{
-			color: #ff2b06;
-			text-decoration: none;
+			color: #fff;
+			text-decoration: blink;
 		}
 
 	.showcase-onepage .showcase-content

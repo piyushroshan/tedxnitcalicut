@@ -1,14 +1,6 @@
-#content
-{
-padding-left: 20%;
-padding-right: 20%;
-}
 
-#content .wrapper
-{
-	padding: 50px;
 
-}
+
 
 #content h1
 {
@@ -35,3 +27,9 @@ color: #111;
 height: 600px;
 min-height: 600px;		
 		}
+		
+		.credits
+		{
+	height: 600px;
+padding-left: 100px;
+			}

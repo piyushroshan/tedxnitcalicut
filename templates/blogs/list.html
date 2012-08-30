@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Blog Posts{% endblock %}
 
+{% block head %}<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />{% endblock %}
+ 
 {% block content %}
-	<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
 	<div id="content" >
 	<div class="wrapper">
 
@@ -17,17 +18,17 @@
 							</header>
 							
 							{% autoescape off %}  
-								<div id="post_body">	{{ post.body|linebreaks|truncatewords:100}}</div> 
+								<div id="post_body">	{{ post.body|linebreaks|truncatewords:100}} </div> 
 							{% endautoescape %}
 							
 							<footer>
+							<p> <span id="red"> <a class="readmore" href="{% url 'blogs.views.post' post.pk  %}">read more..</a> </span> <span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
 								<div id="post_footer">
-										<p>Posted By &nbsp; <a href="mailto:{{post.email}}">{{post.name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
-										<p><span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.post' post.pk  %}"><b>read more...</b></a></span>
-										<span id="readmore_link"><a class="readmore" href="{% url 'blogs.views.list_user' post.user_id  %}"><b>{{post.name}}'s blog</b></a></span>
-										<span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
-										
+										<p>Posted By &nbsp; <a href="{% url 'blogs.views.list_user' post.user_id  %}">{{post.user_id.get_full_name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
 								</div>
+										
+
+								
 							</footer>
 					</div>
 					</section>
@@ -37,7 +38,7 @@
 
 		<!-- Next/Prev page links  -->
 		{% if posts.object_list and posts.paginator.num_pages > 1 %}
-		<div  style="margin-top: 20px; margin-left: -20px; ">
+		<div  style="margin-top: 20px; margin-left: -20px; margin-bottom:20px; ">
 			<span >
 				{% if posts.has_previous %}
 					<a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>

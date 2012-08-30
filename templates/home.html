@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}TEDx NITCalicut{% endblock %}
+{% block title %}TEDxNITCalicut{% endblock %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}slideshow/css/style1.css" />
@@ -10,33 +10,15 @@
 
 {% endblock %}
 
-{% block content %}
-
-
-
-
-<div class="wrapper">
-
-<script type="text/javascript">
-	$(function() {
-	  if ($.browser.msie && $.browser.version.substr(0,1)<7)
-	  {
-		$('li').has('ul').mouseover(function(){
-			$(this).children('ul').show();
-			}).mouseout(function(){
-			$(this).children('ul').hide();
-			})
-	  }
-	});
-</script>
-
+{% block slideshow %}
+<div class="black">
 <script type="text/javascript">
 $(document).ready(function()
 {
 	$("#showcase").awShowcase(
 	{
-		content_width:			742,
-		content_height:			350,
+		content_width:			760,
+		content_height:			390,
 		fit_to_parent:			true,
 		auto:					true,
 		interval:				3000,
@@ -50,10 +32,10 @@ $(document).ready(function()
 		mousetrace:				false, /* Trace x and y coordinates for the mouse */
 		pauseonover:			true,
 		stoponclick:			false,
-		transition:				'hslide', /* hslide/vslide/fade */
+		transition:				'fade', /* hslide/vslide/fade */
 		transition_delay:		0,
 		transition_speed:		500,
-		show_caption:			'onload', /* onload/onhover/show */
+		show_caption:			'show', /* onload/onhover/show */
 		thumbnails:				false,
 		thumbnails_position:	'outside-last', /* outside-last/outside-first/inside-last/inside-first */
 		thumbnails_direction:	'vertical', /* vertical/horizontal */
@@ -65,7 +47,7 @@ $(document).ready(function()
 	});
 });
 </script>
-<div>
+<div class="center">
 
 
 	<div class="slideshow">
@@ -101,15 +83,55 @@ $(document).ready(function()
 		</div>
 	</div>
 </div>
-<div id=content-wrapper">
+</div>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+<div class="wrapper">
+
+
+<div class="center">
+<div id="content-wrapper">
+<div class="about">
 	<div class="content">
 	<div id="cursive">
-		<h4>What is <span id="red">TEDx</span>?</h4>
-		<p>In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxNITCalicut, where x = independently organized TED event. At our TEDxNITCalicut event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized </p>
+		
+		<h3> What is <span id="red"> TEDx </span> ? </h3>
+		
+		<p>In the spirit of ideas worth spreading, TED has created a program called TEDx.
+		 TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.
+		  Our event is called TEDxNITCalicut, where x = independently organized TED event.
+		   At our TEDxNITCalicut event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group.
+		    The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized </p>
 	</div>
 	</div>
 </div>
-<div class="tweetFeed"></div>
+<div class="blog-home">
+	<div class="content">
+	<div id="cursive" >
+	<h3><span id="red"><a href="{% url 'blogs.views.post' post.pk  %}">{{post.title}}</a></span></h3>
+			{% autoescape off %}  
+					<div id="post_body">	{{ post.body|linebreaks|truncatewords:80}} <span id="red"> <a class="readmore" href="{% url 'blogs.views.post' post.pk  %}">read more..</a> </span> </div> 
+			{% endautoescape %}
+		<div id="post_footer">
+										<p class="detail">Posted By <a href="{% url 'blogs.views.list_user' post.user_id  %}">{{post.user_id.get_full_name}} </a> on {{post.created}}.</p>
+		
+										<p> <span id="readmore_link"><a class="readmore" href="/blog/"><b>View Blog</b></a></span> </p>
+										
+		</div>
+	</div>
+	</div>
+</div>
+</div>
 
+</div>
 </div>
 {% endblock %}

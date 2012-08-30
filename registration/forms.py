@@ -14,10 +14,10 @@ attrs_dict = { 'class': 'required' }
 class RegistrationForm(forms.Form):
 	"""
 	Form for registering a new user account.
-	
+
 	Validates that the password is entered twice and matches,
 	and that the username is not already taken.
-	
+
 	"""
 	username = forms.CharField(max_length=30,
 							widget=forms.TextInput(attrs=attrs_dict),
@@ -37,7 +37,7 @@ class RegistrationForm(forms.Form):
 	def clean_username(self):
 		"""
 		Validates that the username is not already in use.
-		
+
 		"""
 		if self.cleaned_data.get('username', None):
 			try:
@@ -48,7 +48,7 @@ class RegistrationForm(forms.Form):
 	def clean_email(self):
 		"""
 		Validates that the email is not already in use.
-		
+
 		"""
 		if self.cleaned_data.get('email', None):
 			try:
@@ -60,7 +60,7 @@ class RegistrationForm(forms.Form):
 	def clean_password2(self):
 		"""
 		Validates that the two password inputs match.
-		
+
 		"""
 		if self.cleaned_data.get('password1', None) and self.cleaned_data.get('password2', None) and \
 		self.cleaned_data['password1'] == self.cleaned_data['password2']:
@@ -71,15 +71,11 @@ class RegistrationForm(forms.Form):
 	def clean_tos(self):
 		"""
 		Validates that the user accepted the Terms of Service.
-		
+
 		"""
 		if self.cleaned_data.get('tos', False):
 			return self.cleaned_data['tos']
 		raise forms.ValidationError(u'You must agree to the terms to register')
 
 
-def UserProfileForm(ModelForm):
-	class Meta:
-		model=UserProfile
-		exclude = ['user']
 

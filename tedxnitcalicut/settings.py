@@ -13,6 +13,11 @@ EMAIL_HOST_USER='piyushroshan@gmail.com'
 EMAIL_HOST_PASSWORD ='8888888'
 DEFAULT_FROM_EMAIL ='noreply@tedxnitcalicut.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+RECAPTCHA_PRIVATE_KEY = '6Let5NUSAAAAADXx-OIJHzZREb2SSrGaLwdG8ynO'
+RECAPTCHA_PUBLIC_KEY = '6Let5NUSAAAAAOW6otujPq7PCR2WjcmXXgG8wc9b'
+
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -90,22 +95,24 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-TINYMCE_JS_URL = path.join(MEDIA_ROOT, "js/tiny_mce/tiny_mce.js")
-TINYMCE_JS_ROOT = path.join(MEDIA_ROOT, "js/tiny_mce")
+TINYMCE_JS_URL = path.join(STATIC_URL, "js/tiny_mce/tiny_mce.js")
+TINYMCE_JS_ROOT = path.join(STATIC_URL, "js/tiny_mce")
 
 TINYMCE_DEFAULT_CONFIG = {
-	'plugins': "table,spellchecker,paste,searchreplace",
-	'theme': "advanced",
-	'theme_advanced_toolbar_location' : "top",
-	'theme_advanced_toolbar_align' : "left",
-	'theme_advanced_statusbar_location' : "bottom",
-	'theme_advanced_resizing' : True,
-	'convert_urls' : False
+      'mode' : "textareas",
+      'plugins' : "fullpage",
+      'theme_advanced_buttons3_add': "fullpage",
+		'theme': 'advanced',
+		'theme_advanced_toolbar_location' : "top",
+		'theme_advanced_toolbar_align' : "left",
+		'theme_advanced_statusbar_location' : "bottom",
+		'theme_advanced_resizing' : True,
+		'convert_urls' : False
 	}
-TINYMCE_SPELLCHECKER = False
+TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = False
 
 
@@ -160,6 +167,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
     'tinymce',
+	 'recaptcha',
+    'oauth2',
 )
 
 # A sample logging configuration. The only tangible logging

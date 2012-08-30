@@ -15,3 +15,4 @@ class CommentForm(ModelForm):
 	name=forms.CharField(max_length = 100)
 	body = forms.TextField(max_length = 200)
 	email= forms.EmailField()
+

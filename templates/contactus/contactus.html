@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Contact us{% endblock %}
+{% block head %}
 
+<link rel="stylesheet"  href="{{STATIC_URL}}css/contactform.css" />
+{% endblock %}
 
 {% block content %}
-<link rel="stylesheet"  href="{{STATIC_URL}}css/contactform.css" />
+
 <div id="content">
 <div class="wrapper">
 <div class="contactform">

@@ -3,6 +3,7 @@ html,
 	body {
 		margin:0;
 		padding:0;
+		min-height: 100%;
 		height:100%;
 	}
 	#container {
@@ -10,16 +11,14 @@ html,
 		position:relative;
 	}
 	#header {
-		background:#ff0;
-		padding:10px;
+		padding:0px;
 	}
 	#body {
 		padding:10px;
 		padding-bottom:200px;	/* Height of the footer */
 	}
 	#footer {
-		position:absolute;
-		bottom:0;
+		position:relative;
 		width:100%;
 		margin-top: 50px;
 		height:200px;			/* Height of the footer */
@@ -34,29 +33,7 @@ html,
 	</style>
 	<![endif]-->
 
-a
-{
-	color: #ff2b06;
-}
 
-p
-{
-	margin-bottom: 10px;
-}
-
-h1
-{
-	font-size: 20px;
-	margin-bottom: 5px;
-	font-weight: bold;
-}
-
-h2
-{
-	font-size: 16px;
-	margin-bottom: 5px;
-	font-weight: bold;
-}
 
 #header
 {
@@ -68,13 +45,17 @@ padding: 0;
 
 
 
+
+
 #red
 {
 	color: #ff2b06;
 }
 
-html>body #header {
-	height: auto;
+#red a
+{
+	color: #ff2b06;
+	text-decoration: none;
 }
 
 
@@ -88,20 +69,11 @@ body {
 	height:auto;
 	margin: 0;
 	padding-top: 10px;
+	padding-bottom: 30px;
 	padding-left:25%;
 	list-style: none;
-	background: #111;
-	background: -moz-linear-gradient(#000000, #111);
-	background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #000000));
-	background: -webkit-linear-gradient(#000000, #111);
-	background: -o-linear-gradient(#000000, #111);
-	background: -ms-linear-gradient(#000000, #111);
-	background: linear-gradient(#000000, #111);
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-moz-box-shadow: 0 2px 1px #9c9c9c;
-	-webkit-box-shadow: 0 2px 1px #9c9c9c;
-	box-shadow: 0 2px 1px #9c9c9c;
+	background: #000;
+	
 }
 
 #menu li{
@@ -251,33 +223,38 @@ width: 150px;
 *:first-child+html #menu { zoom: 1; } /* IE7 */
 
 
+#right-menu a{
+color: white;	
+text-decoration: none;
+	}
+
 
 
 #right-menu{
-	clear: both;
-	margin: 50px 0 0 0;
-	padding: 5px 10px 5px 5px;
-	float:right;
-	width:200px;
-	color: antiquewhite;
-	font-family:Arial, Helvetica, sans-serif;
-			background-color: darkslategray; 
-		 border-left: 1px solid #ffd;
-		 border-left: 4px solid #ffd;
-		 border-left: 1px solid #ffd;
- background: -moz-linear-gradient(#000000, #011);
- background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #011),color-stop(1, #000000));
- background: -webkit-linear-gradient(#000000, #111);
- background: -o-linear-gradient(#000000, #111);
- background: -ms-linear-gradient(#000000, #111);
- background: linear-gradient(#000000, #111);
- border-radius: 5px;
+	color: wheat;
+	top: 20px;
+	position: absolute;
+	right: 0;
+	padding: 0px 0 0 0;
+	margin-left: 620px;
+	
+	width:250px;
+			background-color: #000; 
+		 border-top:  1px solid #000;
+		 border-left: 4px solid #000;
+		 border-right: 4px solid #000;
+		 border-bottom: : 1px solid #000;
+ border-radius: 15px;
 }
+
+
 
 #right-menu li{
 list-style: none;	
-padding: 5px 10px 5px 5px;
+margin: 0;
 	}
+	
+	
 #right-menu li{
 color: ff2b06;
 	}
@@ -292,88 +269,75 @@ margin: 0;
 }
 
 .footer {
-    font: 15px Helvetica,serif;
+	color: white;
+
     line-height:18px;
     background:#000;
-    color: #fff;
  border-top: 1px solid #ffd;
+ border-bottom-color: transparent;
+ border-right-color: transparent;
  background: -moz-linear-gradient(#000000, #011);
  background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #011),color-stop(1, #000000));
  background: -webkit-linear-gradient(#000000, #111);
  background: -o-linear-gradient(#000000, #111);
  background: -ms-linear-gradient(#000000, #111);
  background: linear-gradient(#000000, #111);
- -moz-border-radius: 5px;
- border-radius: 5px;
- -moz-box-shadow: 0 2px 1px #9c9c9c;
- -webkit-box-shadow: 0 2px 1px #9c9c9c;
-    height:200px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
+ height:200px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
+ 	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
 }
 .footercontainer {
 width: 100%;
 height: 200px; /* If you change this value, be sure to change the footer column's height as well */
 margin: 0 ;
-color: white;
+font: 15px Helvetica,serif;
+;
+display: inline-block;
 }
  
 .col1 {
-float: left;
-width: 300px;
-margin-top: 15px;
+position: absolute;
+display: block;
+left: 0;
+width: 25%;
 margin-left: 0px;
-height: 100px;
+height: 190px;
 }
 .col1 span
 {
 font-weight: bold;
-font-size: 16px;
+font-size: 12px;
 padding-left: 20px;	
 }
 
 .col1 img
 {
-width: 40px;
-height: 40px;	
+width: 30px;
+height: 30px;	
 margin: 0;
 padding-right: 5px;
 	}
 	
+.col1 ul
+{
+margin: 0;
+padding: 0;	
+	}
+	
 .col1 li
 {
-	float: left;
-list-style: none;	
-display: inline;
+	list-style-type: none;	
 
 }
  
-.col1 h4, .col2 h4,.col3 h4,.col4 h4 {
-font-size: 16px;
-text-align: left;
-font-variant: small-caps;
-font-family: Arial;
-margin:0px;
-padding-bottom: 5px;
-}
  
-/* This controls how the blog footer's regular text looks - Feel free to change the colours/font family */
-.col1 p, .col2 p,.col3 p,.col4 p {
-font-size: 12px;
-text-align: left;
-font: 14px Helvetica,serif;
-line-height:22px;
-margin:0px;
-padding-bottom: 5px;
-}
+
 /* This controls how column 2's list items hyperlinks look as well as column 4's hyperlinks - Feel free to change the colours/font family */
-.col2 ul li a, .col4 a {
+.col2 ul li a, .col4 a .col3 a  {
 color: #fffff1;
 font-size: 12px;
-text-align: left;
-font: 14px Helvetica,serif;
-line-height:22px;
-list-style: none;
-margin:0px;
-padding-bottom: 5px;
+font:Helvetica,serif;
 }
 /* This controls how the blog footer's hyperlinks look - Feel free to change the colours/font family */
 .col2 ul {
@@ -381,53 +345,77 @@ color: #ffffff;
 }
  
 .col2 {
-float: left;
-width: 280px;
+position: absolute;
+display: block;
+margin-left: 25%; 
+width: 25%;
 margin-top: 15px;
-margin-right: 15px;
 height: 180px;
 }
  
 .col3 {
 
-right: 300px;
-float: right;
-width: 250px;
+position: absolute;
+display: block;
+margin-left: 50% ;
+width: 25%;
 font-size: 14px;
 line-height: 14px;
 word-spacing: 3px;
-margin-top: 30px;
-margin-right: 10px;
 height: 180px;
 }
 
-div a{
+.footer a{
 color: white;	
 text-decoration: none;
 	}
+
+
 
 .wrapcol{
 	margin-top: 40px
 	}
  
 .col4 {
-float: right;
-
-width: 250px;
+position: absolute;
+display: block;
+margin-left: 75% ;
+width: 20%;
 font-size: 14px;
 line-height: 14px;
 word-spacing: 3px;
-margin-left: 50px;
-margin-right: 50px;
-margin-top: 30px;
 height: 180px;
 }
+
+.licence
+{
+	padding-top: 3%
+font-size: 12px;
+line-height: 14px;
+width: 70%;
+text-align: left;	
+	
+	}
+	
+	.licencet
+{
+	padding-top: 3%;
+font-size: 12px;
+line-height: 14px;
+width: 70%;
+text-align: left;	
+	}
+
+
 
 
 #logo
 {
 	float: left;
 	width: 20%;
+	padding-top: 10px;
+	margin-left: 6%;
+	padding-right: 20px;
 	background-color: #000000;
 	height: auto;
 	max-height:10%;
@@ -440,15 +428,47 @@ height: 180px;
 font-style: italic;
 position: relative;
 font-size: 10px;
-margin-left: 100px;
-padding-left: 100px;
 color: #ff2b06;
 }
 
-#twitter_div
+
+
+
+	
+#content .wrapper
 {
-display: block;
-height: 380px;
-min-height: 380px;
-padding-bottom: 10px;
+color: #555;	
 	}
+	
+	
+	
+#wrappernew
+{
+	position: relative;
+	width: 960px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 900px;
+	height: 100%;
+	}
+	
+	
+	
+#wrappernew	.wrapper
+	{
+	position: relative;
+	width: 600px;
+	display: block;
+	min-height: 900px;
+	height: 100%;
+		}
+	
+#content .wrapper	body { font: .8em Arial, Tahoma, Verdana; }
+#content .wrapper   a { text-decoration: none; color: #ff2b06; }
+h1 { font-size: 1.4em; font-weight: normal; }
+	h1 a { font-size: 1.6em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.2em;  font-weight: normal; margin: 0 0 15px; }
+h4 { margin: 0 0 15px;  font-weight: normal; font-size: 1.6em; font-weight: normal; }
+p { clear: both; line-height: 1.64em; margin: 0 0 15px; }

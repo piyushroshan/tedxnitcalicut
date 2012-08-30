@@ -1,5 +1,5 @@
 #Create your views here.
-maxpost = 3
+maxpost = 5
 from django.http import *
 from django.shortcuts import render_to_response
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
@@ -33,6 +33,7 @@ def list_user(request, uid):
 	"""Main listing."""
 	u_id = User.objects.get(username = uid)
 	posts = Blogpost.objects.filter(user_id = u_id)
+	u_name=u_id.get_full_name()
 	paginator = Paginator(posts, maxpost)
 	
 	try: page = int(request.GET.get("page", '1'))
@@ -44,7 +45,7 @@ def list_user(request, uid):
 		posts = paginator.page(paginator.num_pages)
 		
 	t=get_template("blogs/list_user.html")
-	c=RequestContext(request, {'posts':posts})
+	c=RequestContext(request, {'posts':posts,'u_name': u_name,})
 	html=t.render(c)
 	return HttpResponse(html)
 

@@ -7,16 +7,8 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from blogs.models import Blogpost
 def main(request):
-	posts = Blogpost.objects.all().order_by("-created")
-	paginator = Paginator(posts, 2)
-	try: 
-		page = int(request.GET.get("page", '1'))
-	except ValueError: page = 1
-	try:
-		posts = paginator.page(page)
-	except (InvalidPage, EmptyPage):
-		posts = paginator.page(paginator.num_pages)
+	post = Blogpost.objects.latest('created')
 	t=get_template('home.html')
-	c=RequestContext(request, {'posts': posts})
+	c=RequestContext(request, {'post': post})
 	html=t.render(c)
 	return HttpResponse(html)

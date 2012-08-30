@@ -1,8 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 import datetime
-from registration.models import UserProfile
 from tinymce import models as tinymce_models
 # Create your models here.
 

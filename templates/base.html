@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset=”UTF-8”>
-<link rel="shortcut icon" href="http://tedxnitcalicut.com/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico" type="image/vnd.microsoft.icon" />
 
-<title>{% block title %}TEDXNitc{% endblock %}</title>
+<title>{% block title %}{% endblock %} | TEDxNITCalicut</title>
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
 
 <link rel="stylesheet" href="{{STATIC_URL}}css/hf.css" />
@@ -12,6 +12,17 @@
 {% block head %} {% endblock %}
 
 
+<script type="text/javascript">
+	$(function() {
+	  
+		$('li').has('ul').mouseover(function(){
+			$(this).children('ul').show();
+			}).mouseout(function(){
+			$(this).children('ul').hide();
+			})
+	  
+	});
+</script>
 </head>
 
 <body>
@@ -23,6 +34,7 @@
 		<div id="logo">
 				<img src="{{STATIC_URL}}images/logo.png" border="0" width="100%" height="100em"></img>
 		</div>
+		<div>
 		<nav>
 			<ul id="menu">
 				<li><a href="/">Home</a></li>
@@ -43,36 +55,57 @@
 			</ul>
 		</nav>
 		</div>
+		
+{% block slideshow %}
+{% endblock %}
+		
+		
+		
+		
+</div>
 
 
 
 {% endblock %}
 
 
-<div id="right-menu">
+
+
+<div id="body">
+
+
+
+					
+
+ 
+        
+   <div id="wrappernew">
+  <div id="right-menu">
 	<div id="user_menu">
-					<ul id="user_id">{{user.get_full_name}}
+					<ul id="user_id"> {{user.get_full_name}}
 									{% if user.is_authenticated %}
-										<li id="red"> <a href="/accounts/logout/">Log Out</a></li>
-										<li id="red"> <a href="/accounts/profile/">Account</a></li>
+										<li id="red"> <a href="/accounts/logout/">Log Out</a> </li>
 										{%else%}
-											<li id="red"> <a href="/accounts/login/">Log In</a></li>
+											<li id="red"> <a href="/accounts/login/">Log In</a> </li>
 									{%endif%}
 					</ul>
 	</div>
-<div style="width: 100%;"><div style="background: #111;padding: 5px;"><img src="http://www.facebook.com/images/fb_logo_small.png" alt="Facebook"/><img src="https://badge.facebook.com/badge/217383778300462.100000111709722.498679001.png" alt="" width="0" height="0"/></div><div style="background: #000;display: block;border-right: 1px solid #D8DFEA;border-bottom: 1px solid #D8DFEA;border-left: 1px solid #D8DFEA;margin: 0px;padding: 0px 0px 5px 0px;"><div style="background: #EDEFF4;display: block;padding: 5px;"><table cellspacing="0" cellpadding="0" border="0"><tr><td valign="top"><img src="http://www.facebook.com/images/icons/fbpage.gif" alt=""/></td><td valign="top"><p style="color: #808080;font-family: verdana;font-size: 11px;margin: 0px 0px 0px 0px;padding: 0px 8px 0px 8px;"><a href="https://www.facebook.com/piyushroshan" target="_TOP" style="color: #3B5998;font-family: verdana;font-size: 11px;font-weight: normal;margin: 0px;padding: 0px 0px 0px 0px;text-decoration: none;" title="Roshan Piyush">Roshan Piyush</a> likes</p></td></tr></table></div><div style="background: #FFFFFF;clear: both;display: block;margin: 0px;overflow: hidden;padding: 5px;"><table cellspacing="0" cellpadding="0" border="0"><tr><td valign="middle"><a href="https://www.facebook.com/TEDxNITCalicut" target="_TOP" style="border: 0px;color: #3B5998;font-family: verdana;font-size: 12px;font-weight: bold;margin: 0px;padding: 0px;text-decoration: none;" title="TEDxNITCalicut"><img src="https://www.facebook.com/profile/pic.php?oid=AWzU9g2l7yDFE9k3UbmcaxkBVVU88iF4G2ByF1qlzRs_Hv4rAETbSwv1ZyRLONT76L8&size=square" style="border: 0px;margin: 0px;padding: 0px;" alt="TEDxNITCalicut"/></a></td><td valign="middle" style="padding: 0px 8px 0px 8px;"><a href="https://www.facebook.com/TEDxNITCalicut" target="_TOP" style="border: 0px;color: #3B5998;font-family: verdana;font-size: 12px;font-weight: bold;margin: 0px;padding: 0px;text-decoration: none;" title="TEDxNITCalicut">TEDxNITCalicut</a></td></tr></table></div></div></div>
+
+
 
 <div id="twitter_div">
-<script src="{{STATIC_URL}}js/twitter.js"></script>
+<script src="{{STATIC_URL}}js/twitter.js"> </script>
 <script type="text/javascript" >
+
+<!--//--><![CDATA[// ><!--
 
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: 'tedxnitcalicut OR tedxnitc',
-  interval: 30000,
-  title: 'Excitement in the air!',
-  subject: 'What\'s the buzz??',
+  search: 'tedxnitc OR tedxnitcalicut',
+  interval: 6000,
+  title: 'Excitement is in the air!',
+  subject: 'What\'s the buzz?',
   width: 'auto',
   height: 300,
   theme: {
@@ -82,7 +115,7 @@ new TWTR.Widget({
     },
     tweets: {
       background: '#ffffff',
-      color: '#000000',
+      color: '#444444',
       links: '#ff2b06'
     }
   },
@@ -90,9 +123,15 @@ new TWTR.Widget({
     scrollbar: false,
     loop: true,
     live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
     behavior: 'default'
   }
 }).render().start();
+
+//--><!]]>
 
 if (!browser.ie || isLoaded || (document.readyState === "complete")) {
 append();
@@ -103,19 +142,20 @@ isLoaded = true;
 append();
 });
 }
-
-</script>
+      
+      
+       </script>
+       </div>
+       
+ </div> 
+ {% block content %}
+  {% endblock %}
  </div>
-					
-</div>
+       
 
-<div id="body">
-
-        {% block content %}{% endblock %}
-
-
-</div>
 <div class="push"></div>
+</div>
+
 {% block footer %}
 
 
@@ -126,12 +166,11 @@ append();
 
    <div class="col1"><span>Socialize with us</span>
 	  <ul>
-     <li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /></a> </li>
-     <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  />  </a> </li>
-     <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png  /> </a> </li>
-      <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  />     </a> </li>
+     <li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /> Subscribe Us</a> </li>
+     <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  /> Follow Us</a> </li>
+     <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png /> Watch Us</a> </li>
+      <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  /> Add Us</a> </li>
      <li> <a href="http://www.flickr.com/photos/tedxnitcalicut/7034667221/in/photostream"> <img src={{STATIC_URL}}images/socials/Flickr.png  /> </a> </li>
-    
      </ul>
    </div>
    	 <div class="col2">
@@ -151,22 +190,24 @@ append();
 	</ul>
    </div>
 
-    <div class="col3">
-    <div>This independent TEDx event is operated under license from TED</div>
-    <div class="wrapcol">
-   	 <div>&copy; TEDxNITCalicut </div>
-		<div>Powered by <a href="#">Django</a></div>	
-		</div>
+  <div class="col3">
+   		 <div class="licence">All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>	
+<div class="licencet">This independent TEDx event is operated under license from TED</div>	
 	</div>
 
     <div class="col4">
-   		 <div>All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>	
+    
+    <div class="wrapcol">
+   	 <div>&copy; TEDxNITCalicut </div>
+		<div>Powered by <a href="#">Django</a></div>	
 	</div>
+	</div>
+
+  
 
 
    </div>
 
- </div>
  </div>
  </div>
 {% endblock %}

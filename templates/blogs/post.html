@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Blog Posts{% endblock %}
 
+
+{% block head %}<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />{% endblock %}
+ 
+
 {% block content %}
-	<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />
 <div id="content" >
 <div class="wrapper">
 			<!-- Posts  -->
