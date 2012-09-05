@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Blog Posts{% endblock %}
+{% block title %}Blog Posts |{% endblock %}
 
 {% block head %}<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css" />{% endblock %}
  
@@ -14,7 +14,7 @@
 					<section>
 					<div id="post_content">
 							<header>
-								<h3><a href="{% url 'blogs.views.post' post.pk %}">{{ post.title }}</a></h3>
+								<h3><a href="{% url blogs.views.post post.pk %}">{{ post.title }}</a></h3>
 							</header>
 							
 							{% autoescape off %}  
@@ -22,9 +22,9 @@
 							{% endautoescape %}
 							
 							<footer>
-							<p> <span id="red"> <a class="readmore" href="{% url 'blogs.views.post' post.pk  %}">read more..</a> </span> <span id="comments_link"><a href="{% url 'blogs.views.post' post.pk %}">Comments</a></span></p>
+							<p> <span id="red"> <a class="readmore" href="{% url blogs.views.post post.pk  %}">read more..</a> </span> <span id="comments_link"><a href="{% url blogs.views.post post.pk %}">Comments</a></span></p>
 								<div id="post_footer">
-										<p>Posted By &nbsp; <a href="{% url 'blogs.views.list_user' post.user_id  %}">{{post.user_id.get_full_name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
+										<p>Posted By &nbsp; <a href="{% url blogs.views.list_user post.user_id  %}">{{post.user_id.get_full_name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
 								</div>
 										
 

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Contact us{% endblock %}
+{% block title %}Contact us | {% endblock %}
 {% block head %}
 
 <link rel="stylesheet"  href="{{STATIC_URL}}css/contactform.css" />
@@ -10,26 +10,29 @@
 <div id="content">
 <div class="wrapper">
 <div class="contactform">
-<h1>Contact us</h1>
-
+<fieldset ><legend><span >Contact US</span></legend>
     {% if errors %}
         <ul>
             {% for error in errors %}
-            <li>{{ error }}</li>
+            <li class="errors">{{ error }}</li>
             {% endfor %}
         </ul>
     {% endif %}
+    
 <table>
     <form action="/contactus/submit/" method="post">{% csrf_token %}
 	<tr><td>Name:<sup>*</sup> </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
 	<tr><td>E-mail:<sup>*</sup></td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
 	<tr><td>Phone :</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
         <tr><td>Subject:<sup>*</sup></td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
-        
         <tr><td >Your Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
-        <tr><td></td><td><input type="submit" value="Submit"></td></tr>
+        {% if not user.is_authenticated %}
+        <tr><td >{{ ques }}<sup>*</sup></td><td><input type="text" name="answer" ></td></tr>
+        {% endif %}
+         <tr><td></td><td><input type="submit" value="Submit"></td></tr>
     </form>
 </table>
+</fieldset>
 </div>
 </div>
 </div>

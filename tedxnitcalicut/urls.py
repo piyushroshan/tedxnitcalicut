@@ -3,6 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 from django.conf.urls.defaults import *
+from filebrowser.sites import site
 
 
 
@@ -21,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^credits/$','aboutus.views.credits'),
     url(r'^privacy-policy/$','aboutus.views.privacypolicy'),
     url(r'^nominate/vote/$','nominations.views.nominator_view'),
-    # url(r'^$', 'tedxnitcalicut.views.home', name='home'),
+    url(r'^partners/$', 'aboutus.views.partners'),
     # url(r'^tedxnitcalicut/', include('tedxnitcalicut.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -31,14 +32,13 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
 )
 
 
 urlpatterns += patterns('blogs.views',
-    (r"^blog/$",'list'),
-    (r"^blog/(\d+)/$", 'post'),
-    (r"^blog/(?P<uid>[-\w]+)/$", 'list_user'),
-    url(r"^blog/add_comment/(\d+)/$", "add_comment"),
+    url(r"^blog/$",'list'),
+    url(r"^blog/(\d+)/$", 'post'),
+    url(r"^blog/(?P<uid>[-\w]+)/$", 'list_user'),
 )
-
-

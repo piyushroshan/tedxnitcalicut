@@ -9,20 +9,31 @@ html,
 	#container {
 		min-height:100%;
 		position:relative;
+		height: 100%;
 	}
 	#header {
-		padding:0px;
+		padding:0;
+		background-color: #000000;
+		height: 170px;
+width: 100%;
+margin-left: 0;
+margin-right: 0;
+ z-index: 10;
 	}
 	#body {
 		padding:10px;
-		padding-bottom:200px;	/* Height of the footer */
+		padding-bottom:100px;	/* Height of the footer */
+		min-height: 100%;
 	}
 	#footer {
 		position:relative;
 		width:100%;
 		margin-top: 50px;
-		height:200px;			/* Height of the footer */
+		margin-left: 0;
+	margin-right: 0;
+		height:150px;			/* Height of the footer */
 	}
+
 
 	</style>
 	<!--[if lt IE 7]>
@@ -35,28 +46,22 @@ html,
 
 
 
-#header
-{
-background-color: #000000;
-height: 6em;
-padding: 0;
- z-index: 10;
-}
 
-
-
-
-
-#red
-{
+#red {
 	color: #ff2b06;
 }
 
-#red a
-{
+#red a {
 	color: #ff2b06;
 	text-decoration: none;
 }
+
+.red
+{
+	
+color: #ff2b06;	
+	}
+
 
 
 body {
@@ -65,16 +70,86 @@ body {
 	background-color: #fff;
 }
 
-#menu{
+#menud
+{
+width: 960px;	
+margin-left: auto;
+display: block;
+margin-right: auto;
+
+	}
+	
+	
+	#logo
+{
+
+	position:relative;
+	display: inline-block;
+	background-color: #000000;
+	height: 100px;
+	display: -moz-inline-stack;
+   vertical-align: top;
+   zoom: 1;
+   padding-left: 50px;
+   *display: inline;
+   _height: 100px;
+
+}
+
+.event
+{
+height: 30px;
+width: 960px;
+padding-top: 15px;
+margin-bottom: 0;
+
+display: block;
+position: relative;
+margin-left: 0;
+margin-right: 0;
+color: white;
+	
+	}
+	
+.event h2
+{
+	color: #ff2b06;
+	text-align: center;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 25px;
+text-shadow:0px 0px 3px #fff;
+	
+	}
+
+#menuf{
 	height:auto;
+	position: absolute;
+	margin-top: 0;
+	display: inline-block;
+	width: 500px;
+	max-height: 100px;
+	margin-left: 50px;
+	margin: 5px;
+	background: #000;
+	display: -moz-inline-stack;
+   vertical-align: top;
+   zoom: 1;
+   *display: inline;
+	
+}
+
+#menu{
+	position: relative;
+	height:auto;
+	text-align: left;
 	margin: 0;
-	padding-top: 10px;
-	padding-bottom: 30px;
-	padding-left:25%;
 	list-style: none;
 	background: #000;
 	
 }
+
+
 
 #menu li{
 	float: left;
@@ -237,204 +312,53 @@ text-decoration: none;
 	right: 0;
 	padding: 0px 0 0 0;
 	margin-left: 620px;
-	
 	width:250px;
-			background-color: #000; 
+
+}
+	
+#right-menu #user_menu
+{
+background-color: #000; 
+margin-bottom: 20px;
+margin-top: 10px;
 		 border-top:  1px solid #000;
 		 border-left: 4px solid #000;
+		 display: block;
+		 position: relative;
+		 width: 240px;
 		 border-right: 4px solid #000;
+		 padding-bottom: 5px;
 		 border-bottom: : 1px solid #000;
  border-radius: 15px;
-}
-
-
-
-#right-menu li{
-list-style: none;	
-margin: 0;
-	}
 	
+	}	
 	
-#right-menu li{
-color: ff2b06;
-	}
-
-.footer
+#fbmenu
 {
-
-position: relative;
-width:100%;
-margin: 0;
-
-}
-
-.footer {
-	color: white;
-
-    line-height:18px;
-    background:#000;
- border-top: 1px solid #ffd;
- border-bottom-color: transparent;
- border-right-color: transparent;
- background: -moz-linear-gradient(#000000, #011);
- background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #011),color-stop(1, #000000));
- background: -webkit-linear-gradient(#000000, #111);
- background: -o-linear-gradient(#000000, #111);
- background: -ms-linear-gradient(#000000, #111);
- background: linear-gradient(#000000, #111);
- height:200px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
- 	-moz-border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
-}
-.footercontainer {
-width: 100%;
-height: 200px; /* If you change this value, be sure to change the footer column's height as well */
-margin: 0 ;
-font: 15px Helvetica,serif;
-;
-display: inline-block;
-}
- 
-.col1 {
-position: absolute;
-display: block;
-left: 0;
-width: 25%;
-margin-left: 0px;
-height: 190px;
-}
-.col1 span
-{
-font-weight: bold;
-font-size: 12px;
-padding-left: 20px;	
-}
-
-.col1 img
-{
-width: 30px;
-height: 30px;	
-margin: 0;
-padding-right: 5px;
-	}
-	
-.col1 ul
-{
-margin: 0;
-padding: 0;	
-	}
-	
-.col1 li
-{
-	list-style-type: none;	
-
-}
- 
- 
-
-/* This controls how column 2's list items hyperlinks look as well as column 4's hyperlinks - Feel free to change the colours/font family */
-.col2 ul li a, .col4 a .col3 a  {
-color: #fffff1;
-font-size: 12px;
-font:Helvetica,serif;
-}
-/* This controls how the blog footer's hyperlinks look - Feel free to change the colours/font family */
-.col2 ul {
-color: #ffffff;
-}
- 
-.col2 {
-position: absolute;
-display: block;
-margin-left: 25%; 
-width: 25%;
+margin-bottom: 20px;
 margin-top: 15px;
-height: 180px;
-}
- 
-.col3 {
 
-position: absolute;
-display: block;
-margin-left: 50% ;
-width: 25%;
-font-size: 14px;
-line-height: 14px;
-word-spacing: 3px;
-height: 180px;
-}
-
-.footer a{
-color: white;	
-text-decoration: none;
-	}
-
-
-
-.wrapcol{
-	margin-top: 40px
-	}
- 
-.col4 {
-position: absolute;
-display: block;
-margin-left: 75% ;
-width: 20%;
-font-size: 14px;
-line-height: 14px;
-word-spacing: 3px;
-height: 180px;
-}
-
-.licence
-{
-	padding-top: 3%
-font-size: 12px;
-line-height: 14px;
-width: 70%;
-text-align: left;	
+		 display: block;
+		 position: relative;
+		 width: 230px;
+		 height: 25px;
+ border-radius: 15px;
 	
 	}
 	
-	.licencet
+	#tweetmenu
 {
-	padding-top: 3%;
-font-size: 12px;
-line-height: 14px;
-width: 70%;
-text-align: left;	
+margin-bottom: 20px;
+margin-top: 15px;
+
+		 display: block;
+		 position: relative;
+		 width: 230px;
+		 height: 25px;
+ border-radius: 15px;
+	
 	}
 
-
-
-
-#logo
-{
-	float: left;
-	width: 20%;
-	padding-top: 10px;
-	margin-left: 6%;
-	padding-right: 20px;
-	background-color: #000000;
-	height: auto;
-	max-height:10%;
-
-}
-
-
-.errors
-{
-font-style: italic;
-position: relative;
-font-size: 10px;
-color: #ff2b06;
-}
-
-
-
-
-	
 #content .wrapper
 {
 color: #555;	
@@ -449,8 +373,8 @@ color: #555;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 900px;
-	height: 100%;
+
+	height: auto;
 	}
 	
 	
@@ -460,15 +384,212 @@ color: #555;
 	position: relative;
 	width: 600px;
 	display: block;
-	min-height: 900px;
-	height: 100%;
+	min-height: 100%;
+	height: auto;
 		}
 	
-#content .wrapper	body { font: .8em Arial, Tahoma, Verdana; }
-#content .wrapper   a { text-decoration: none; color: #ff2b06; }
-h1 { font-size: 1.4em; font-weight: normal; }
-	h1 a { font-size: 1.6em; }
-h2 { font-size: 1.2em; }
-h3 { font-size: 1.2em;  font-weight: normal; margin: 0 0 15px; }
-h4 { margin: 0 0 15px;  font-weight: normal; font-size: 1.6em; font-weight: normal; }
-p { clear: both; line-height: 1.64em; margin: 0 0 15px; }
+#content .wrapper	body 
+{ font: .8em Arial, Tahoma, Verdana; }
+#content .wrapper   a 
+{ text-decoration: none; color: #ff2b06; }
+h1 
+{ font-size: 23px font-weight: normal; }
+h1 a 
+{ font-size: 23px;
+text-decoration: none;
+ }
+h2 
+{ font-size: 18px; }
+h3 
+{ font-size: 18px;  font-weight: normal; margin: 0 0 15px; }
+h4 
+{ margin: 0 0 15px;  font-weight: normal; font-size: 18px; }
+p 
+{ clear: 
+ line-height: 22px;
+  margin: 0 0 15px; }
+
+#right-menu li{
+list-style: none;	
+color: ff2b06;
+margin: 0;
+	}
+
+
+
+.footercontainer {
+	color: white;
+margin-left: auto;
+margin-right: auto;
+    line-height:18px;
+    background:#000;
+ border-top: 1px solid #ffd;
+ border-bottom-color: transparent;
+ border-right-color: transparent;
+ background: -moz-linear-gradient(#000000, #011);
+ background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #011),color-stop(1, #000000));
+ background: -webkit-linear-gradient(#000000, #111);
+ background: -o-linear-gradient(#000000, #111);
+ background: -ms-linear-gradient(#000000, #111);
+ background: linear-gradient(#000000, #111);
+ height:150px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
+ 	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+
+.footer {
+	position: relative;
+	margin-top: 20px;
+width: 960px;
+height: 130px; /* If you change this value, be sure to change the footer column's height as well */
+margin-left: auto;
+margin-right: auto;
+font: 12px Ubuntu,Helvetica,serif;
+display: block;
+}
+ 
+.col1 {
+position: relative;
+display: inline-block;
+width: 210px;
+margin-left: 0px;
+margin: 5px;
+display: -moz-inline-stack;
+vertical-align: top;
+zoom: 1;
+*display: inline;
+}
+
+.col1 span
+{
+padding-left: 10px;	
+}
+
+.col1 img
+{
+width: 30px;
+height: 30px;	
+margin: 0;
+vertical-align: middle;
+padding-right: 5px;
+	}
+	
+.col1 ul
+{
+margin: 0;
+padding-right: 0;	
+	}
+	
+.col1 li
+{
+	list-style-type: none;	
+
+}
+ 
+.col1 ul li a
+{
+	font-weight: normal;
+	} 
+ 
+ 
+ 
+ 
+ 
+.col1 ul li a .texts
+{
+text-align: left;
+padding-top:8px;
+	}
+ 
+/* This controls how column 2's list items hyperlinks look as well as column 4's hyperlinks - Feel free to change the colours/font family */
+.col3 ul li a, .col4 a .col3 a  {
+color: #fffff1;
+}
+/* This controls how the blog footer's hyperlinks look - Feel free to change the colours/font family */
+.col3 ul {
+color: #ffffff;
+padding-right: 80px;
+}
+ 
+.col3 {
+position: relative;
+display: inline-block;
+width: 220px;
+margin: 5px;
+display: -moz-inline-stack;
+vertical-align: top;
+zoom: 1;
+*display: inline;
+}
+ 
+.col2 {
+
+position: relative;
+display: inline-block;
+width: 220px;
+margin: 5px;
+display: -moz-inline-stack;
+vertical-align: top;
+zoom: 1;
+*display: inline;
+}
+
+.footer a{
+color: white;	
+text-decoration: none;
+	}
+
+ 
+.col4 {
+position: relative;
+display: inline-block;
+width: 210px;
+margin-left: 5px;
+margin-top: 30px;
+line-height: 18px;
+word-spacing: 3px;
+display: -moz-inline-stack;
+vertical-align: top;
+zoom: 1;
+*display: inline;
+}
+
+.licence
+{
+position: relative;
+display: block;
+text-align: left;	
+	}
+	
+	.licencet
+{
+	position: relative;
+	margin-top: 20px;
+	display: block;
+	text-align: left;	
+	}
+
+.powerby
+{
+margin-top: 30px;
+margin-left: 15px;	
+display: block;
+	}
+
+
+
+
+
+.errors
+{
+font-style: italic;
+position: relative;
+font-size: 10px;
+color: #ff2b06;
+}
+
+
+
+

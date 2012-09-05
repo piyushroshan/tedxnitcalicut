@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}TEDxNITCalicut{% endblock %}
+{% block title %}{% endblock %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}slideshow/css/style1.css" />
@@ -47,6 +47,7 @@ $(document).ready(function()
 	});
 });
 </script>
+<div class="bgwrapper">
 <div class="center">
 
 
@@ -55,7 +56,7 @@ $(document).ready(function()
 
 			<div class="showcase-slide">
 				<div class="showcase-content">
-					<img src="{{STATIC_URL}}slideshow/images/slide1.png" alt="01" />
+					<img src="{{STATIC_URL}}slideshow/images/slide1.jpg" alt="01" />
 				</div>
 				<div class="showcase-caption">
 					Prof. Krishna Rao Jaisim <a href="http://www.flickr.com/photos/tedxnitcalicut/6900663505">Photo from flickr</a>
@@ -82,6 +83,7 @@ $(document).ready(function()
 
 		</div>
 	</div>
+	</div>
 </div>
 </div>
 
@@ -104,27 +106,27 @@ $(document).ready(function()
 	<div class="content">
 	<div id="cursive">
 		
-		<h3> What is <span id="red"> TEDx </span> ? </h3>
+		<h3> What is <span class="red" id="red"> TEDx </span> ? </h3>
 		
 		<p>In the spirit of ideas worth spreading, TED has created a program called TEDx.
 		 TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.
 		  Our event is called TEDxNITCalicut, where x = independently organized TED event.
 		   At our TEDxNITCalicut event, TEDTalks video and live speakers will combine to spark deep discussion and connection in a small group.
-		    The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized </p>
+		    The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized. </p>
 	</div>
 	</div>
 </div>
 <div class="blog-home">
 	<div class="content">
 	<div id="cursive" >
-	<h3><span id="red"><a href="{% url 'blogs.views.post' post.pk  %}">{{post.title}}</a></span></h3>
+	<h3><span id="red"><a href="{% url blogs.views.post post.pk  %}">{{post.title}}</a></span></h3>
 			{% autoescape off %}  
-					<div id="post_body">	{{ post.body|linebreaks|truncatewords:80}} <span id="red"> <a class="readmore" href="{% url 'blogs.views.post' post.pk  %}">read more..</a> </span> </div> 
+					<div id="post_body">	{{ post.body|linebreaks|truncatewords:50}} <span id="red"> <a class="readmore" href="{% url blogs.views.post post.pk  %}">read more..</a> </span> </div> 
 			{% endautoescape %}
 		<div id="post_footer">
-										<p class="detail">Posted By <a href="{% url 'blogs.views.list_user' post.user_id  %}">{{post.user_id.get_full_name}} </a> on {{post.created}}.</p>
+										<p class="detail">Posted By <a href="{% url blogs.views.list_user post.user_id  %}">{{post.user_id.get_full_name}} </a> on {{post.created}}.</p>
 		
-										<p> <span id="readmore_link"><a class="readmore" href="/blog/"><b>View Blog</b></a></span> </p>
+										<p> <span id="readmore_link"><a class="readmore" href="/blog/">View Blog </a></span> </p>
 										
 		</div>
 	</div>

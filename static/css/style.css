@@ -11,7 +11,6 @@ background-repeat: repeat;}
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 900px;
 	height: 100%;
 	}
 	
@@ -22,9 +21,7 @@ background-repeat: repeat;}
 	position: relative;
 	width: 600px;
 	display: block;
-	min-height: 900px;
 	height: 100%;
-		
 		}
 	
 	#header
@@ -37,10 +34,7 @@ height: 650px;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
-	background-image:url('../images/home/wbck.png');
-	background-position: left top;
-	background-size: 40% 100%;
-	background-repeat: no-repeat;	
+
 	 background-color: #000;
 	 height: 500px;
 	 width: 100%;
@@ -48,17 +42,15 @@ height: 650px;
 
 
 .center
-{
-	
+	{
 	width: 760px;
 	margin-left: auto;
 	margin-right: auto;
-		
 	}
 
 .slideshow
 {
-	top: 7.5%;
+	top: 45px;
 	height: 380px;
 	width: 740px;
 	position: absolute;
@@ -81,7 +73,20 @@ body
   margin-bottom: 56px;
 	}
 	
+	.bgwrapper
+{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	height: 100%;
+	width: 1284px;
+	background-image:url('../images/home/wbck.png');
+	background-size: 320px 320px;
+	background-position: left top;
+	background-repeat: no-repeat;
 	
+	}
 	
 	
 #content-wrapper{	

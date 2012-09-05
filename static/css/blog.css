@@ -91,4 +91,10 @@ div {
 	text-decoration: none;
 }
 
+.captcha
+{
+	display: block;
+	height: 300px;
+	}
+
 

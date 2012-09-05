@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+ #   'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 TINYMCE_JS_URL = path.join(STATIC_URL, "js/tiny_mce/tiny_mce.js")
@@ -103,9 +103,11 @@ TINYMCE_JS_ROOT = path.join(STATIC_URL, "js/tiny_mce")
 
 TINYMCE_DEFAULT_CONFIG = {
       'mode' : "textareas",
-      'plugins' : "fullpage",
-      'theme_advanced_buttons3_add': "fullpage",
 		'theme': 'advanced',
+		'plugins' : "media,autoresize,preview",
+      'theme_advanced_buttons1_add' : "media,preview",
+      'plugin_preview_width' : "500",
+      'plugin_preview_height' : "600",
 		'theme_advanced_toolbar_location' : "top",
 		'theme_advanced_toolbar_align' : "left",
 		'theme_advanced_statusbar_location' : "bottom",
@@ -158,10 +160,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aboutus',
+    'filebrowser',
+    'grappelli',
     'contactus',
     'blogs',
     'homepage',
     'nominations',
+    'recaptchawidget',
+    
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -13,8 +13,15 @@ color: red;
 {
 	padding-bottom: 1em;
 	display: block;
-	width: 500px;
+	width: auto;
 }
+
+.form-itemt
+{
+	padding-bottom: 2em;
+	display: block;
+	width: auto;
+	}
 
 .input
 {
@@ -28,17 +35,31 @@ display: inline-block;
 
 .form-item .errors
 {
-margin-left: 170px;
+margin-left: 185px;
 padding-left: 10px;	
+	}
+
+.form-itemt .errors
+{
+padding-left: 20px;	
 	}
 
 .form-item label
 {
 	padding-bottom: .1em;
-	font:12px arial,sans-serif;
-	font-weight : inherit;
+	font-weight : normal;
+	text-align: right;
+	font: 12px/12px Arial,Helvetica,sans-serif;
 	display: inline-block;
-	width: 170px;
+	width: 185px;
+}
+
+
+.form-itemt label
+{
+	font: 12px/12px Arial,Helvetica,sans-serif;
+	padding-bottom: .1em;
+	font-weight : bold;
 }
 
 .form-item .description
@@ -48,13 +69,28 @@ padding-left: 10px;
 	font: 10px/10px Arial,Helvetica,sans-serif;
 }
 
+.form-itemt .description
+{
+	padding-bottom: .1em;
+	margin-left: 10px;
+	font-weight: lighter;
+	font: 12px/12px Arial,Helvetica,sans-serif;
+}
+
 fieldset
 {
 border-radius:5px;	
 margin-bottom: 50px;
 	}
 	
-	
+.captcha
+{
+min-height: 100px;
+display: block;
+position: relative;
+height: 100px;
+
+}
 
 .submit-button {
 	border-color: #777;
@@ -70,7 +106,7 @@ margin-bottom: 50px;
 	border-radius: 8px;
 	color: #e80c0c;
 	font-size: 18px;
-	margin:  50px 0 10px 10px;
+	margin:  20px 0 10px 10px;
 	padding: 3px 3px 3px 3px;
 	font-family: Georgia, Serif;
 	text-decoration: none;
@@ -80,7 +116,6 @@ margin-bottom: 50px;
 }
 .submit-button:hover {
 	border-color: #fff;
-	border-width: medium;
 	background: #000203;
 	color: #e30000;
 }
@@ -91,10 +126,10 @@ margin-bottom: 50px;
 
 textarea
 {
-width: 400px;
-border-color: #999;
-border-left-width: 2px;
-border-top-width: 2px;
+width: 80%;
+margin-right: 20px;
+margin-left: 10px;
+border-radius: 5px;
 	
 	}
 	

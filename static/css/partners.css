@@ -1,0 +1,24 @@
+#space
+{
+
+}
+
+#content .wrapper
+{
+	padding-bottom: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 500px;
+	min-height: 100%;
+}
+
+
+
+#box
+{
+display: block;
+height: 150px;
+position: relative;
+margin: 5px;
+padding: 5px;
+}

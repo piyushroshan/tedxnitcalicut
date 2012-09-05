@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Nomination Form{% endblock %}
+{% block title %}Nomination Form |{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{{STATIC_URL}}css/nominations.css" />
@@ -27,28 +27,28 @@
             <div class="fullname">
             <form action="/nominate/submit/" method="POST">{% csrf_token %}
 				<div class="field-items">
-					<div class="field-item even" property="content:encoded"><p>We are now accepting nominations for speakers, entertainers and performers for the TEDxNITCalicut 2013 event. If you know a dynamic speaker who has an idea to share and knows how to leave audience in a state of astonishment., please do write to us.</p>
-					<fieldset class="webform-component-fieldset form-wrapper" id="webform-component-nominee-information"><legend><span class="fieldset-legend">Your Information</span></legend>
+					<div  property="content:encoded"><p>We are now accepting nominations for speakers, entertainers and performers for the TEDxNITCalicut 2013 event. If you know a dynamic speaker who has an idea to share and knows how to leave audience in a state of astonishment., please do write to us.</p>
+					<fieldset ><legend><span >Your Information</span></legend>
 				
 				
 					<div class="fieldset-wrapper">
 
 								<div class="form-item" id="full-name-wrapper">
-									<label for="full-name">Full Name of the Nominator: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="full-name">Full Name of the Nominator: <span class="form-required" title="This field is required."> *</span></label>
 									<div class="input" id="full-name">{{form.nominator_name}}</div>
 									{% if form.nominator_name.errors %}
        									 <div class="errors">{{ form.nominator_name.errors.as_text }}</div>
     							  {% endif %}
 								</div>
 								<div class="form-item" id="email-wrapper">
-									<label for="email">Email:*</label>
+									<label for="email">Email: <span class="form-required" title="This field is required."> *</span></label>
 									<div class="input"  id="email">{{form.nominator_email}}</div>
 									{% if form.nominator_email.errors %}
        									 <div class="errors">{{ form.nominator_email.errors.as_text }}</div>
     							  {% endif %}
 								</div>
 								<div class="form-item" id="phone-number-wrapper">
-									<label for="phone-number">Phone Number:* </label>
+									<label for="phone-number">Phone Number: <span class="form-required" title="This field is required."> *</span> </label>
 									<div class="input"  id="phone-number">{{form.nominator_phone}}</div>
 								{% if form.nominator_phone.errors %}
        									 <div class="errors">{{ form.nominator_phone.errors.as_text }}</div>
@@ -63,14 +63,14 @@
 							<div class="fieldset-wrapper">
 
 								<div class="form-item" id="full-name-wrapper">
-									<label for="full-name">Full Name of the Nominee: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="full-name">Full Name of the Nominee: <span class="form-required" title="This field is required."> *</span></label>
 									<div class="input"  id="full-name">{{form.fullname}}</div>
 									{% if form.fullname.errors %}
        									 <div class="errors">{{ form.fullname.errors.as_text }}</div>
     							  {% endif %}
 								</div>
 								<div class="form-item" id="email-wrapper">
-									<label for="email">Nominee's Email: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="email">Nominee's Email: <span class="form-required" title="This field is required."> *</span></label>
 									<div class="input"  id="email">{{form.email}}</div>
 									{% if form.email.errors %}
        									 <div class="errors">{{ form.email.errors.as_text }}</div>
@@ -84,15 +84,15 @@
     							  {% endif %}
 								</div>
 								<div class="form-itemt" id="descriptions-wrapper">
-									<label for="descriptions">Tell us briefly about the speaker: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="descriptions">Tell us briefly about the speaker: <span class="form-required" title="This field is required."> *</span></label>
 									<div class="description">Occupation? Honors or Distinctions? Recent Work?</div>
-									<div id="descriptions"><div class="textarea">{{form.description}}</div></div>
+									<div id="descriptions" ><div class="textarea">{{form.description}}</div></div>
 									{% if form.description.errors %}
        									 <div class="errors">{{ form.description.errors.as_text }}</div>
     							  {% endif %}
 								</div>
 								<div class="form-itemt" id="support-wrapper">
-									<label for="support">What is the presenter's "Idea Worth Spreading"? What is unique about this performer?: <span class="form-required" title="This field is required.">*</span></label>
+									<label for="support">What is the presenter's "Idea Worth Spreading"? What is unique about this performer?<span class="form-required" title="This field is required."> *</span></label>
 									<div class="description">Why should TEDxNITCalicut experience this speaker?</div>
 									<div id="support"><div class="textarea">{{form.support}} </div></div>
 									{% if form.support.errors %}
@@ -110,18 +110,11 @@
 								
 
 								<div class="form-itemt" id="reference-wrapper">
+								<label for="captcha">Prove you are human: </label>
 								<div class="captcha" id="captcha">
-								<script type="text/javascript"
-    							 src="http://www.google.com/recaptcha/api/challenge?k=6Let5NUSAAAAAOW6otujPq7PCR2WjcmXXgG8wc9b">
- 									 </script>
- 					 <noscript>
-  					   <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Let5NUSAAAAAOW6otujPq7PCR2WjcmXXgG8wc9b"
-    				     height="300" width="500" frameborder="0"></iframe><br>
-  						   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-    					 </textarea>
-    					 <input type="hidden" name="recaptcha_response_field"
-    							     value="manual_challenge">
- 									 </noscript>
+								{{form.recaptcha}}								
+            <div class="errors">{% if form.recaptcha.errors %} {{form.recaptcha.errors.as_text}}  {% endif %}</div>
+        
 								</div>
 								</div>
 								<button class="submit-button" type="submit" value="submit">
@@ -129,6 +122,21 @@
 								</button>
 							</div>
                         </fieldset>
+
+			                    <script type="text/javascript">
+			      
+										$('.textarea').focus(function(){
+											   			  if($(this).val() == defaultText){
+											        		 $(this).val("");
+											     }
+											});
+											$('#textarea').blur(function(){
+											     	 if($(this).val() == "" || $(this).val() == defaultText){
+											          $(this).val(defaultTextAreaValue);
+											      }
+											});
+
+			                     </script>
 					</div>
 
 				</div>

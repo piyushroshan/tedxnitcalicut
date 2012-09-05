@@ -29,6 +29,12 @@ def organisers(request):
 	return HttpResponse(http)
 
 
+def partners(request):
+	t = get_template('partners.html') 
+	c = RequestContext(request,{}) 
+	http = t.render(c)
+	return HttpResponse(http)
+
 def credits(request):
 	t=get_template('about/credits.html')
 	c=RequestContext(request,{}) 

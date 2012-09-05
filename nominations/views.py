@@ -12,7 +12,11 @@ from django.contrib.auth.decorators import login_required
 
 def nominater(request):
 	t=get_template('nominations/nomination.html')
-	c=RequestContext(request,{'form':NominationForm()})
+	if request.user.is_authenticated():
+		form = NominationFormAuth()
+	else:
+		form = NominationForm()
+	c=RequestContext(request,{'form':form})
 	html = t.render(c)
 	return HttpResponse(html)
 

@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
 <meta charset=”UTF-8”>
+<meta property="og:title" content="TEDx NITCalicut"/>
+    <meta property="og:type" content=""/>
+    <meta property="og:url" content="http://tedxnitcalicut.com/"/>
+    <meta property="og:image" content="http://tedxnitcalicut.com/images/logo.png"/>
+    <meta property="og:site_name" content="Organisation"/>
+    <meta property="og:description"
+          content="TEDxNITCalicut is an independently organized conference brought forth by a group of diverse and passionate TED enthusiasts under the exclusive license from TED.
+           The conference gathers some active thinkers and doers from entrepreneurs to artists, technocrats to economists and is all about ideas: inspiring, discovering, generating and sharing “Ideas Worth Spreading” in different areas. 
+          We believe in sharing the platform with people with great ideas that can not only inspire but also bring fresh perspectives before us to make this world a better place to live.
+          "/>
 <link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico" type="image/vnd.microsoft.icon" />
 
-<title>{% block title %}{% endblock %} | TEDxNITCalicut</title>
+<title>{% block title %}{% endblock %} TEDxNITCalicut </title>
+
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
 
 <link rel="stylesheet" href="{{STATIC_URL}}css/hf.css" />
@@ -20,7 +31,6 @@
 			}).mouseout(function(){
 			$(this).children('ul').hide();
 			})
-	  
 	});
 </script>
 </head>
@@ -31,10 +41,13 @@
 
 {% block header %}
 	<div id="header">
+		
+		<div id="menud">
+		<div class="event"> <h2>TEDxNITCalicut 2013 coming soon</h2> </div>
 		<div id="logo">
-				<img src="{{STATIC_URL}}images/logo.png" border="0" width="100%" height="100em"></img>
+				<img src="{{STATIC_URL}}images/logo.png" border="0" width="200px" height="100px"></img>
 		</div>
-		<div>
+		<div id="menuf">
 		<nav>
 			<ul id="menu">
 				<li><a href="/">Home</a></li>
@@ -55,7 +68,7 @@
 			</ul>
 		</nav>
 		</div>
-		
+		</div>
 {% block slideshow %}
 {% endblock %}
 		
@@ -74,7 +87,14 @@
 <div id="body">
 
 
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=260699714041603";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 					
 
  
@@ -85,6 +105,7 @@
 					<ul id="user_id"> {{user.get_full_name}}
 									{% if user.is_authenticated %}
 										<li id="red"> <a href="/accounts/logout/">Log Out</a> </li>
+										<li id="red"> <a href="/admin/">Admin</a> </li>
 										{%else%}
 											<li id="red"> <a href="/accounts/login/">Log In</a> </li>
 									{%endif%}
@@ -100,10 +121,10 @@
 <!--//--><![CDATA[// ><!--
 
 new TWTR.Widget({
-  version: 2,
+  version: 3,
   type: 'search',
   search: 'tedxnitc OR tedxnitcalicut',
-  interval: 6000,
+  interval: 60000,
   title: 'Excitement is in the air!',
   subject: 'What\'s the buzz?',
   width: 'auto',
@@ -116,11 +137,12 @@ new TWTR.Widget({
     tweets: {
       background: '#ffffff',
       color: '#444444',
-      links: '#ff2b06'
+      links: '#ff2b06',
+      position: 'absolute',
     }
   },
   features: {
-    scrollbar: false,
+    scrollbar: true,
     loop: true,
     live: true,
     hashtags: true,
@@ -144,7 +166,17 @@ append();
 }
       
       
-       </script>
+ </script>
+ <div id="tweetmenu">
+ <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tedxnitcalicut.com" data-via="TEDxNITCalicut" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+ </div>
+ 	<div id="fbmenu">
+<div class="fb-like" data-href="http://tedxnitcalicut.com" 
+data-send="true" data-layout="button_count" data-width="200" 
+data-show-faces="true" data-colorscheme="light" data-font="arial"></div>
+</div>
        </div>
        
  </div> 
@@ -160,47 +192,43 @@ append();
 
 
 <div id="footer">
-<div class="footercon">
+<div class="footercontainer">
 <div class="footer">
 
 
-   <div class="col1"><span>Socialize with us</span>
+   <div class="col1">
 	  <ul>
-     <li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /> Subscribe Us</a> </li>
-     <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  /> Follow Us</a> </li>
-     <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png /> Watch Us</a> </li>
-      <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  /> Add Us</a> </li>
-     <li> <a href="http://www.flickr.com/photos/tedxnitcalicut/7034667221/in/photostream"> <img src={{STATIC_URL}}images/socials/Flickr.png  /> </a> </li>
+    <li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /><span class="texts">Subscribe Us</span>  </a> </li>
+     <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  /><span class="texts">Follow Us  </span> </a> </li>
+     <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png /><span class="texts">Watch Us  </span>  </a> </li>
+      <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  /><span class="texts">Add Us </span> </a> </li>
      </ul>
    </div>
-   	 <div class="col2">
+
+
+	 <div class="col2">
+	   		<div class="licence">All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>	
+			<div class="licencet">This independent TEDx event is operated under license from TED</div>	
+	</div>
+
+	   	 <div class="col3">
    	     <ul>
     <li>
-		<a href="/privacy-policy">Privacy Policy</a></li>
-	<li>
-		<a href="/credits" title="">Credits</a></li>
-	</ul>
-	<ul>
-	{% if user.is_authenticated %}
-		<li> <a href="/accounts/logout/">Log Out {{user.get_full_name}}</a></li>
-		<li> <a href="/accounts/profile/">Account</a></li>
-		{%else%}
-			<li> <a href="/accounts/login/">Log In</a></li>
+		<a href="/privacy-policy">Privacy Policy</a></li><hr></hr>
+		<li>
+			<a href="/credits" title="">Credits</a></li><hr></hr>
+			{% if user.is_authenticated %}
+		<li> <a href="/accounts/logout/">Log Out</a></li>
+			{%else%}
+		<li> <a href="/accounts/login/">Log In</a></li>
 			{%endif%}
-	</ul>
+			<hr></hr>
+		</ul>
    </div>
 
-  <div class="col3">
-   		 <div class="licence">All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>	
-<div class="licencet">This independent TEDx event is operated under license from TED</div>	
-	</div>
-
     <div class="col4">
-    
-    <div class="wrapcol">
-   	 <div>&copy; TEDxNITCalicut </div>
-		<div>Powered by <a href="#">Django</a></div>	
-	</div>
+   	 <div class="copyright">&copy; TEDxNITCalicut 2012 </div>
+		<div class="powerby">Powered by <a href="#">Django</a></div>	
 	</div>
 
   
