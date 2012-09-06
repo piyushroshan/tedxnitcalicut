@@ -157,6 +157,12 @@ text-shadow:0px 0px 3px #fff;
 	position: relative;
 }
 
+
+.active a{
+color: red;
+}
+
+
 #menu a{
 	float: left;
 	height: 25px;
@@ -165,8 +171,9 @@ text-shadow:0px 0px 3px #fff;
 	text-transform: uppercase;
 	font: bold 12px/25px Arial, Helvetica;
 	text-decoration: none;
-	text-shadow: 0 1px 0 #ff2b00;
+	text-shadow: 0 1px 0 #ff2b06;
 }
+
 
 #menu li:hover > a{
 	color: #ff2b06;
@@ -293,6 +300,10 @@ width: 150px;
 	clear: both;
 	height: 0;
 }
+
+
+
+
 
 * html #menu             { zoom: 1; } /* IE6 */
 *:first-child+html #menu { zoom: 1; } /* IE7 */
@@ -573,7 +584,7 @@ text-align: left;
 
 .powerby
 {
-margin-top: 30px;
+margin-top: 20px;
 margin-left: 15px;	
 display: block;
 	}

@@ -2,13 +2,17 @@
 {% block title %}{% endblock %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}slideshow/css/style1.css" />
 <script type="text/javascript" src="{{STATIC_URL}}slideshow/jquery.aw-showcase.js"></script>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}slideshow/css/style1.css" />
+
 
 
 
 
 {% endblock %}
+
+
+{% block m_home %} class="active" {% endblock %}
 
 {% block slideshow %}
 <div class="black">

@@ -50,20 +50,20 @@
 		<div id="menuf">
 		<nav>
 			<ul id="menu">
-				<li><a href="/">Home</a></li>
+				<li ><a {% block m_home %} {% endblock %} href="/">Home</a></li>
 
-				<li><a href="/organisers/">Organisers</a></li>
-				<li><a href="/blog/">Blog</a></li>
-				<li><a href="/nominate/">Nominate</a></li>
+				<li {% block m_organisers %} {% endblock %}><a href="/organisers/">Organisers</a></li>
+				<li {% block m_blog %} {% endblock %}><a href="/blog/">Blog</a></li>
+				<li {% block m_nominate %} {% endblock %}><a href="/nominate/">Nominate</a></li>
 
-				<li><a >About</a>
+				<li {% block m_about %} {% endblock %}><a >About</a>
 					<ul>
 					<li><a href="/about/ted/">TED</a></li>
 					<li><a href="/about/tedx/">TEDx</a></li>
 					<li><a href="/about/tedxnitcalicut/">TEDxNITCalicut</a></li>
 					</ul>
 				</li>
-				<li> <a href="/contactus/">Contact us </a> </li>
+				<li {% block m_contact %} {% endblock %}> <a href="/contactus/">Contact us </a> </li>
 
 			</ul>
 		</nav>

@@ -47,21 +47,32 @@
 						<div id="cname_wrapper" >
 							<label for="id_name"> Name :	</label>
 							<div id="cname"> {{form.name}} </div>
+							{% if form.name.errors %}
+       									 <div class="errors">{{ form.name.errors.as_text }}</div>
+    							  {% endif %}
 						</div>
 						<div id="cemail_wrapper">
 							<label for="id_email">Email : </label>
 							<div id="cemail" > {{form.email}} </div>
+							{% if form.email.errors %}
+       									 <div class="errors">{{ form.email.errors.as_text }}</div>
+    							  {% endif %}
 						</div>
 						<div id="cbody_wrapper">
 							<label for="id_body">Your Message : </label>
 							<div id="cbody"> {{form.body}} </div>
+							{% if form.body %}
+       									 <div class="errors">{{ form.body.errors.as_text }}</div>
+    							  {% endif %}
 						</div>
 						<div class="captcha" id="captcha">
 								{{ form.recaptcha }}
-								{% if form.recaptcha.errors %}<div class="errors">{{ form.recaptcha.errors|join:", " }}</div>{% endif %}<br />
+								{% if form.recaptcha.errors %}<div class="errors">{{ form.recaptcha.errors.as_text }}</div>{% endif %}<br />
 								</div>
 					<div class="submit-button">
-							<input type="submit" value="Submit">
+							<button class="submit-button" type="submit" value="submit">
+                                    <span>Submit</span>
+                                </button>
 					</div>
 					</div>
 				</form>

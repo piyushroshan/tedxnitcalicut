@@ -9,8 +9,11 @@
 
 <div id="content">
 <div class="wrapper">
+
 <div class="contactform">
-<fieldset ><legend><span >Contact US</span></legend>
+
+<fieldset ><legend><span ></span></legend>
+    <h1 class="title">Contact Us</h1>
     {% if errors %}
         <ul>
             {% for error in errors %}
@@ -21,15 +24,20 @@
     
 <table>
     <form action="/contactus/submit/" method="post">{% csrf_token %}
-	<tr><td>Name:<sup>*</sup> </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
-	<tr><td>E-mail:<sup>*</sup></td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
-	<tr><td>Phone :</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
-        <tr><td>Subject:<sup>*</sup></td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
-        <tr><td >Your Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
+	<tr><td class="label">Name:<sup>*</sup> </td><td><input type="text" name="name" value="{{ name }}"></td></tr>
+	<tr><td class="label">E-mail:<sup>*</sup></td><td> <input type="text" name="email" value="{{ email }}"></td></tr>
+	<tr><td class="label">Phone :</td><td> <input type="text" name="phone" value="{{ phone }}"></td></tr>
+        <tr><td class="label">Subject:<sup>*</sup></td><td> <input type="text" name="subject" value="{{ subject }}"></td></tr>
+        <tr><td class="label" >Your Message :<sup>*</sup></td><td> <textarea name="message" rows="10" cols="50">{{ message }}</textarea></td></tr>
         {% if not user.is_authenticated %}
         <tr><td >{{ ques }}<sup>*</sup></td><td><input type="text" name="answer" ></td></tr>
         {% endif %}
-         <tr><td></td><td><input type="submit" value="Submit"></td></tr>
+         <tr><td></td><td>
+        <button class="submit-button" type="submit" value="submit">
+                                    <span>Submit</span>
+                                </button>
+
+        </td></tr>
     </form>
 </table>
 </fieldset>

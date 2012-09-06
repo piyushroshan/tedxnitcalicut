@@ -58,11 +58,7 @@ def post(request, pk):
 			post = Blogpost.objects.get(pk = int(pk))
 			comments = Comment.objects.filter(post=post)
 			t=get_template('blogs/post.html')
-			if request.user.is_authenticated():
-				formc = CommentFormAuth(request.POST)
-			else:
-				formc = CommentForm(request.POST)
-			c = RequestContext(request, {'post':post, 'comments' : comments, 'form':formc })
+			c = RequestContext(request, {'post':post, 'comments' : comments, 'form':form })
 			html= t.render(c)
 			return HttpResponse(html)
 	else:

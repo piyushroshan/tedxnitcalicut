@@ -30,5 +30,63 @@ textarea
 {
 width: 350px;
 height: 200px;
-	
-	}
+border-radius: 5px;
+border: 1px solid #999;
+}
+
+input
+{
+border: 1px solid #999;
+border-radius: 2px;
+width: 200px;
+}
+fieldset {
+border: 0px solid #999;
+border-radius: 8px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+background: url(fieldsetbg.jpg) no-repeat left top;
+}
+
+.label
+{
+	text-align: right;
+	padding-right: 10px;
+}
+
+.title
+{
+	margin-left: 100px;
+}
+
+.submit-button {
+	border-color: #777;
+	background: #000000;
+	background-image:url('../images/home/wbck.png');
+	background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
+	background: -webkit-linear-gradient(top, #000000, #000000);
+	background: -moz-linear-gradient(top, #000000, #000000);
+	background: -ms-linear-gradient(top, #000000, #000000);
+	background: -o-linear-gradient(top, #000000, #000000);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	color: #e80c0c;
+	font-size: 18px;
+	margin:  20px 0 10px 10px;
+	padding: 3px 3px 3px 3px;
+	font-family: Georgia, Serif;
+	text-decoration: none;
+	vertical-align: middle;
+	width:100px;
+	height:auto;
+}
+.submit-button:hover {
+	border-color: #fff;
+	background: #000203;
+	color: #e30000;
+}
+.submit-button:active {
+	border-color: #fff;
+	background: #0d1012;
+}
