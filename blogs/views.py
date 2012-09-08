@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 
 def list(request):
 	"""Main listing."""
-	posts = Blogpost.objects.all().order_by("created")
+	posts = Blogpost.objects.all().order_by("-created")
 	paginator = Paginator(posts, maxpost )
 	try:
 		 page = int(request.GET.get("page", '1'))
