@@ -18,6 +18,7 @@ RECAPTCHA_PRIVATE_KEY = '6Let5NUSAAAAADXx-OIJHzZREb2SSrGaLwdG8ynO'
 RECAPTCHA_PUBLIC_KEY = '6Let5NUSAAAAAOW6otujPq7PCR2WjcmXXgG8wc9b'
 
 
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -167,6 +168,7 @@ INSTALLED_APPS = (
     'homepage',
     'nominations',
     'recaptchawidget',
+    'sorl.thumbnail',
     
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',

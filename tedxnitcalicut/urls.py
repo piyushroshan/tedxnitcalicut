@@ -4,12 +4,14 @@ from django.contrib import admin
 admin.autodiscover()
 from django.conf.urls.defaults import *
 from filebrowser.sites import site
+from tedxnitcalicut import settings
 
 
 
 
 urlpatterns = patterns('',
     url(r'^$','homepage.views.main',name='home'),
+    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^organisers/$','aboutus.views.organisers'),
     url(r'^about/ted/$','aboutus.views.aboutted'),
     url(r'^about/tedx/$','aboutus.views.abouttedx'),
@@ -33,7 +35,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/filebrowser/', include(site.urls)),
+   
+)
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),
 )
 
 
@@ -42,3 +49,4 @@ urlpatterns += patterns('blogs.views',
     url(r"^blog/(\d+)/$", 'post'),
     url(r"^blog/(?P<uid>[-\w]+)/$", 'list_user'),
 )
+
