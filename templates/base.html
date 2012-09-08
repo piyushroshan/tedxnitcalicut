@@ -17,11 +17,11 @@
 <title>{% block title %}{% endblock %} TEDxNITCalicut </title>
 
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/scroll.js"></script>
+
 <link rel="stylesheet" href="{{STATIC_URL}}css/hf.css" />
 
 {% block head %} {% endblock %}
-
+<script type="text/javascript" src="{{STATIC_URL}}js/scroll.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -50,10 +50,10 @@
 		<div id="menuf">
 		<nav>
 			<ul id="menu">
-				<li ><a {% block m_home %} {% endblock %} href="/">Home</a></li>
+				<li  {% block m_home %} {% endblock %}><a href="/">Home</a></li>
 
 				<li {% block m_organisers %} {% endblock %}><a href="/organisers/">Organisers</a></li>
-				<li {% block m_blog %} {% endblock %}><a href="/blog/">Blog</a></li>
+				<li {% block m_contact %} {% endblock %}> <a href="/contactus/">Contact us </a> </li>
 				<li {% block m_nominate %} {% endblock %}><a href="/nominate/">Nominate</a></li>
 
 				<li {% block m_about %} {% endblock %}><a >About</a>
@@ -63,7 +63,8 @@
 					<li><a href="/about/tedxnitcalicut/">TEDxNITCalicut</a></li>
 					</ul>
 				</li>
-				<li {% block m_contact %} {% endblock %}> <a href="/contactus/">Contact us </a> </li>
+				<li {% block m_blog %} {% endblock %}><a href="/blog/">Blog</a></li>
+				
 
 			</ul>
 		</nav>
@@ -100,88 +101,93 @@
  
         
    <div id="wrappernew">
-  <div id="right-menu">
-	<div id="user_menu">
-					<ul id="user_id"> {{user.get_full_name}}
-									{% if user.is_authenticated %}
-										<li id="red"> <a href="/accounts/logout/">Log Out</a> </li>
-										<li id="red"> <a href="/admin/">Admin</a> </li>
-										{%else%}
-											<li id="red"> <a href="/accounts/login/">Log In</a> </li>
-									{%endif%}
-					</ul>
-	</div>
 
 
-
-<div id="twitter_div">
-<script src="{{STATIC_URL}}js/twitter.js"> </script>
-<script type="text/javascript" >
-
-<!--//--><![CDATA[// ><!--
-
-new TWTR.Widget({
-  version: 3,
-  type: 'search',
-  search: 'tedxnitc OR tedxnitcalicut',
-  interval: 60000,
-  title: 'Excitement is in the air!',
-  subject: 'What\'s the buzz?',
-  width: 'auto',
-  height: 300,
-  theme: {
-    shell: {
-      background: '#000000',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#444444',
-      links: '#ff2b06',
-      position: 'absolute',
-    }
-  },
-  features: {
-    scrollbar: true,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    toptweets: true,
-    behavior: 'default'
-  }
-}).render().start();
-
-//--><!]]>
-
-if (!browser.ie || isLoaded || (document.readyState === "complete")) {
-append();
-}
-else {
-window.attachEvent('onload', function() {
-isLoaded = true;
-append();
-});
-}
-      
-      
- </script>
- <div id="tweetmenu">
- <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tedxnitcalicut.com" data-via="TEDxNITCalicut" data-dnt="true">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
- 
- </div>
- 	<div id="fbmenu">
-<div class="fb-like" data-href="http://tedxnitcalicut.com" 
-data-send="true" data-layout="button_count" data-width="200" 
-data-show-faces="true" data-colorscheme="light" data-font="arial"></div>
-</div>
-       </div>
-       
- </div> 
+		
  {% block content %}
   {% endblock %}
+
+<div id="right-menu">
+				<div id="user_menu">
+								<ul id="user_id"> {{user.get_full_name}}
+												{% if user.is_authenticated %}
+													<li id="red"> <a href="/accounts/logout/">Log Out</a> </li>
+													<li id="red"> <a href="/admin/">Admin</a> </li>
+													{%else%}
+														<li id="red"> <a href="/accounts/login/">Log In</a> </li>
+												{%endif%}
+								</ul>
+				</div>
+
+
+
+			<div id="twitter_div">
+			<script src="{{STATIC_URL}}js/twitter.js"> </script>
+			<script type="text/javascript" >
+
+			<!--//--><![CDATA[// ><!--
+
+			new TWTR.Widget({
+			  version: 3,
+			  type: 'search',
+			  search: 'tedxnitc OR tedxnitcalicut',
+			  interval: 60000,
+			  title: 'Excitement is in the air!',
+			  subject: 'What\'s the buzz?',
+			  width: 'auto',
+			  height: 300,
+			  theme: {
+			    shell: {
+			      background: '#000000',
+			      color: '#ffffff'
+			    },
+			    tweets: {
+			      background: '#ffffff',
+			      color: '#444444',
+			      links: '#ff2b06',
+			      position: 'absolute',
+			    }
+			  },
+			  features: {
+			    scrollbar: true,
+			    loop: true,
+			    live: true,
+			    hashtags: true,
+			    timestamp: true,
+			    avatars: true,
+			    toptweets: true,
+			    behavior: 'default'
+			  }
+			}).render().start();
+
+			//--><!]]>
+
+			if (!browser.ie || isLoaded || (document.readyState === "complete")) {
+			append();
+			}
+			else {
+			window.attachEvent('onload', function() {
+			isLoaded = true;
+			append();
+			});
+			}
+			      
+			      
+			 </script>
+						 <div id="tweetmenu">
+								 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tedxnitcalicut.com" data-via="TEDxNITCalicut" data-dnt="true">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						 </div>
+					 <div id="fbmenu">
+						<div class="fb-like" data-href="http://tedxnitcalicut.com" 
+						data-send="true" data-layout="button_count" data-width="200" 
+						data-show-faces="true" data-colorscheme="light" data-font="arial">
+						</div>
+					</div>
+			  </div>
+			       
+		</div> 
+  
  </div>
        
 <div id="info">
@@ -202,39 +208,49 @@ data-show-faces="true" data-colorscheme="light" data-font="arial"></div>
 
 
    <div class="col1">
+   	<div class="col1wrap">
+   	<div class="social1">
 	  <ul>
-    <li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /><span class="texts">Subscribe Us</span>  </a> </li>
-     <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  /><span class="texts">Follow Us  </span> </a> </li>
-     <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png /><span class="texts">Watch Us  </span>  </a> </li>
-      <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  /><span class="texts">Add Us </span> </a> </li>
-     </ul>
-   </div>
+    		<li> <a href="https://www.facebook.com/TEDxNITCalicut?sk=wall"><img src={{STATIC_URL}}images/socials/FaceBook.png  /><span class="texts">Subscribe Us</span>  </a> </li>
 
+    		 <li> <a href="https://twitter.com/TEDxNITCalicut">  <img src={{STATIC_URL}}images/socials/Twitter.png  /><span class="texts">Follow Us  </span> </a> </li>
+     		  </ul>
+   </div>
+   <div class="social2">
+  	  <ul >
+  	   <li> <a href="http://www.youtube.com/user/tedxnitcalicut"> <img src={{STATIC_URL}}images/socials/Youtube.png /><span class="texts">Watch Us  </span>  </a> </li>
+  	    <li> <a href="https://plus.google.com/u/0/114378286842619164063/">	<img src={{STATIC_URL}}images/socials/Google.png  /><span class="texts">Add Us </span> </a> </li>
+  	   </ul>
+     </div>
+     </div>
+   </div>
 
 	 <div class="col2">
-	   		<div class="licence">All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>	
-			<div class="licencet">This independent TEDx event is operated under license from TED</div>	
+		   		<div class="licence">
+					<div>This independent TEDx event is operated under license from TED.</div>	
+		   			<div class="small">All content on this website is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License unless otherwise noted.</div>
+				
+			</div>
+	
 	</div>
 
-	   	 <div class="col3">
+	  <div class="col3">
    	     <ul>
-    <li>
-		<a href="/privacy-policy">Privacy Policy</a></li><hr></hr>
-		<li>
-			<a href="/credits" title="">Credits</a></li><hr></hr>
-			{% if user.is_authenticated %}
-		<li> <a href="/accounts/logout/">Log Out</a></li>
-			{%else%}
-		<li> <a href="/accounts/login/">Log In</a></li>
-			{%endif%}
-			<hr></hr>
-		</ul>
-   </div>
+		    <li>
+				<a href="/privacy-policy">Privacy Policy</a></li>
+				<li>
+					<a href="/credits" title="">Credits</a></li>
+					{% if user.is_authenticated %}
+				<li> <a href="/accounts/logout/">Log Out</a></li>
+					{%else%}
+				<li> <a href="/accounts/login/">Log In</a></li>
+					{%endif%}
+				</ul>
+	  </div>
+<div class="copyright">&copy; TEDxNITCalicut 2012 &nbsp;&nbsp;&nbsp;	Powered by <a href="#">Django</a></div>
 
-    <div class="col4">
-   	 <div class="copyright">&copy; TEDxNITCalicut 2012 </div>
-		<div class="powerby">Powered by <a href="#">Django</a></div>	
-	</div>
+
+
 
   
 
