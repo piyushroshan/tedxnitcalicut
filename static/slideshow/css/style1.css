@@ -109,14 +109,14 @@
 		/* Styling the caption */
 		.showcase-caption
 		{
-			color: #111;
-			padding: 8px 10px;
+			color: #bbb;
+			padding: 6px 20px;
 			text-align: left;
 			position: absolute;
 			bottom: 2%; left: 14%; right: 14%;
 			border-radius: 5px;
 			display: none;
-			background-color: #ff2b06;
+			background-image: url(../images/black-opacity-80.png);
 				opacity:0.9;
 				margin-bottom: 2px
  
@@ -124,8 +124,9 @@
 		}
 		.showcase-caption a
 		{
-			color: #fff;
-			text-decoration: blink;
+			color: #ff2b06;
+			padding-left: 20px;
+			text-decoration: none;
 		}
 
 	.showcase-onepage .showcase-content

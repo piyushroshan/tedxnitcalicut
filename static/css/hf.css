@@ -158,7 +158,8 @@ text-shadow:0px 0px 3px #fff;
 }
 
 
-.active a{
+.active li > a
+{
 color: red;
 }
 
@@ -167,7 +168,7 @@ color: red;
 	float: left;
 	height: 25px;
 	padding: 0 25px;
-	color: #ffffff;
+	color: #eee;
 	text-transform: uppercase;
 	font: bold 12px/25px Arial, Helvetica;
 	text-decoration: none;
@@ -301,7 +302,12 @@ width: 150px;
 	height: 0;
 }
 
-
+.scroll_up {
+  display:table;
+  height:28px;
+  width:28px;
+  background:url(../images/up.png) no-repeat scroll left top transparent; 
+}
 
 
 
@@ -429,7 +435,7 @@ margin: 0;
 
 
 .footercontainer {
-	color: white;
+	color: #aaa;
 margin-left: auto;
 margin-right: auto;
     line-height:18px;
@@ -516,11 +522,11 @@ padding-top:8px;
  
 /* This controls how column 2's list items hyperlinks look as well as column 4's hyperlinks - Feel free to change the colours/font family */
 .col3 ul li a, .col4 a .col3 a  {
-color: #fffff1;
+color: #aaa;
 }
 /* This controls how the blog footer's hyperlinks look - Feel free to change the colours/font family */
 .col3 ul {
-color: #ffffff;
+color: #aaa;
 padding-right: 80px;
 }
  
@@ -548,7 +554,7 @@ zoom: 1;
 }
 
 .footer a{
-color: white;	
+color: #aaa;	
 text-decoration: none;
 	}
 

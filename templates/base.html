@@ -17,7 +17,7 @@
 <title>{% block title %}{% endblock %} TEDxNITCalicut </title>
 
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
-
+<script type="text/javascript" src="{{STATIC_URL}}js/scroll.js"></script>
 <link rel="stylesheet" href="{{STATIC_URL}}css/hf.css" />
 
 {% block head %} {% endblock %}
@@ -184,8 +184,13 @@ data-show-faces="true" data-colorscheme="light" data-font="arial"></div>
   {% endblock %}
  </div>
        
-
+<div id="info">
+<div class="col1"></div>
+<div class="col2"></div>
+<div class="col3"></div>
+</div>
 <div class="push"></div>
+
 </div>
 
 {% block footer %}
@@ -239,6 +244,7 @@ data-show-faces="true" data-colorscheme="light" data-font="arial"></div>
  </div>
  </div>
 {% endblock %}
+<div id="topcontrol" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer; " title="Scroll Back to Top"><span class="scroll_up"></span></div>
 </div>
 </body>
 </html>
