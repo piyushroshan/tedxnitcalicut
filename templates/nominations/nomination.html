@@ -110,6 +110,7 @@
        									 <div class="errors">{{ form.reference1.errors.as_text }}</div>
     							  {% endif %}
 								</div>
+								{% if not user.is_authenticated %}
 								<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"> </script>
 
 								<div class="form-itemt" id="reference-wrapper">
@@ -120,6 +121,7 @@
         
 								</div>
 								</div>
+								{% endif %}
 								<button class="submit-button" type="submit" value="submit">
   									<span>Submit</span>
 								</button>

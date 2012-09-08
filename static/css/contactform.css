@@ -50,7 +50,7 @@ background: url(fieldsetbg.jpg) no-repeat left top;
 
 .label
 {
-	text-align: right;
+	text-align: left;
 	padding-right: 10px;
 }
 

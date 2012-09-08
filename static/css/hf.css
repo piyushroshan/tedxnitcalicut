@@ -550,7 +550,7 @@ margin: 5px;
 display: -moz-inline-stack;
 vertical-align: top;
 zoom: 1;
-font-size: 10px;
+font-size: 12px;
 text-align: center;
 *display: inline;
 }
@@ -558,12 +558,12 @@ text-align: center;
 .small
 {
 	margin-top: 5px;
-	font-size: 9px;
+	font-size: 11px;
 }
 
 .col2 p
 {
-	font-size: 10px;
+	font-size: 12px;
 	margin-top: 0px;
 	margin: 4px;
 	text-align: center;
@@ -601,7 +601,7 @@ text-decoration: none;
  .licence
  {
  	display: block;
- 	width: 330px;
+ 	width: 430px;
  	margin-left: auto;
  	margin-right: auto;
  }

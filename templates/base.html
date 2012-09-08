@@ -51,10 +51,10 @@
 		<nav>
 			<ul id="menu">
 				<li  {% block m_home %} {% endblock %}><a href="/">Home</a></li>
-
+				<li {% block m_nominate %} {% endblock %}><a href="/nominate/">Nominate</a></li>
 				<li {% block m_organisers %} {% endblock %}><a href="/organisers/">Organisers</a></li>
 				<li {% block m_contact %} {% endblock %}> <a href="/contactus/">Contact us </a> </li>
-				<li {% block m_nominate %} {% endblock %}><a href="/nominate/">Nominate</a></li>
+				
 
 				<li {% block m_about %} {% endblock %}><a >About</a>
 					<ul>
@@ -63,6 +63,7 @@
 					<li><a href="/about/tedxnitcalicut/">TEDxNITCalicut</a></li>
 					</ul>
 				</li>
+				<li {% block m_partners %} {% endblock %}><a href="/partners/">Partners</a></li>
 				<li {% block m_blog %} {% endblock %}><a href="/blog/">Blog</a></li>
 				
 
@@ -107,7 +108,9 @@
  {% block content %}
   {% endblock %}
 
-<div id="right-menu">
+
+{% block rightmenu %}
+		<div id="right-menu">
 				<div id="user_menu">
 								<ul id="user_id"> {{user.get_full_name}}
 												{% if user.is_authenticated %}
@@ -187,8 +190,10 @@
 			  </div>
 			       
 		</div> 
+	 {% endblock %}
   
  </div>
+
        
 <div id="info">
 <div class="col1"></div>
@@ -247,7 +252,7 @@
 					{%endif%}
 				</ul>
 	  </div>
-<div class="copyright">&copy; TEDxNITCalicut 2012 &nbsp;&nbsp;&nbsp;	Powered by <a href="#">Django</a></div>
+<div class="copyright">&copy; TEDxNITCalicut 2012 &nbsp;&nbsp;&nbsp;	Powered by <a href="https://www.djangoproject.com/">Django</a></div>
 
 
 

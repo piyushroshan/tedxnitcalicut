@@ -65,10 +65,12 @@
        									 <div class="errors">{{ form.body.errors.as_text }}</div>
     							  {% endif %}
 						</div>
+						{% if not user.is_authenticated %}
 						<div class="captcha" id="captcha">
 								{{ form.recaptcha }}
 								{% if form.recaptcha.errors %}<div class="errors">{{ form.recaptcha.errors.as_text }}</div>{% endif %}<br />
 								</div>
+						{% endif %}
 					<div class="submit-button">
 							<button class="submit-button" type="submit" value="submit">
                                     <span>Submit</span>
