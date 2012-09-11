@@ -1,2 +1,23 @@
 Requirements:
+git clone https://github.com/sehmaschine/django-grappelli.git
+
+git clone https://github.com/sehmaschine/django-filebrowser.git
+
+git clone https://github.com/aljosa/django-tinymce.git
+
 pip install sorl-thumbnail
+
+pip install django-social-auth
+
+ Root User: admin
+   Root Password: KqxpTuhPwhUU
+   Database Name: tedxnitcalicut
+
+Connection URL: mysql://127.7.213.129:3306/
+
+
+   Root User: admin
+   Root Password: KqxpTuhPwhUU
+   
+
+URL: https://tedxnitcalicut-piyushroshan.rhcloud.com/phpmyadmin/

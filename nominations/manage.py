@@ -16,5 +16,5 @@ def nominated(request):
 			return HttpResponseRedirect('/')
 		else:
 			t=get_template('nominations/nomination.html')
-			c=RequestContext(request,{ 'form':NominationForm(request.POST)})
+			c=RequestContext(request,{ 'form': form})
 			return HttpResponse(t.render(c))

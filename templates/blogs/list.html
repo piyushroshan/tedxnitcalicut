@@ -22,9 +22,9 @@
 							{% endautoescape %}
 							
 							<footer>
-							<p> <span id="red"> <a class="readmore" href="{% url blogs.views.post post.pk  %}">read more..</a> </span> <span id="comments_link"><a href="{% url blogs.views.post post.pk %}">Comments</a></span></p>
+							<p> <span id="red"> <a class="readmore" href="{% url blogs.views.post post.pk  %}">read more..</a> </span> </p>
 								<div id="post_footer">
-										<p>Posted By &nbsp; <a href="{% url blogs.views.list_user post.user_id  %}">{{post.user_id.get_full_name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
+										<p><span id="comments_link"><a href="{% url blogs.views.post post.pk %}">Comments</a></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Posted By<a href="{% url blogs.views.list_user post.user_id  %}" title="{{post.user_id.get_full_name}}'s Blog">{{post.user_id.get_full_name}} </a> &nbsp;on &nbsp;{{post.created}}.</p>
 								</div>
 										
 

@@ -113,7 +113,7 @@
 								{% if not user.is_authenticated %}
 								<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"> </script>
 
-								<div class="form-itemt" id="reference-wrapper">
+								<div class="form-it" id="reference-wrapper">
 								<label for="captcha">Prove you are human: </label>
 								<div class="captcha" id="captcha">
 								{{form.recaptcha}}								
@@ -122,9 +122,11 @@
 								</div>
 								</div>
 								{% endif %}
+								<div class="buttondiv">
 								<button class="submit-button" type="submit" value="submit">
   									<span>Submit</span>
 								</button>
+							</div>
 							</div>
                         </fieldset>
 

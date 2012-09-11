@@ -23,14 +23,18 @@ def contact_us(request):
 def submit_form(request):
 	errors=[]
 	if request.method == 'POST':
-		if not request.user.is_authenticated() and not request.POST.get('answer')==ans:
-			errors.append('Enter correct answer to the question')
+		if not request.POST.get('name', ''):
+			errors.append('Enter your name.')
+		if not request.POST.get('email', ''):
+			errors.append('Enter a valid email address.')
+		if request.POST.get('email') and '@' not in request.POST['email']:
+			errors.append('Enter a valid e-mail address.')
 		if not request.POST.get('subject', ''):
 			errors.append('Enter a subject.')
 		if not request.POST.get('message', ''):
 			errors.append('Enter a message.')
-		if request.POST.get('email') and '@' not in request.POST['email']:
-			errors.append('Enter a valid e-mail address.')
+		if not request.user.is_authenticated() and not request.POST.get('answer')==ans:
+			errors.append('Enter correct answer to the question')
 		if not errors:
 			cform = contactform()
 			cform.name = request.POST['name']

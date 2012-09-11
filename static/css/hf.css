@@ -22,13 +22,12 @@ margin-right: 0;
 	}
 	#body {
 		padding:10px;
-		padding-bottom:100px;	/* Height of the footer */
-		min-height: 100%;
+		/*padding-bottom:100px; Height of the footer */
+		min-height: 80%;
 	}
 	#footer {
 		position:relative;
 		width:100%;
-		margin-top: 50px;
 		margin-left: 0;
 	margin-right: 0;
 		height:100px;			/* Height of the footer */
@@ -79,8 +78,80 @@ margin-right: auto;
 
 	}
 	
+	.jquery-bar {
+	background: #111; /* #FAFAFA */
+	width:100%;
+	color: #aaa;
+	position: relative;	
+	margin:0px 0px 0px 0px;
+	padding: 6px 0px 0px 0px;	
+	border-bottom:1px solid #ddd;
+	box-shadow: 0px 2px 3px #AAAAAA;
+	font-size:14px;
+	font-family: 'Lato Regular', Arial;
+}
+
+.jquery-bar .notification {
+	display:block;
+	width:auto;
+}
+
+.downbar {
+	cursor:pointer;	
+	top:5px;
+	right:70px;	
+	padding: 0;
+	display:table;
+ 	 height:28px;
+ 	 width:28px;
+ 	 background:url(../images/down.png) no-repeat scroll left top transparent; 
+	position:absolute;	
+	border-top:none;
+}
+
+.downbar:hover{
+	 display:table;
+ 	 height:28px;
+ 	 width:28px;
+ 	 background:url(../images/down.png) no-repeat scroll left top transparent; 
+	cursor:pointer;
+}
+
+.down {
+	position:absolute;
+	top:6px;
+	margin-bottom: 0;
+	padding: 0;
+	right:70px;
+	height:28px;
+ 	 width:28px;
+}
+
+.up {
+	top: -45px;
+	 height:28px;
+ 	 width:28px;
+	display: table;
+}
+
+.arrow {
+	cursor:pointer;
+}
+
+.font-style{
+	text-align: center;
+}
+
+.font-style a{
+	color:#CC0000;
+	font-size:15px;
+	text-decoration:underline;
+	text-transform:none;
+}
+
+
 	
-	#logo
+#logo
 {
 
 	position:relative;
@@ -89,6 +160,7 @@ margin-right: auto;
 	height: 100px;
 	display: -moz-inline-stack;
    vertical-align: top;
+   margin-top: 5px;
    zoom: 1;
    margin-left: 50px;
    padding-left: 50px;
@@ -97,31 +169,7 @@ margin-right: auto;
 
 }
 
-.event
-{
-height: 30px;
-width: 960px;
-padding-top: 15px;
-margin-bottom: 0;
 
-display: block;
-position: relative;
-margin-left: 0;
-margin-right: 0;
-color: white;
-	
-	}
-	
-.event h2
-{
-	color: #ff2b06;
-	text-align: center;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-	font-size: 25px;
-text-shadow:0px 0px 3px #fff;
-	
-	}
 
 #menuf{
 	height:auto;
@@ -154,6 +202,7 @@ text-shadow:0px 0px 3px #fff;
 
 #menu li{
 	float: left;
+	width: 110px;
 	padding: 15px 0 10px 0;
 	position: relative;
 }
@@ -165,7 +214,7 @@ text-shadow:0px 0px 3px #fff;
 #menu a{
 	float: left;
 	height: 25px;
-	padding: 0 25px;
+	padding: 0 5px;
 	color: #fff;
 	text-transform: uppercase;
 	font: bold 12px/25px Arial, Helvetica;
@@ -351,33 +400,20 @@ margin-top: 10px;
 		 border-bottom: : 1px solid #000;
  border-radius: 15px;
 	
-	}	
+}	
 	
 #fbmenu
 {
-margin-bottom: 20px;
-margin-top: 15px;
-
-		 display: block;
-		 position: relative;
-		 width: 230px;
-		 height: 25px;
- border-radius: 15px;
+	 display: inline-block;
+	 position: relative;
 	
-	}
+}
 	
 	#tweetmenu
 {
-margin-bottom: 20px;
-margin-top: 15px;
-
-		 display: block;
-		 position: relative;
-		 width: 230px;
-		 height: 25px;
- border-radius: 15px;
-	
-	}
+	margin: 5px 0px;
+	 display: inline-block;	
+}
 
 #content .wrapper
 {
@@ -395,18 +431,18 @@ color: #555;
 	margin-right: auto;
 
 	height: auto;
-	}
+}
 	
 	
 	
 #wrappernew	.wrapper
-	{
+{
 	position: relative;
 	width: 600px;
 	display: block;
 	min-height: 100%;
 	height: auto;
-		}
+}
 	
 #content .wrapper	body 
 { font: .8em Arial, Tahoma, Verdana; }
@@ -452,7 +488,7 @@ margin-right: auto;
  background: -o-linear-gradient(#000000, #111);
  background: -ms-linear-gradient(#000000, #111);
  background: linear-gradient(#000000, #111);
- height:110px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
+ height:120px; /* If you change this value, be sure to change the footer's height as well as the column's height. */
  	-moz-border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
@@ -463,7 +499,7 @@ margin-right: auto;
 position: relative;
 margin-top: 20px;
 width: 960px;
-height: 80px; /* If you change this value, be sure to change the footer column's height as well */
+height: 100px; /* If you change this value, be sure to change the footer column's height as well */
 margin-left: auto;
 margin-right: auto;
 font: 10px Ubuntu,Helvetica,serif;

@@ -42,7 +42,7 @@ height: 650px;
 
 .center
 	{
-	width: 760px;
+	width: 700px;
 	margin-left: auto;
 	margin-right: auto;
 	}
@@ -79,7 +79,7 @@ body
 	margin-right: auto;
 	display: block;
 	height: 100%;
-	width: 1200px;
+	width: 100%
 	background-image:url('../images/home/wbck.png');
 	background-size: 280px 280px;
 	background-position: left top;
@@ -89,7 +89,7 @@ body
 	
 	
 #content-wrapper{	
-position: absolute;
+	position: relative;
 	word-spacing: 3px;
 	line-height: 26px;
 	margin-left: 0;
@@ -97,17 +97,15 @@ position: absolute;
 	background-color: transparent;
 	z-index: 10;
 	height: auto;
-	width: 600px;
-	display: inline-block;
+	width: 610px;
+	display: block;
 }
 	
 .content h3
 {
-margin: 8px;
+margin: 8px 0 0 8px;
 margin-left: 18px;
 margin-top: 15px;
-
-
 }
 .content p
 {	
@@ -118,17 +116,72 @@ margin-top: 15px;
 .about
 {
 	width: 300px;
-  display: block;
-  position: absolute;
+  display: inline-block;
+  position: relative;
 
-	}
+}
 
+.gridleft
+{
+	width: 300px;
+  display: inline-block;
+  position: relative;
+
+}
+
+.gridleft img
+{
+	border:2px solid #ddd;
+	width: 200px;
+	height:150px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+}
+
+
+.gridright
+{
+	width: 300px;
+  display: inline-block;
+  position: relative;
+	
+}
+
+.gridright img
+{
+	border:2px solid #ddd;
+	border-radius: 10px;
+	width: 200px;
+	height:150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.grid h3
+{
+margin-bottom: 5px;
+font-size: 15px;
+width: 200px;
+text-align: center;
+}
+
+.grid h3 a
+{
+color: #ff2b06;
+text-decoration: none;
+}
+
+.grid p
+{
+	margin-top: 0px;
+}
 
 .blog-home
 {
-width: 300px;;
-margin-left: 300px;
-display: block;
+width: 300px;
+display: inline-block;
+vertical-align: top;
 position: relative;
 	}
 
@@ -158,8 +211,3 @@ padding-right: 1em;
 	text-decoration: none;
 }
 	
-	
-	
-	
-	
-	}
