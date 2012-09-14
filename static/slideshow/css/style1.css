@@ -13,7 +13,7 @@
 /* Assign the correct showcase height to prevent loading jumps in IE */
 .showcase-load
 {
-	height: 350px; /* Same as showcase javascript option */
+	height: 390px; /* Same as showcase javascript option */
 	overflow: hidden;
 }
 

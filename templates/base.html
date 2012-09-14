@@ -53,19 +53,21 @@
 
 
 {% block header %}
-	<div id="header">
-		
-		
 		<!-- Start jQuery Notification Bar -->
-		<div>
+<div id="newbar">
 <div class="jquery-bar">
     <span class="notification">
-        <p class="font-style"> TEDx NITCalicut 2013 date to be announced soon<p class="jquery-arrow down"><img src="{{STATIC_URL}}images/up.png" alt="Click to Hide Notification" title="Click to Hide Notification" style="cursor:pointer;"></p>
+        <p class="font-style"> TEDx NITCalicut 2013 date to be announced soon
+        	<span class="jquery-arrow down"><img src="{{STATIC_URL}}images/close.png" alt="Click to Hide Notification" title="Click to Hide Notification" style="cursor:pointer;"> </span></p>
     </span>
 </div>
 <span class="downbar jquery-arrow"><img src="{{STATIC_URL}}images/down.png" alt="Click to Show Notification" title="Click to Show Notification" style="cursor:pointer;"></span>
 </div>
 <!-- End jQuery Notification Bar -->
+
+<div id="header">
+		
+		
 <div id="menud">
 		<div id="logo">
 				<a href="/"><img src="{{STATIC_URL}}images/logo.png" border="0" width="230px" height="100px"></img></a>
@@ -124,7 +126,7 @@
 
  
         
-   <div id="wrappernew">
+ <div id="wrappernew">
 
 
 		
